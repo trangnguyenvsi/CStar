@@ -7,8 +7,19 @@ public class TeamCalendarPage {
  //Define Elements
 	//Dropdown Month & year
 	@FindBy(id="ctl00_plcMain_ddlMonth")
-	private WebElement dropdown_MonthYear;
+	private WebElement dropdown_Month;
 	
+	@FindBy(id="ctl00_plcMain_ddlYear")
+	private WebElement dropdown_Year;
+	
+	public WebElement getDropdown_Year() {
+		return dropdown_Year;
+	}
+
+	public void setDropdown_Year(WebElement dropdown_Year) {
+		this.dropdown_Year = dropdown_Year;
+	}
+
 	//Dropdown Team
 	@FindBy(id="ctl00_plcMain_ddlTeamList")
 	private WebElement dropdown_Team;
@@ -46,12 +57,12 @@ public class TeamCalendarPage {
 	private WebElement option_Travel;
 	//NOTE: Option Undo Reserved Date is not selected in this Screen
 	
-	public WebElement getDropdown_MonthYear() {
-		return dropdown_MonthYear;
+	public WebElement getDropdown_Month() {
+		return dropdown_Month;
 	}
 
-	public void setDropdown_MonthYear(WebElement dropdown_MonthYear) {
-		this.dropdown_MonthYear = dropdown_MonthYear;
+	public void setDropdown_Month(WebElement dropdown_Month) {
+		this.dropdown_Month = dropdown_Month;
 	}
 
 	public WebElement getDropdown_Team() {
