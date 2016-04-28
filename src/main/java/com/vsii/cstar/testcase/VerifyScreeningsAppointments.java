@@ -1,4 +1,4 @@
-package com.vsii.cstar.pages.methods;
+package com.vsii.cstar.testcase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,6 +7,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.vsii.cstar.pages.methods.HomePageMethods;
+import com.vsii.cstar.pages.methods.LoginPageMethods;
+import com.vsii.cstar.pages.methods.ScreeningMaintainanceMethods;
+import com.vsii.cstar.pages.methods.TeamCalendarMethods;
 
 public class VerifyScreeningsAppointments {
 	WebDriver driver;
