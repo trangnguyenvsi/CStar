@@ -50,6 +50,11 @@ public class ScreeningMaintenance {
 	@FindBy(id = "ctl00_body_lblInfoScheduleVal")
 	private WebElement label_ScheduleCode;
 
+	@FindBy(id = "ctl00_body_lnkScreeningAppointment")
+	private WebElement link_Appointments;
+
+	// Beans
+
 	public WebElement getLabel_SiteAddress() {
 		return label_SiteAddress;
 	}
@@ -145,5 +150,13 @@ public class ScreeningMaintenance {
 	public void setLabel_ScheduleCode(WebElement label_ScheduleCode) {
 		this.label_ScheduleCode = label_ScheduleCode;
 	}
-	
+
+	public WebElement getLink_Appointments() {
+		return link_Appointments;
+	}
+
+	public void setLink_Appointments(WebElement link_Appointments) {
+		this.link_Appointments = link_Appointments;
+	}
+
 }
