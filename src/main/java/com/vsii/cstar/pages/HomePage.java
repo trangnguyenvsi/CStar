@@ -16,6 +16,32 @@ public class HomePage {
 	//Submenu Team Calendar & Grid
 	@FindBy(xpath="//a[contains(text(),'Team Calendar and Grid')]")
 	private WebElement submenu_Teamcalendar;
+	
+	//Menu Products & Pricing
+	@FindBy(xpath="//a[contains(text(),'Products & Pricing')]")
+	private WebElement menu_ProductPricing;
+
+	//Submenu Product Set
+	@FindBy(xpath="//a[contains(text(),'Product Set')]")
+	private WebElement menu_ProductSet;
+	
+	
+
+	public WebElement getMenu_ProductPricing() {
+		return menu_ProductPricing;
+	}
+
+	public void setMenu_ProductPricing(WebElement menu_ProductPricing) {
+		this.menu_ProductPricing = menu_ProductPricing;
+	}
+
+	public WebElement getMenu_ProductSet() {
+		return menu_ProductSet;
+	}
+
+	public void setMenu_ProductSet(WebElement menu_ProductSet) {
+		this.menu_ProductSet = menu_ProductSet;
+	}
 
 	public WebElement getLabel_Account() {
 		return label_Account;
