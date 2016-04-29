@@ -53,7 +53,34 @@ public class ScreeningMaintenance {
 	@FindBy(id = "ctl00_body_lnkScreeningAppointment")
 	private WebElement link_Appointments;
 
+	/**
+	 * Elements in Products & Pricing Tab
+	 */
+	//Tab location
+	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlProductPricing")
+	WebElement tab_ProductsPricing;
+	
+	//Dropdown ProductSet
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlProductPricing_ddlProductSet")
+	WebElement ddl_ProductSet;
+	
 	// Beans
+
+	public WebElement getTab_ProductsPricing() {
+		return tab_ProductsPricing;
+	}
+
+	public void setTab_ProductsPricing(WebElement tab_ProductsPricing) {
+		this.tab_ProductsPricing = tab_ProductsPricing;
+	}
+
+	public WebElement getDdl_ProductSet() {
+		return ddl_ProductSet;
+	}
+
+	public void setDdl_ProductSet(WebElement ddl_ProductSet) {
+		this.ddl_ProductSet = ddl_ProductSet;
+	}
 
 	public WebElement getLabel_SiteAddress() {
 		return label_SiteAddress;

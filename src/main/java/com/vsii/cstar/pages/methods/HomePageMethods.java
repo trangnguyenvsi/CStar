@@ -23,4 +23,13 @@ public class HomePageMethods {
 	public void selectSubMenuTeamCalendar(){
 		objHomePage.getSubmenu_Teamcalendar().click();;
 	}
+	
+	public void mouseHoverProductPricing(){
+		Actions action=new Actions(driver);
+		action.moveToElement(objHomePage.getMenu_ProductPricing()).perform();		
+	}
+	
+	public void selectSubMenuProductSet(){
+		objHomePage.getSubmenu_ProductSet().click();;
+	}
 }

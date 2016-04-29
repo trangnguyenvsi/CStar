@@ -23,9 +23,17 @@ public class HomePage {
 
 	//Submenu Product Set
 	@FindBy(xpath="//a[contains(text(),'Product Set')]")
-	private WebElement menu_ProductSet;
+	private WebElement submenu_ProductSet;
 	
 	
+
+	public WebElement getSubmenu_ProductSet() {
+		return submenu_ProductSet;
+	}
+
+	public void setSubmenu_ProductSet(WebElement submenu_ProductSet) {
+		this.submenu_ProductSet = submenu_ProductSet;
+	}
 
 	public WebElement getMenu_ProductPricing() {
 		return menu_ProductPricing;
@@ -35,13 +43,7 @@ public class HomePage {
 		this.menu_ProductPricing = menu_ProductPricing;
 	}
 
-	public WebElement getMenu_ProductSet() {
-		return menu_ProductSet;
-	}
 
-	public void setMenu_ProductSet(WebElement menu_ProductSet) {
-		this.menu_ProductSet = menu_ProductSet;
-	}
 
 	public WebElement getLabel_Account() {
 		return label_Account;
