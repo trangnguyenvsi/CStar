@@ -9,13 +9,13 @@ import java.util.Properties;
 
 public class DBConnection {
 static Properties p;	
-	public static ResultSet connectSQLServer(String sqlCommandName) throws IOException{
+	public static ResultSet connectSQLServer(String sqlCommand) throws IOException{
 		
 		p = CommonOperations.readConfig();
 		Connection conn = null;
 		ResultSet rs = null;
 		Statement stmt = null;
-		String sqlCommand;
+		//String sqlCommand;
 		
 		//Defining the SQL URL
 		String dbAddress = p.getProperty("SQLServer_address");
@@ -24,7 +24,7 @@ static Properties p;
 		String pwd = p.getProperty("SQLServer_pwd");
 		
 		//Define sql command
-		sqlCommand = p.getProperty(sqlCommandName);
+		//sqlCommand = p.getProperty(sqlCommandName);
 		
 		//Driver of SQLServer
 		String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -44,10 +44,11 @@ static Properties p;
 		}
 		catch(Exception e){
 			System.out.println("Couldn't connect to DB");
+			System.out.print(e);	
 			
 		}
 		return rs;
-
+		
 	}
 public static ResultSet connectMySQL(String sqlCommandName) throws IOException{
 		
