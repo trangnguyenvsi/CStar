@@ -15,10 +15,10 @@ public class CommonMethod {
 //		pwd = TestBase.p.getProperty("password");
 		email = "nguyen.thi.thu.trang@vsi-international.com";
 		pwd = "Trangntt123@";
-		//if(loginPageObj.getTxt_Email().isDisplayed()==true){
+		if(loginPageObj.getTxt_Email().isDisplayed()==true){
 			loginPageMethodObj.login(email, pwd);
 			
-		//}
+		}
 		
 	}
 
