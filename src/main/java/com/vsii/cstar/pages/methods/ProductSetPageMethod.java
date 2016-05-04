@@ -1,6 +1,6 @@
 package com.vsii.cstar.pages.methods;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,8 +30,7 @@ public class ProductSetPageMethod {
 	public String[] getProductsOfOpenedProductSet() {
 		int NumOfProduct = driver.findElements(By.xpath("//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr"))
 				.size();
-		System.out.println(NumOfProduct);
-
+		
 		// Declare array Product - prepare to get all product/packet name to
 		// this Array
 		String[] product = new String[NumOfProduct - 1];
@@ -40,6 +39,8 @@ public class ProductSetPageMethod {
 			String xpath_product = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[4]";
 			product[i - 2] = driver.findElement(By.xpath(xpath_product)).getText();
 		}
+		
+		Arrays.sort(product);
 		return product;
 	}
 }

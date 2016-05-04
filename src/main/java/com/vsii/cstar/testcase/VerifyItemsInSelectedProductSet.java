@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -44,17 +45,20 @@ public class VerifyItemsInSelectedProductSet {
 	@Test
 	public void t() throws InterruptedException {
 		// Verify Product in a product set
-		String productSetName="Medicare- Annual Wellness Visit";
+		String productSetName = "Medicare- Annual Wellness Visit";
 		objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com", "Thanhvc123@");
 		objHomepageMethod.mouseHoverScreeningConfig();
 		objHomepageMethod.selectSubMenuTeamCalendar();
+		objTeamCalendarMethod.selectMonth("April");
 		objTeamCalendarMethod.selectTeam("ACE - ACO - East");
 		objTeamCalendarMethod.selectExistingScreening("TESTSITE-001");
 		objScreeningMaintainanceMethod.selectProductsPricingTab();
 		objScreeningMaintainanceMethod.selectDdlProductSet(productSetName);
 		Thread.sleep(20000);
 		String[] product1 = objScreeningMaintainanceMethod.getProductsOfChosenProductSet();
-		
+		for (int i = 0; i < objScreeningMaintainanceMethod.getProductsOfChosenProductSet().length; i++) {
+			System.out.println(product1[i]);
+		}
 
 		// Verify product in product set of Products & Pricing
 		objHomepageMethod.mouseHoverProductPricing();
@@ -62,24 +66,21 @@ public class VerifyItemsInSelectedProductSet {
 		objProductSetMethod.searchProductSet(productSetName);
 		objProductSetMethod.viewDetailProductSet(productSetName);
 		String[] products2 = objProductSetMethod.getProductsOfOpenedProductSet();
-		
-		Arrays.sort(products2);
-		// Compare 2 result
-		// for (int i = 0; i <
-		// objScreeningMaintainanceMethod.getProductsOfChosenProductSet().length;
-		// i++) {
-		// for (int j = 0; j <
-		// objProductSetMethod.getProductsOfOpenedProductSet().length; j++) {
-		// Assert.assertEquals(product1[], expected);
-		
-		
-		if (Arrays.equals(product1, products2)) {
-			System.out.println("Same");
+		for (int j = 0; j < objProductSetMethod.getProductsOfOpenedProductSet().length; j++) {
+			System.out.println(products2[j]);
 		}
-		else{
-			System.out.println("Not Same");
+		
+		// Compare 2 result
+		boolean result;
+		if (Arrays.equals(product1, products2)) {
+			result=true;
+			System.out.println(result);
+		} else {
+			result=false;
+			System.out.println(result);
 		}
 
+		Assert.assertTrue(result);
 	}
 
 	@AfterClass

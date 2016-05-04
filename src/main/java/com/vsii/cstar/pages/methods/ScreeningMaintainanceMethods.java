@@ -1,5 +1,7 @@
 package com.vsii.cstar.pages.methods;
 
+import java.util.Arrays;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -31,17 +33,20 @@ public class ScreeningMaintainanceMethods {
 	}
 	
 	public String[] getProductsOfChosenProductSet() {
-		int NumOfProduct2 = driver.findElements(By.xpath("//table[@id='ctl00_body_tabScreeningInfo_tabPnlProductPricing_grdPackages2']/tbody/tr"))
-				.size()-1;
+		int NumOfProduct2 = driver.findElements(By.xpath("//table[@id='ctl00_body_tabScreeningInfo_tabPnlProductPricing_grdPackages2']/tbody/tr")).size()-1;
 		
 		// Declare array Product - prepare to get all product/packet name to
 		// this Array
 		String[] product2 = new String[NumOfProduct2];
-
+		
+		//Test arrayList
+		
 		for (int i = 2; i <= NumOfProduct2+1; i++) {
-			String xpath_product = "//table[@id='ctl00_body_tabScreeningInfo_tabPnlProductPricing_grdPackages2']/tbody/tr["+2+"]/td";
-			product2[i - 2] = driver.findElement(By.xpath(xpath_product)).getText();
+			String xpath_product = "//table[@id='ctl00_body_tabScreeningInfo_tabPnlProductPricing_grdPackages2']/tbody/tr["+i+"]/td";
+			product2[i-2]=driver.findElement(By.xpath(xpath_product)).getText();
 		}
+		
+		Arrays.sort(product2);
 		return product2;
 	}
 }
