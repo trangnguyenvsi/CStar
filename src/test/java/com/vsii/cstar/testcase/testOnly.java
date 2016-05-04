@@ -1,5 +1,6 @@
 package com.vsii.cstar.testcase;
 
+import java.text.ParseException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -35,7 +36,7 @@ public class testOnly {
 		objScreeningMaintainanceMethod = new ScreeningMaintainanceMethods(driver);
 		objAptSingleScreenMethod = new AppointmentsSingleScreeningPageMethod(driver);
 		objProductSetMethod = new ProductSetPageMethod(driver);
-		objProductPageMethod=new ProductPageMethod(driver);
+		objProductPageMethod = new ProductPageMethod(driver);
 
 		// Setup browser
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -44,15 +45,27 @@ public class testOnly {
 	}
 
 	@Test
-	public void t() throws InterruptedException {
+	public void t() throws InterruptedException, ParseException {
 		// Steps to access Appointments Screen
-		String productName="PRODUCT-1008";
+		String productName = "PRODUCT-1008";
 		objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com", "Thanhvc123@");
 		objHomepageMethod.mouseHoverProductPricing();
 		objHomepageMethod.selectSubMenuProductList();
 		objProductPageMethod.searchProduct(productName);
-		objProductPageMethod.selectSearchedProduct(productName);
+		objProductPageMethod.selectProductByName(productName);
 
+		// Verify product is active or not
+		if (objProductPageMethod.isProductActived() == true) {
+			
+		}
+		else if (objProductPageMethod.isScreeningDateInProductEffectivedDate("04/06/2016")==true) {
+			System.out.println("Continue");
+		
+		}
+		else {
+			System.out.println("End here");
+		}
+	
 	}
 
 	@AfterClass

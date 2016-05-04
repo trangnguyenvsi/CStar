@@ -5,21 +5,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class TeamCalendarPage {
  //Define Elements
-	//Dropdown Month & year
+	//Dropdown Month
 	@FindBy(id="ctl00_plcMain_ddlMonth")
 	private WebElement dropdown_Month;
 	
+	//Dropdown year
 	@FindBy(id="ctl00_plcMain_ddlYear")
 	private WebElement dropdown_Year;
 	
-	public WebElement getDropdown_Year() {
-		return dropdown_Year;
-	}
-
-	public void setDropdown_Year(WebElement dropdown_Year) {
-		this.dropdown_Year = dropdown_Year;
-	}
-
+	
 	//Dropdown Team
 	@FindBy(id="ctl00_plcMain_ddlTeamList")
 	private WebElement dropdown_Team;
@@ -55,6 +49,7 @@ public class TeamCalendarPage {
 	//Option: Travel
 	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl06_lnkBtnControlTypes")
 	private WebElement option_Travel;
+
 	//NOTE: Option Undo Reserved Date is not selected in this Screen
 	
 	public WebElement getDropdown_Month() {
@@ -137,5 +132,14 @@ public class TeamCalendarPage {
 		this.option_Travel = option_Travel;
 	}
 	
+	
+
+	public WebElement getDropdown_Year() {
+		return dropdown_Year;
+	}
+
+	public void setDropdown_Year(WebElement dropdown_Year) {
+		this.dropdown_Year = dropdown_Year;
+	}	
 
 }

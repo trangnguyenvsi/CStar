@@ -118,7 +118,7 @@ public class VerifyScreeningsAppointments {
 		objHomepageMethod.selectSubMenuTeamCalendar();
 		objTeamCalendarMethod.selectMonth("April");
 		objTeamCalendarMethod.selectTeam("CLV - Cleveland");
-		objTeamCalendarMethod.selectExistingScreening("St Stephen Church");
+		objTeamCalendarMethod.selectExistingScreening("Mogadore Baptist Church");
 		objScreeningMaintainanceMethod.clickAppointmentsLinkText();
 
 		// Input a disired time (time that participant was choose)

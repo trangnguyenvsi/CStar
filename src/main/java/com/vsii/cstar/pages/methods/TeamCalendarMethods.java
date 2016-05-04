@@ -11,57 +11,85 @@ import com.vsii.cstar.pages.TeamCalendarPage;
 public class TeamCalendarMethods {
 	WebDriver driver;
 	public TeamCalendarPage objTeamCalendar = new TeamCalendarPage();
-	
 
 	public TeamCalendarMethods(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, objTeamCalendar);
 	}
-	
-	//Select dropdown Month and choose a specific month
-	public void selectMonth(String month){
-		Select selectobj=new Select(objTeamCalendar.getDropdown_Month());
+
+	// Select dropdown Month and choose a specific month
+	public void selectMonth(String month) {
+		Select selectobj = new Select(objTeamCalendar.getDropdown_Month());
 		selectobj.selectByVisibleText(month);
 	}
 
-	//Select dropdown Year and choose a specific year	
-	public void selectYear(String year){
-		Select selectobj=new Select(objTeamCalendar.getDropdown_Year());
+	// Select dropdown Year and choose a specific year
+	public void selectYear(String year) {
+		Select selectobj = new Select(objTeamCalendar.getDropdown_Year());
 		selectobj.selectByVisibleText(year);
 	}
-	
-	//Select dropdown Team and choose a specific team
-	public void selectTeam(String team){
-		Select selectobj=new Select(objTeamCalendar.getDropdown_Team());
+
+	// Select dropdown Team and choose a specific team
+	public void selectTeam(String team) {
+		Select selectobj = new Select(objTeamCalendar.getDropdown_Team());
 		selectobj.selectByVisibleText(team);
 	}
-	
-	//Select a screening that visibling in calendar - select with screening name
-	public void selectExistingScreening(String screeningName){
+
+	// Select a screening that visibling in calendar - select with screening
+	// name
+	public void selectExistingScreening(String screeningName) {
 		driver.findElement(By.linkText(screeningName)).click();
 	}
-	
-	//Righ click to a date in calendar - to prepare for add/select screening
-	public void rightToDateCell(String date){
-		String xpathDate="//table/tbody/tr/td[contains(@oncontextmenu,'" +date+ "')]";
+
+	// Righ click to a date in calendar - to prepare for add/select screening
+	public void rightClickToDateCell(String date) {
+		String xpathDate = "//table/tbody/tr/td[contains(@oncontextmenu,'" + date + "')]";
 		Actions action = new Actions(driver);
 		action.contextClick(driver.findElement(By.xpath(xpathDate))).perform();
 	}
-	
-	//Click to Add Screening (after right click to a date) 
-	public void selectOptionAddScreening(){
+
+	// Click to Add Screening (after right click to a date)
+	public void selectOptionAddScreening() {
 		objTeamCalendar.getOption_AddScreening().click();
 	}
-	
-	//Click to Reserved (after right click to a date)
-	public void selectOptionReservedDate(){
+
+	// Click to Reserved (after right click to a date)
+	public void selectOptionReservedDate() {
 		objTeamCalendar.getOption_Reserved().click();
 	}
-	
-	//Choose view type - Grid
-	public void selectGridView(){
+
+	// Choose view type - Grid
+	public void selectGridView() {
 		objTeamCalendar.getRadio_Grid().click();
 	}
+
+	// Show all team's calendar
+	public void selectShowAll() {
+		objTeamCalendar.getCheckbox_Showall().click();
+	}
+
+	// Click to add screening
+	public void addScreening() {
+		objTeamCalendar.getOption_AddScreening().click();
+	}
+
+	// Click to Reserved Date
+	public void reservedDate() {
+		objTeamCalendar.getOption_Reserved().click();
+	}
+
+	// Click to View Screening
+	public void viewScreeningInNewWindow() {
+		objTeamCalendar.getOption_ViewScreening().click();
+	}
+
+	// Click to Travel
+	public void viewTravel() {
+		objTeamCalendar.getOption_Travel().click();
+	}
 	
-	
+	// Click to Site Change
+		public void siteChange() {
+			objTeamCalendar.getOption_SiteChange().click();
+		}
 }
