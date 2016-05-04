@@ -1,12 +1,10 @@
 package com.vsii.cstar.testcase;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -56,7 +54,7 @@ public class VerifyItemsInSelectedProductSet {
 		objScreeningMaintainanceMethod.selectDdlProductSet(productSetName);
 		Thread.sleep(20000);
 		String[] product1 = objScreeningMaintainanceMethod.getProductsOfChosenProductSet();
-		Arrays.sort(product1);
+		
 
 		// Verify product in product set of Products & Pricing
 		objHomepageMethod.mouseHoverProductPricing();
