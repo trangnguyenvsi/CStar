@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
+  <listeners>
+    <listener class-name="com.vsii.tsc.utility.Reports"/>
+  </listeners>
+  <test name="TestTeamCalendar(failed)">
     <classes>
+      <class name="com.vsii.cstar.testcase.VerifyScreeningsAppointments">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="test02" invocation-numbers="0"/>
+          <include name="end"/>
+          <include name="start"/>
+        </methods>
+      </class> <!-- com.vsii.cstar.testcase.VerifyScreeningsAppointments -->
       <class name="com.vsii.tsc.utility.TestBase">
         <methods>
-          <include name="teardownSuite"/>
           <include name="setupSuite"/>
+          <include name="teardownSuite"/>
         </methods>
       </class> <!-- com.vsii.tsc.utility.TestBase -->
-      <class name="com.vsii.cstar.testcase.TestTeamCalendar">
-        <methods>
-          <include name="test01"/>
-        </methods>
-      </class> <!-- com.vsii.cstar.testcase.TestTeamCalendar -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- TestTeamCalendar(failed) -->
 </suite> <!-- Failed suite [Suite] -->

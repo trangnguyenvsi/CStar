@@ -63,7 +63,7 @@ public class AppointmentsSingleScreeningPageMethod {
 		return amountDue;
 	}
 
-	public void getVisibleProductCode() {
+	public void getAllProductCode() {
 		int colNo = driver.findElements(By.xpath("//th[@class='GridSingleChar' and @scope='col']")).size();
 		for (int i = 0; i <= (colNo - 9); i++) {
 
@@ -71,4 +71,22 @@ public class AppointmentsSingleScreeningPageMethod {
 		// System.out.println(colNo);
 
 	}
+	//CA test
+	 public String getCA(String time){
+	  String CA = "//tr[td/span='"+time+"']//td[5]";
+	  String CAValue = driver.findElement(By.xpath(CA)).getText();
+	  return CAValue;
+	 }
+	 //AO test
+	 public String getAO(String time){
+	  String AO = "//tr[td/span='"+time+"']//td[6]";
+	  String AOValue = driver.findElement(By.xpath(AO)).getText();
+	  return AOValue;
+	 }
+	 //AB test
+	 public String getAB(String time){
+	  String AB = "//tr[td/span='"+time+"']//td[7]";
+	  String ABValue = driver.findElement(By.xpath(AB)).getText();
+	  return ABValue;
+	 }
 }

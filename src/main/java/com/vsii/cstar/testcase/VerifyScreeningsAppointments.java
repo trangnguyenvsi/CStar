@@ -116,7 +116,7 @@ public class VerifyScreeningsAppointments {
 		// Steps to access Appointments Screen
 		objHomepageMethod.mouseHoverScreeningConfig();
 		objHomepageMethod.selectSubMenuTeamCalendar();
-
+		objTeamCalendarMethod.selectMonth("April");
 		objTeamCalendarMethod.selectTeam("CLV - Cleveland");
 		objTeamCalendarMethod.selectExistingScreening("St Stephen Church");
 		objScreeningMaintainanceMethod.clickAppointmentsLinkText();

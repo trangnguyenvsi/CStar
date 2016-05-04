@@ -32,4 +32,8 @@ public class HomePageMethods {
 	public void selectSubMenuProductSet(){
 		objHomePage.getSubmenu_ProductSet().click();;
 	}
+	
+	public void selectSubMenuProductList(){
+		objHomePage.getSubmenu_ProductList().click();;
+	}
 }

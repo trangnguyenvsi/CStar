@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.vsii.cstar.pages.LoginPage;
+import com.vsii.tsc.utility.TestBase;
 
 public class LoginPageMethods {
 	WebDriver driver;

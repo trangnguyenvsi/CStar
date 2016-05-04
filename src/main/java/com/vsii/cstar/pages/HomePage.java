@@ -25,7 +25,18 @@ public class HomePage {
 	@FindBy(xpath="//a[contains(text(),'Product Set')]")
 	private WebElement submenu_ProductSet;
 	
+	//Submenu Product List
+	@FindBy(xpath="//a[contains(text(),'Product List')]")
+	private WebElement submenu_ProductList;
 	
+
+	public WebElement getSubmenu_ProductList() {
+		return submenu_ProductList;
+	}
+
+	public void setSubmenu_ProductList(WebElement submenu_ProductList) {
+		this.submenu_ProductList = submenu_ProductList;
+	}
 
 	public WebElement getSubmenu_ProductSet() {
 		return submenu_ProductSet;
