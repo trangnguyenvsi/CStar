@@ -1,5 +1,6 @@
 package com.vsii.cstar.pages.methods;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.openqa.selenium.By;
@@ -27,20 +28,53 @@ public class ProductSetPageMethod {
 		driver.findElement(By.xpath(xpath_ProductSet)).click();
 	}
 
+	/**
+	 * 
+	 * @return: Products code
+	 */
 	public String[] getProductsOfOpenedProductSet() {
-		int NumOfProduct = driver.findElements(By.xpath("//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr"))
+		int NumOfItems = driver.findElements(By.xpath("//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr"))
 				.size();
-		
+
 		// Declare array Product - prepare to get all product/packet name to
 		// this Array
-		String[] product = new String[NumOfProduct - 1];
+		ArrayList<String> product = new ArrayList<>();
+		// String[] product = new String[NumOfItems - 1];
 
-		for (int i = 2; i <= NumOfProduct; i++) {
-			String xpath_product = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[4]";
-			product[i - 2] = driver.findElement(By.xpath(xpath_product)).getText();
+		for (int i = 2; i <= NumOfItems; i++) {
+			String xpath_type = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[2]";
+			String xpath_product = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[3]";
+			if (driver.findElement(By.xpath(xpath_type)).getText().equals("Product")) {
+				product.add(driver.findElement(By.xpath(xpath_product)).getText());
+			}
 		}
-		
-		Arrays.sort(product);
-		return product;
+
+		String[] product2 = new String[product.size()];
+		product2 = product.toArray(product2);
+		Arrays.sort(product2);
+		return product2;
+	}
+
+	//Get package code in opened product set
+	public String[] getPackagesOfOpenedProductSet() {
+		int NumOfItems = driver.findElements(By.xpath("//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr"))
+				.size();
+
+		// Declare array package - prepare to get all product/packet name to
+		// this Array
+		ArrayList<String> packet = new ArrayList<>();
+
+		for (int i = 2; i <= NumOfItems; i++) {
+			String xpath_type = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[2]";
+			String xpath_product = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[3]";
+			if (driver.findElement(By.xpath(xpath_type)).getText().equals("Package")) {
+				packet.add(driver.findElement(By.xpath(xpath_product)).getText());
+			}
+		}
+
+		String[] packet2 = new String[packet.size()];
+		packet2 = packet.toArray(packet2);
+		Arrays.sort(packet2);
+		return packet2;
 	}
 }

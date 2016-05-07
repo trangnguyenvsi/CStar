@@ -44,6 +44,7 @@ public class VerifyScreeningsAppointments2 {
 		objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com", "Thanhvc123@");
 		objHomepageMethod.mouseHoverScreeningConfig();
 		objHomepageMethod.selectSubMenuTeamCalendar();
+		objTeamCalendarMethod.selectMonth("April");
 		objTeamCalendarMethod.selectTeam("HOU - Houston");
 		objTeamCalendarMethod.selectExistingScreening("First Church of Pearland");
 		objScreeningMaintainanceMethod.clickAppointmentsLinkText();

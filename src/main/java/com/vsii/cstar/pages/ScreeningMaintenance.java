@@ -58,14 +58,217 @@ public class ScreeningMaintenance {
 	 */
 	//Tab location
 	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlProductPricing")
-	WebElement tab_ProductsPricing;
+	private WebElement tab_ProductsPricing;
 	
 	//Dropdown ProductSet
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlProductPricing_ddlProductSet")
-	WebElement ddl_ProductSet;
+	private WebElement ddl_ProductSet;
 	
-	// Beans
+	/**
+	 * Site info tab
+	 */
+	//Tab location
+	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlSiteInfo")
+	private WebElement tab_SiteInfo;
+	
+	//Texbox Note for UltraSound Team
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_txtUltrasoundNotes")
+	private WebElement txt_NoteUltraSound;
+	
+	//Texbox Note for Call center
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_txtCallCenterNotes")
+	private WebElement txt_NoteCallCenter;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl02_chkActive")
+	private WebElement chk_01;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl03_chkActive")
+	private WebElement chk_02;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl04_chkActive")
+	private WebElement chk_03;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl05_chkActive")
+	private WebElement chk_04;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl06_chkActive")
+	private WebElement chk_05;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl07_chkActive")
+	private WebElement chk_06;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl08_chkActive")
+	private WebElement chk_07;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl09_chkActive")
+	private WebElement chk_08;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl10_chkActive")
+	private WebElement chk_09;
+	
+	//Checkbox Site Requirements 
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl11_chkActive")
+	private WebElement chk_10;
+	
+	//Button Save & Continue
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_btnSiteInfoSaveContinue")
+	WebElement btn_SaveContinueSiteInfo;
+	
+	/**
+	 * Accounting tab
+	 */
+	//Tab Accounting location
+	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlAccounting")
+	WebElement tab_Accounting;
+	
+	//Link Add a check request
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lnkAddCheck")
+	WebElement lnk_AddCheckRequest;
+	
+	//Dropdown Purpose
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlCheckPurpose")
+	WebElement chk_Purpose;
+	
+	//Dropdown Payable to
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_txtPayableTo")
+	WebElement chk_PayTo;
+	
+	//Textbox Amount
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlAmount_radInputBox")
+	WebElement txt_Amount;
+	
+	//Textbox VAT
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlVatAmount_radInputBox")
+	WebElement txt_VAT;
+	
+	//Textbox date
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_chkDateNeeded_dateInput")
+	WebElement txt_DateNeeded;
+	
+	
+	
+	public WebElement getTab_SiteInfo() {
+		return tab_SiteInfo;
+	}
 
+	public void setTab_SiteInfo(WebElement tab_SiteInfo) {
+		this.tab_SiteInfo = tab_SiteInfo;
+	}
+
+	public WebElement getBtn_SaveContinueSiteInfo() {
+		return btn_SaveContinueSiteInfo;
+	}
+
+	public void setBtn_SaveContinueSiteInfo(WebElement btn_SaveContinueSiteInfo) {
+		this.btn_SaveContinueSiteInfo = btn_SaveContinueSiteInfo;
+	}
+
+	public WebElement getTxt_NoteUltraSound() {
+		return txt_NoteUltraSound;
+	}
+
+	public void setTxt_NoteUltraSound(WebElement txt_NoteUltraSound) {
+		this.txt_NoteUltraSound = txt_NoteUltraSound;
+	}
+
+	public WebElement getTxt_NoteCallCenter() {
+		return txt_NoteCallCenter;
+	}
+
+	public void setTxt_NoteCallCenter(WebElement txt_NoteCallCenter) {
+		this.txt_NoteCallCenter = txt_NoteCallCenter;
+	}
+
+	public WebElement getChk_01() {
+		return chk_01;
+	}
+
+	public void setChk_01(WebElement chk_01) {
+		this.chk_01 = chk_01;
+	}
+
+	public WebElement getChk_02() {
+		return chk_02;
+	}
+
+	public void setChk_02(WebElement chk_02) {
+		this.chk_02 = chk_02;
+	}
+
+	public WebElement getChk_03() {
+		return chk_03;
+	}
+
+	public void setChk_03(WebElement chk_03) {
+		this.chk_03 = chk_03;
+	}
+
+	public WebElement getChk_04() {
+		return chk_04;
+	}
+
+	public void setChk_04(WebElement chk_04) {
+		this.chk_04 = chk_04;
+	}
+
+	public WebElement getChk_05() {
+		return chk_05;
+	}
+
+	public void setChk_05(WebElement chk_05) {
+		this.chk_05 = chk_05;
+	}
+
+	public WebElement getChk_06() {
+		return chk_06;
+	}
+
+	public void setChk_06(WebElement chk_06) {
+		this.chk_06 = chk_06;
+	}
+
+	public WebElement getChk_07() {
+		return chk_07;
+	}
+
+	public void setChk_07(WebElement chk_07) {
+		this.chk_07 = chk_07;
+	}
+
+	public WebElement getChk_08() {
+		return chk_08;
+	}
+
+	public void setChk_08(WebElement chk_08) {
+		this.chk_08 = chk_08;
+	}
+
+	public WebElement getChk_09() {
+		return chk_09;
+	}
+
+	public void setChk_09(WebElement chk_09) {
+		this.chk_09 = chk_09;
+	}
+
+	public WebElement getChk_10() {
+		return chk_10;
+	}
+
+	public void setChk_10(WebElement chk_10) {
+		this.chk_10 = chk_10;
+	}
+
+	// Beans
 	public WebElement getTab_ProductsPricing() {
 		return tab_ProductsPricing;
 	}

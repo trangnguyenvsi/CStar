@@ -1,126 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1359" started-at="2016-05-04T09:10:04Z" finished-at="2016-05-04T09:10:06Z">
+  <suite name="Default suite" duration-ms="134610" started-at="2016-05-07T04:48:08Z" finished-at="2016-05-07T04:50:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1359" started-at="2016-05-04T09:10:04Z" finished-at="2016-05-04T09:10:06Z">
-      <class name="com.vsii.cstar.testcase.VerifyScreeningsAppointments">
-        <test-method status="FAIL" signature="start()[pri:0, instance:com.vsii.cstar.testcase.VerifyScreeningsAppointments@331efc39]" name="start" is-config="true" duration-ms="0" started-at="2016-05-04T16:10:04Z" finished-at="2016-05-04T16:10:04Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
-	at com.vsii.cstar.pages.methods.LoginPageMethods.login(LoginPageMethods.java:19)
-	at com.vsii.cstar.testcase.VerifyScreeningsAppointments.start(VerifyScreeningsAppointments.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+    <test name="Default test" duration-ms="134610" started-at="2016-05-07T04:48:08Z" finished-at="2016-05-07T04:50:22Z">
+      <class name="com.vsii.cstar.testcase.testOnly2">
+        <test-method status="PASS" signature="start()[pri:0, instance:com.vsii.cstar.testcase.testOnly2@6cb00c4a]" name="start" is-config="true" duration-ms="11673" started-at="2016-05-07T11:48:08Z" finished-at="2016-05-07T11:48:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="SKIP" signature="test02(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.cstar.testcase.VerifyScreeningsAppointments@331efc39]" name="test02" duration-ms="3" started-at="2016-05-04T16:10:06Z" description="takeappointment" data-provider="takeappointment" finished-at="2016-05-04T16:10:06Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[287220]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[474]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[403]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[63BA6A19-63A8-42AB-A641-265AC9609460]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[16-0414_CLV,11125030]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[83C0ACBC-E8D1-402D-81E6-00D505153A21]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[500]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[11:25 AM]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[29.0]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[MaCjoCie]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[500]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="t()[pri:0, instance:com.vsii.cstar.testcase.testOnly2@6cb00c4a]" name="t" duration-ms="121974" started-at="2016-05-07T11:48:20Z" finished-at="2016-05-07T11:50:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test02 -->
-        <test-method status="SKIP" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.VerifyScreeningsAppointments@331efc39]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-05-04T16:10:06Z" finished-at="2016-05-04T16:10:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="end()[pri:0, instance:com.vsii.cstar.testcase.VerifyScreeningsAppointments@331efc39]" name="end" is-config="true" duration-ms="0" started-at="2016-05-04T16:10:06Z" finished-at="2016-05-04T16:10:06Z">
+        </test-method> <!-- t -->
+        <test-method status="PASS" signature="end()[pri:0, instance:com.vsii.cstar.testcase.testOnly2@6cb00c4a]" name="end" is-config="true" duration-ms="944" started-at="2016-05-07T11:50:22Z" finished-at="2016-05-07T11:50:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->
-      </class> <!-- com.vsii.cstar.testcase.VerifyScreeningsAppointments -->
+      </class> <!-- com.vsii.cstar.testcase.testOnly2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.vsii.cstar.pages.TeamCalendarPage;
+import com.vsii.tsc.utility.TestBase;
 
 public class TeamCalendarMethods {
 	WebDriver driver;
@@ -38,8 +39,21 @@ public class TeamCalendarMethods {
 	// Select a screening that visibling in calendar - select with screening
 	// name
 	public void selectExistingScreening(String screeningName) {
+		// Thread.sleep("10000");
+		// driver.findElement(By.linkText(screeningName)).click();
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		driver.findElement(By.linkText(screeningName)).click();
+//		String xpath = "(//span[@id='lbl04DD2016']/b/a)[12]";
+//		driver.findElement(By.xpath(xpath)).click();
 	}
+
+	
 
 	// Righ click to a date in calendar - to prepare for add/select screening
 	public void rightClickToDateCell(String date) {
@@ -87,9 +101,9 @@ public class TeamCalendarMethods {
 	public void viewTravel() {
 		objTeamCalendar.getOption_Travel().click();
 	}
-	
+
 	// Click to Site Change
-		public void siteChange() {
-			objTeamCalendar.getOption_SiteChange().click();
-		}
+	public void siteChange() {
+		objTeamCalendar.getOption_SiteChange().click();
+	}
 }

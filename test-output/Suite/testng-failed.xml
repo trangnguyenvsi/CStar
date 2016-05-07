@@ -6,6 +6,12 @@
   </listeners>
   <test name="TestTeamCalendar(failed)">
     <classes>
+      <class name="com.vsii.tsc.utility.TestBase">
+        <methods>
+          <include name="setupSuite"/>
+          <include name="teardownSuite"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
       <class name="com.vsii.cstar.testcase.VerifyScreeningsAppointments">
         <methods>
           <include name="afterMethod"/>
@@ -14,12 +20,6 @@
           <include name="start"/>
         </methods>
       </class> <!-- com.vsii.cstar.testcase.VerifyScreeningsAppointments -->
-      <class name="com.vsii.tsc.utility.TestBase">
-        <methods>
-          <include name="setupSuite"/>
-          <include name="teardownSuite"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.utility.TestBase -->
     </classes>
   </test> <!-- TestTeamCalendar(failed) -->
 </suite> <!-- Failed suite [Suite] -->

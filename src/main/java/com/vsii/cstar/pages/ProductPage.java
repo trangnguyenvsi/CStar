@@ -12,25 +12,60 @@ public class ProductPage {
 	@FindBy(id = "ctl00_body_btnSearch")
 	private WebElement btn_Search;
 
-	//Linktext Team
-//	@FindBy()
+	// Button Next page
+	@FindBy(xpath = "//input[contains(@src,'next.gif')]")
+	private WebElement btn_NextPage;
+
+	// Product name in detail page
+	@FindBy(id="ctl00_plcMain_lblProductNameVal")
+	private WebElement lbl_ProductName;
+
 	// Product's status icon
 	@FindBy(id = "ctl00_plcMain_imgActive")
 	private WebElement icon_ProductStatus;
+	
+	//Call center's status
+	@FindBy(id="ctl00_plcMain_imgSS2017")
+	private WebElement icon_CCStatus;
 
-	//Product's start effective date
-	@FindBy(id="ctl00_plcMain_lblES2017")
+	// Product's start effective date
+	@FindBy(id = "ctl00_plcMain_lblES2017")
 	private WebElement lbl_StartEffectiveDate;
-	
-	//Product's end effective date
-	@FindBy(id="ctl00_plcMain_lblEE2017")
+
+	// Product's end effective date
+	@FindBy(id = "ctl00_plcMain_lblEE2017")
 	private WebElement lbl_EndEffectiveDate;
-	
-	//button Return to the list
-	@FindBy(id="ctl00_plcMain_btnRTList")
+
+	// button Return to the list
+	@FindBy(id = "ctl00_plcMain_btnRTList")
 	WebElement btn_returnToList;
+
 	
 	
+	public WebElement getIcon_CCStatus() {
+		return icon_CCStatus;
+	}
+
+	public void setIcon_CCStatus(WebElement icon_CCStatus) {
+		this.icon_CCStatus = icon_CCStatus;
+	}
+
+	public WebElement getLbl_ProductName() {
+		return lbl_ProductName;
+	}
+
+	public void setLbl_ProductName(WebElement lbl_ProductName) {
+		this.lbl_ProductName = lbl_ProductName;
+	}
+
+	public WebElement getBtn_NextPage() {
+		return btn_NextPage;
+	}
+
+	public void setBtn_NextPage(WebElement btn_NextPage) {
+		this.btn_NextPage = btn_NextPage;
+	}
+
 	public WebElement getBtn_returnToList() {
 		return btn_returnToList;
 	}

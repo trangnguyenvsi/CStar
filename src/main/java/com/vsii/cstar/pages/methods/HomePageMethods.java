@@ -15,25 +15,35 @@ public class HomePageMethods {
 		PageFactory.initElements(driver, objHomePage);
 	}
 	
+	//Mousehover to menu Screening Config
 	public void mouseHoverScreeningConfig(){
 		Actions action=new Actions(driver);
 		action.moveToElement(objHomePage.getMenu_Screeningcfg()).perform();		
 	}
 	
+	//Select submenu Team Calendar & Grid
 	public void selectSubMenuTeamCalendar(){
 		objHomePage.getSubmenu_Teamcalendar().click();;
 	}
 	
+	//Mousehover to menu Products & Pricing
 	public void mouseHoverProductPricing(){
 		Actions action=new Actions(driver);
 		action.moveToElement(objHomePage.getMenu_ProductPricing()).perform();		
 	}
 	
+	//Select submenu Product Set
 	public void selectSubMenuProductSet(){
 		objHomePage.getSubmenu_ProductSet().click();;
 	}
 	
+	//Select submenu Product List
 	public void selectSubMenuProductList(){
-		objHomePage.getSubmenu_ProductList().click();;
+		objHomePage.getSubmenu_ProductList().click();
+	}
+	
+	//Select submenu Package
+	public void selectSubMenuPackage(){
+		objHomePage.getSubmenu_Package().click();
 	}
 }
