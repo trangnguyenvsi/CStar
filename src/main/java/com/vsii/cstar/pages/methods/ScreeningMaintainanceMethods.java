@@ -3,12 +3,6 @@ package com.vsii.cstar.pages.methods;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.xml.soap.Node;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
-
-import org.apache.xalan.transformer.XalanProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +19,51 @@ public class ScreeningMaintainanceMethods {
 	public ScreeningMaintainanceMethods(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, objScreeningMaintainance);
+	}
+
+	// get Screening name
+	public String getScreeningName() {
+		return objScreeningMaintainance.getLbl_ScreeningName().getText();
+	}
+
+	// Get Screening representative
+	public String getScreeningRepresentative() {
+		return objScreeningMaintainance.getLabel_Representative().getText();
+	}
+
+	// Get Screening Territory
+	public String getScreeningTerritory() {
+		return objScreeningMaintainance.getLabel_SiteAddress().getText().split("\n")[1];
+	}
+
+	// Get Screening Status
+	public String getScreeningStatus() {
+		return objScreeningMaintainance.getLbl_ScreeningStatus().getText();
+	}
+
+	// Get Screening's Drive Type
+	public String getScreeningDriveType() {
+		return objScreeningMaintainance.getLabel_DriveType().getText();
+	}
+
+	// Get Screening's Drive Time
+	public String getScreeningDriveTime() {
+		return objScreeningMaintainance.getLabel_DriveTime().getText();
+	}
+
+	// Get Screening's Schedule code
+	public String getScreeningScheduleCode() {
+		return objScreeningMaintainance.getLabel_ScheduleCode().getText();
+	}
+
+	// Get Screening's Schedule time
+	public String getScreeningScheduleTime() {
+		return objScreeningMaintainance.getLbl_ScheduleTime().getText();
+	}
+
+	// Get Screening's Time zone
+	public String getScreeningTimeZone() {
+		return objScreeningMaintainance.getLbl_TimeZone().getText();
 	}
 
 	// Click to Appointments hyperlink
@@ -151,11 +190,11 @@ public class ScreeningMaintainanceMethods {
 					+ i + "]/td[1]";
 			if (value.equals("Product")) {
 				product.add(driver.findElement(By.xpath(xpath_ProPac)).getText());
-			} 
-//			else {
-//				System.out.println("There isn't any products");
-//
-//			}
+			}
+			// else {
+			// System.out.println("There isn't any products");
+			//
+			// }
 
 		}
 		return product;
@@ -181,11 +220,11 @@ public class ScreeningMaintainanceMethods {
 					+ i + "]/td[1]";
 			if (value.equals("Package")) {
 				packet.add(driver.findElement(By.xpath(xpath_ProPac)).getText());
-			} 
-//				else {
-//				System.out.println("There isn't any packet");
-//
-//			}
+			}
+			// else {
+			// System.out.println("There isn't any packet");
+			//
+			// }
 
 		}
 		return packet;

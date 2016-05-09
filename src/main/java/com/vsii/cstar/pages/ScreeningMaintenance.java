@@ -9,21 +9,35 @@ public class ScreeningMaintenance {
 	 * Below Elements is in Address/Contact Info information block
 	 */
 	// Site Address Information
+	//Screening name
+	@FindBy(id="ctl00_body_lblSiteNmVal")
+	private WebElement lbl_ScreeningName;
+	
+	//Screening status
+	@FindBy(id="ctl00_body_lblStatusVal")
+	private WebElement lbl_ScreeningStatus;
+	
+	//Site address
 	@FindBy(id = "ctl00_body_litPrimaryAddress_top")
 	private WebElement label_SiteAddress;
 
+	//site phone no
 	@FindBy(id = "ctl00_body_ctlSitePhone_lblPhoneNumber")
 	private WebElement label_SitePhoneNo;
 
+	//Site fax no
 	@FindBy(id = "ctl00_body_ctlSiteFax_lblPhoneNumber")
 	private WebElement label_SiteFaxNo;
 
+	//Site contact - contact person
 	@FindBy(id = "ctl00_body_lblPrimaryContactNameVal")
 	private WebElement label_SiteContact;
 
+	//Site contact - phone no
 	@FindBy(id = "ctl00_body_ctlPhonePrimaryContact_lblPhoneNumber")
 	private WebElement label_SiteContactPhoneNo;
 
+	//Site contact - email
 	@FindBy(id = "ctl00_body_lblPrimaryContactEmailVal")
 	private WebElement label_SiteContactEmail;
 	/**
@@ -41,6 +55,14 @@ public class ScreeningMaintenance {
 	@FindBy(id = "ctl00_body_lblEventPriveLevelVal")
 	private WebElement label_PriceLevel;
 
+	//Label schedule time
+	@FindBy(id="ctl00_body_lblEventScheduleVal")
+	private WebElement lbl_ScheduleTime;
+	
+	//Label time zone
+	@FindBy(id="ctl00_body_lblEventScheduleTimeZone")
+	private WebElement lbl_TimeZone;
+	
 	@FindBy(id = "ctl00_body_lblMarketingInfoPlanVal")
 	private WebElement label_MarketingPlan;
 
@@ -121,41 +143,129 @@ public class ScreeningMaintenance {
 	
 	//Button Save & Continue
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_btnSiteInfoSaveContinue")
-	WebElement btn_SaveContinueSiteInfo;
+	private WebElement btn_SaveContinueSiteInfo;
 	
 	/**
 	 * Accounting tab
 	 */
 	//Tab Accounting location
 	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlAccounting")
-	WebElement tab_Accounting;
+	private WebElement tab_Accounting;
 	
 	//Link Add a check request
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lnkAddCheck")
-	WebElement lnk_AddCheckRequest;
+	private WebElement lnk_AddCheckRequest;
 	
 	//Dropdown Purpose
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlCheckPurpose")
-	WebElement chk_Purpose;
+	private WebElement chk_Purpose;
 	
 	//Dropdown Payable to
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_txtPayableTo")
-	WebElement chk_PayTo;
+	private WebElement chk_PayTo;
 	
 	//Textbox Amount
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlAmount_radInputBox")
-	WebElement txt_Amount;
+	private WebElement txt_Amount;
 	
 	//Textbox VAT
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlVatAmount_radInputBox")
-	WebElement txt_VAT;
+	private WebElement txt_VAT;
 	
 	//Textbox date
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_chkDateNeeded_dateInput")
-	WebElement txt_DateNeeded;
+	private WebElement txt_DateNeeded;
 	
 	
 	
+	public WebElement getLbl_ScheduleTime() {
+		return lbl_ScheduleTime;
+	}
+
+	public void setLbl_ScheduleTime(WebElement lbl_ScheduleTime) {
+		this.lbl_ScheduleTime = lbl_ScheduleTime;
+	}
+
+	public WebElement getLbl_TimeZone() {
+		return lbl_TimeZone;
+	}
+
+	public void setLbl_TimeZone(WebElement lbl_TimeZone) {
+		this.lbl_TimeZone = lbl_TimeZone;
+	}
+
+	public WebElement getLbl_ScreeningStatus() {
+		return lbl_ScreeningStatus;
+	}
+
+	public void setLbl_ScreeningStatus(WebElement lbl_ScreeningStatus) {
+		this.lbl_ScreeningStatus = lbl_ScreeningStatus;
+	}
+
+	public WebElement getLbl_ScreeningName() {
+		return lbl_ScreeningName;
+	}
+
+	public void setLbl_ScreeningName(WebElement lbl_ScreeningName) {
+		this.lbl_ScreeningName = lbl_ScreeningName;
+	}
+
+	public WebElement getTab_Accounting() {
+		return tab_Accounting;
+	}
+
+	public void setTab_Accounting(WebElement tab_Accounting) {
+		this.tab_Accounting = tab_Accounting;
+	}
+
+	public WebElement getLnk_AddCheckRequest() {
+		return lnk_AddCheckRequest;
+	}
+
+	public void setLnk_AddCheckRequest(WebElement lnk_AddCheckRequest) {
+		this.lnk_AddCheckRequest = lnk_AddCheckRequest;
+	}
+
+	public WebElement getChk_Purpose() {
+		return chk_Purpose;
+	}
+
+	public void setChk_Purpose(WebElement chk_Purpose) {
+		this.chk_Purpose = chk_Purpose;
+	}
+
+	public WebElement getChk_PayTo() {
+		return chk_PayTo;
+	}
+
+	public void setChk_PayTo(WebElement chk_PayTo) {
+		this.chk_PayTo = chk_PayTo;
+	}
+
+	public WebElement getTxt_Amount() {
+		return txt_Amount;
+	}
+
+	public void setTxt_Amount(WebElement txt_Amount) {
+		this.txt_Amount = txt_Amount;
+	}
+
+	public WebElement getTxt_VAT() {
+		return txt_VAT;
+	}
+
+	public void setTxt_VAT(WebElement txt_VAT) {
+		this.txt_VAT = txt_VAT;
+	}
+
+	public WebElement getTxt_DateNeeded() {
+		return txt_DateNeeded;
+	}
+
+	public void setTxt_DateNeeded(WebElement txt_DateNeeded) {
+		this.txt_DateNeeded = txt_DateNeeded;
+	}
+
 	public WebElement getTab_SiteInfo() {
 		return tab_SiteInfo;
 	}

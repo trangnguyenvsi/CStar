@@ -66,9 +66,9 @@ public class ProductSetPageMethod {
 
 		for (int i = 2; i <= NumOfItems; i++) {
 			String xpath_type = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[2]";
-			String xpath_product = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[3]";
+			String xpath_packet = "//table[@id='ctl00_plcMain_gvCurrentProductSet']/tbody/tr[" + i + "]/td[3]";
 			if (driver.findElement(By.xpath(xpath_type)).getText().equals("Package")) {
-				packet.add(driver.findElement(By.xpath(xpath_product)).getText());
+				packet.add(driver.findElement(By.xpath(xpath_packet)).getText());
 			}
 		}
 

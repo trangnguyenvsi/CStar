@@ -2,11 +2,8 @@ package com.vsii.cstar.testcase;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang.ArrayUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -136,7 +133,7 @@ public class VerifyItemsInSelectedProductSet {
 		}
 
 		// Find valid package
-		for (int j = 0; j <= packages2.length; j++) {
+		for (int j = 0; j < packages2.length; j++) {
 			packetCode = packages2[j];
 			objHomepageMethod.mouseHoverProductPricing();
 			objHomepageMethod.selectSubMenuPackage();
