@@ -5,9 +5,9 @@
     <classes>
       <class name="com.vsii.cstar.testcase.testOnly2">
         <methods>
-          <include name="end"/>
-          <include name="start"/>
-          <include name="t"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="f"/>
         </methods>
       </class> <!-- com.vsii.cstar.testcase.testOnly2 -->
     </classes>

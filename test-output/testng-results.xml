@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="134610" started-at="2016-05-07T04:48:08Z" finished-at="2016-05-07T04:50:22Z">
+  <suite name="Default suite" duration-ms="85127" started-at="2016-05-10T03:10:10Z" finished-at="2016-05-10T03:11:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="134610" started-at="2016-05-07T04:48:08Z" finished-at="2016-05-07T04:50:22Z">
-      <class name="com.vsii.cstar.testcase.testOnly2">
-        <test-method status="PASS" signature="start()[pri:0, instance:com.vsii.cstar.testcase.testOnly2@6cb00c4a]" name="start" is-config="true" duration-ms="11673" started-at="2016-05-07T11:48:08Z" finished-at="2016-05-07T11:48:20Z">
+    <test name="Default test" duration-ms="85127" started-at="2016-05-10T03:10:10Z" finished-at="2016-05-10T03:11:35Z">
+      <class name="com.vsii.cstar.testcase.VerifySiteInfoTab">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.vsii.cstar.testcase.VerifySiteInfoTab@4900269d]" name="beforeClass" is-config="true" duration-ms="12690" started-at="2016-05-10T10:10:10Z" finished-at="2016-05-10T10:10:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- start -->
-        <test-method status="PASS" signature="t()[pri:0, instance:com.vsii.cstar.testcase.testOnly2@6cb00c4a]" name="t" duration-ms="121974" started-at="2016-05-07T11:48:20Z" finished-at="2016-05-07T11:50:22Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="f()[pri:0, instance:com.vsii.cstar.testcase.VerifySiteInfoTab@4900269d]" name="f" duration-ms="71557" started-at="2016-05-10T10:10:22Z" finished-at="2016-05-10T10:11:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- t -->
-        <test-method status="PASS" signature="end()[pri:0, instance:com.vsii.cstar.testcase.testOnly2@6cb00c4a]" name="end" is-config="true" duration-ms="944" started-at="2016-05-07T11:50:22Z" finished-at="2016-05-07T11:50:22Z">
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.vsii.cstar.testcase.VerifySiteInfoTab@4900269d]" name="afterClass" is-config="true" duration-ms="860" started-at="2016-05-10T10:11:34Z" finished-at="2016-05-10T10:11:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- end -->
-      </class> <!-- com.vsii.cstar.testcase.testOnly2 -->
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.vsii.cstar.testcase.VerifySiteInfoTab -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

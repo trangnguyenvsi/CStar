@@ -76,6 +76,38 @@ public class ScreeningMaintainanceMethods {
 		objScreeningMaintainance.getTab_SiteInfo().click();
 	}
 
+	//Get all checkbox name in site info tab
+	public ArrayList<String> getAllCheckboxName(){
+		int NoOfCheckBox=
+				driver.findElements(By.xpath("//table[@id='ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo']/tbody/tr")).size();
+		ArrayList<String> checkboxNames=new ArrayList<>();
+		for(int i=1; i <= NoOfCheckBox;i++){
+			String xpath_chkNamelocation=
+					"//table[@id='ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo']/tbody/tr["+i+"]/td[2]";
+			checkboxNames.add(driver.findElement(By.xpath(xpath_chkNamelocation)).getText());
+		}
+		return checkboxNames;
+	}
+	
+	//Get all checkbox status
+	public ArrayList<String> getAllCheckboxStatus(){
+		int NoOfCheckBox=
+				driver.findElements(By.xpath("//table[@id='ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo']/tbody/tr")).size();
+		ArrayList<String> chkStatus = new ArrayList<>();
+		for(int i=1; i <= NoOfCheckBox;i++){
+		String xpath_chklocation=
+				"//table[@id='ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo']/tbody/tr["+i+"]/td[1]/input";
+		String value=driver.findElement(By.xpath(xpath_chklocation)).getAttribute("checked");
+		if(value != null){
+			chkStatus.add("checked");
+		}
+		else {
+			chkStatus.add("unchecked");
+		}
+		}
+		return chkStatus;
+	}
+	
 	// Select tab Products & Pricing
 	public void selectProductsPricingTab() {
 		objScreeningMaintainance.getTab_ProductsPricing().click();
