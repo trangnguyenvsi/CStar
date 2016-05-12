@@ -20,9 +20,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.vsii.cstar.pages.TeamCalendarPage;
 import com.vsii.tsc.utility.DBConnection;
-import com.vsii.tsc.utility.TestBase;
-
-import net.sourceforge.htmlunit.corejs.javascript.ObjToIntMap;
 
 public class TeamCalendarMethods {
 	WebDriver driver;
@@ -51,6 +48,11 @@ public class TeamCalendarMethods {
 		selectobj.selectByVisibleText(team);
 	}
 
+	//Wait for loading img to load
+	public void waitForLoadingIconToLoad(){
+		new WebDriverWait(driver, 60).until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
+	}
+	
 	// Select a screening that visibling in calendar - select with screening
 	// name
 	public void selectExistingScreening(String screeningName) {

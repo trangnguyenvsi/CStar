@@ -12,6 +12,8 @@ public class AppointmentsSingleScreeningPage {
 	@FindBy(id="ctl00_body_rblShowProductsOrPhone_1")
 	WebElement radio_ShowPhoneZip;
 
+	
+	
 	public WebElement getRadio_ShowProduct() {
 		return radio_ShowProduct;
 	}

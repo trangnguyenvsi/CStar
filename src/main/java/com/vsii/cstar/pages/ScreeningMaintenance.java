@@ -43,17 +43,29 @@ public class ScreeningMaintenance {
 	/**
 	 * Below Elements is in Event Information information block
 	 */
+	//Representative name
 	@FindBy(id = "ctl00_body_lblEventRepresentativeVal")
 	private WebElement label_Representative;
+	
+	//Representative's department
+	@FindBy(id="ctl00_body_lblDepartmentVal")
+	private WebElement label_Department;
 
+	//Drived type 
 	@FindBy(id = "ctl00_body_lblEventDriveTypeVal")
 	private WebElement label_DriveType;
 
+	//Drive Time
 	@FindBy(id = "ctl00_body_lblEventDriveTimeVal")
 	private WebElement label_DriveTime;
 
+	//Price Level
 	@FindBy(id = "ctl00_body_lblEventPriveLevelVal")
 	private WebElement label_PriceLevel;
+	
+	//Facility start and close time
+	@FindBy(id="ctl00_body_lblFacilityTimeVal")
+	private WebElement label_FacilityTime;
 
 	//Label schedule time
 	@FindBy(id="ctl00_body_lblEventScheduleVal")
@@ -63,15 +75,58 @@ public class ScreeningMaintenance {
 	@FindBy(id="ctl00_body_lblEventScheduleTimeZone")
 	private WebElement lbl_TimeZone;
 	
+	//Mareting Plan
 	@FindBy(id = "ctl00_body_lblMarketingInfoPlanVal")
 	private WebElement label_MarketingPlan;
+	
+	//Site type
+	@FindBy(id="ctl00_body_lblMarketingSiteTypeVal")
+	private WebElement label_SiteType;
+	
+	//Marketing Zip Code
+	@FindBy(id="ctl00_body_lblMarketingPostalSectorVal")
+	private WebElement label_MarketingZipCode;
 
 	/**
 	 * Below Elements is in Other Information block
 	 */
+	//Preliminary time
+	@FindBy(id="ctl00_body_lblPreliminaryVal")
+	private WebElement lbl_Premininary;
+	
+	//Scheduling time
+	@FindBy(id="ctl00_body_lblSchedulingVal")
+	private WebElement lbl_Scheduling;
+	
+	//Expecting Upload time
+	@FindBy(id="ctl00_body_lblExpectingUploadVal")
+	private WebElement lbl_ExpectingUpload;
+	
+	//Field Reported time
+	@FindBy(id="ctl00_body_lblResultsVal")
+	private WebElement lbl_FieldReport;
+	
+	//Loading Result time
+	@FindBy(id="ctl00_body_lblLoadingResultsVal")
+	private WebElement lbl_LoadingResult;
+	
+	//Complete time
+	@FindBy(id="ctl00_body_lblCompletedVal")
+	private WebElement lbl_Complete;
+	
+	//Changed time
+	@FindBy(id="ctl00_body_lblChangedVal")
+	private WebElement lbl_Changed;
+	
+	//Change Reason
+	@FindBy(id="ctl00_body_lblChangeReasonVal")
+	private WebElement lbl_ChangeReason;	
+	
+	//Schedule Code
 	@FindBy(id = "ctl00_body_lblInfoScheduleVal")
 	private WebElement label_ScheduleCode;
 
+	//Hyper link Appointments
 	@FindBy(id = "ctl00_body_lnkScreeningAppointment")
 	private WebElement link_Appointments;
 
@@ -176,8 +231,140 @@ public class ScreeningMaintenance {
 	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_chkDateNeeded_dateInput")
 	private WebElement txt_DateNeeded;
 	
+	//Label payment fullfill
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalFulfilled")
+	private WebElement lbl_PaymentsFullfilled;
+	
+	//Label payments requested
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalRequested")
+	private WebElement lbl_PaymentsRequested;
+	
+	//Label toltal
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalPayments")
+	private WebElement lbl_Total;
 	
 	
+	
+	public WebElement getLabel_Department() {
+		return label_Department;
+	}
+
+	public void setLabel_Department(WebElement label_Department) {
+		this.label_Department = label_Department;
+	}
+
+	public WebElement getLabel_FacilityTime() {
+		return label_FacilityTime;
+	}
+
+	public void setLabel_FacilityTime(WebElement label_FacilityTime) {
+		this.label_FacilityTime = label_FacilityTime;
+	}
+
+	public WebElement getLabel_SiteType() {
+		return label_SiteType;
+	}
+
+	public void setLabel_SiteType(WebElement label_SiteType) {
+		this.label_SiteType = label_SiteType;
+	}
+
+	public WebElement getLabel_MarketingZipCode() {
+		return label_MarketingZipCode;
+	}
+
+	public void setLabel_MarketingZipCode(WebElement label_MarketingZipCode) {
+		this.label_MarketingZipCode = label_MarketingZipCode;
+	}
+
+	public WebElement getLbl_Premininary() {
+		return lbl_Premininary;
+	}
+
+	public void setLbl_Premininary(WebElement lbl_Premininary) {
+		this.lbl_Premininary = lbl_Premininary;
+	}
+
+	public WebElement getLbl_Scheduling() {
+		return lbl_Scheduling;
+	}
+
+	public void setLbl_Scheduling(WebElement lbl_Scheduling) {
+		this.lbl_Scheduling = lbl_Scheduling;
+	}
+
+	public WebElement getLbl_ExpectingUpload() {
+		return lbl_ExpectingUpload;
+	}
+
+	public void setLbl_ExpectingUpload(WebElement lbl_ExpectingUpload) {
+		this.lbl_ExpectingUpload = lbl_ExpectingUpload;
+	}
+
+	public WebElement getLbl_FieldReport() {
+		return lbl_FieldReport;
+	}
+
+	public void setLbl_FieldReport(WebElement lbl_FieldReport) {
+		this.lbl_FieldReport = lbl_FieldReport;
+	}
+
+	public WebElement getLbl_LoadingResult() {
+		return lbl_LoadingResult;
+	}
+
+	public void setLbl_LoadingResult(WebElement lbl_LoadingResult) {
+		this.lbl_LoadingResult = lbl_LoadingResult;
+	}
+
+	public WebElement getLbl_Complete() {
+		return lbl_Complete;
+	}
+
+	public void setLbl_Complete(WebElement lbl_Complete) {
+		this.lbl_Complete = lbl_Complete;
+	}
+
+	public WebElement getLbl_Changed() {
+		return lbl_Changed;
+	}
+
+	public void setLbl_Changed(WebElement lbl_Changed) {
+		this.lbl_Changed = lbl_Changed;
+	}
+
+	public WebElement getLbl_ChangeReason() {
+		return lbl_ChangeReason;
+	}
+
+	public void setLbl_ChangeReason(WebElement lbl_ChangeReason) {
+		this.lbl_ChangeReason = lbl_ChangeReason;
+	}
+
+	public WebElement getLbl_PaymentsFullfilled() {
+		return lbl_PaymentsFullfilled;
+	}
+
+	public void setLbl_PaymentsFullfilled(WebElement lbl_PaymentsFullfilled) {
+		this.lbl_PaymentsFullfilled = lbl_PaymentsFullfilled;
+	}
+
+	public WebElement getLbl_PaymentsRequested() {
+		return lbl_PaymentsRequested;
+	}
+
+	public void setLbl_PaymentsRequested(WebElement lbl_PaymentsRequested) {
+		this.lbl_PaymentsRequested = lbl_PaymentsRequested;
+	}
+
+	public WebElement getLbl_Total() {
+		return lbl_Total;
+	}
+
+	public void setLbl_Total(WebElement lbl_Total) {
+		this.lbl_Total = lbl_Total;
+	}
+
 	public WebElement getLbl_ScheduleTime() {
 		return lbl_ScheduleTime;
 	}

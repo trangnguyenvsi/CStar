@@ -30,6 +30,10 @@ public class TeamCalendarPage {
 	@FindBy(id="ctl00_plcMain_radioBtnViewOption_1")
 	private WebElement radio_Grid;
 	
+	//Loading image
+	@FindBy(id="ctl00_imgLoading")
+	private WebElement img_Loading;
+	
 	//Option: Add Screening
 	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl02_lnkBtnControlTypes")
 	private WebElement option_AddScreening;
@@ -52,8 +56,18 @@ public class TeamCalendarPage {
 
 	//NOTE: Option Undo Reserved Date is not selected in this Screen
 	
+	
+	
 	public WebElement getDropdown_Month() {
 		return dropdown_Month;
+	}
+
+	public WebElement getImg_Loading() {
+		return img_Loading;
+	}
+
+	public void setImg_Loading(WebElement img_Loading) {
+		this.img_Loading = img_Loading;
 	}
 
 	public void setDropdown_Month(WebElement dropdown_Month) {
