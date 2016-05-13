@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.vsii.cstar.testcase.testOnly2">
+      <class name="com.vsii.cstar.testcase.VerifyScreeningInformation">
         <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-          <include name="f"/>
+          <include name="end"/>
+          <include name="start"/>
+          <include name="t"/>
         </methods>
-      </class> <!-- com.vsii.cstar.testcase.testOnly2 -->
+      </class> <!-- com.vsii.cstar.testcase.VerifyScreeningInformation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

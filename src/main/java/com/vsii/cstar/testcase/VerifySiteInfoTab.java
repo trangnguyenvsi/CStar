@@ -16,6 +16,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -43,7 +44,7 @@ public class VerifySiteInfoTab {
 	}
 
 	@Test
-	public void f() throws IOException, SQLException {
+	public void f() throws IOException, SQLException, ParseException {
 		// Input data
 		String input_Month = "April";
 		String input_Team = "HOU - Houston";

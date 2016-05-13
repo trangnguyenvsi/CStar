@@ -7,7 +7,7 @@
 	<test name="TestTeamCalendar">
 		<classes>
 			<class name="com.vsii.tsc.utility.TestBase" />
-			<class name="com.vsii.cstar.testcase.VerifyItemsInSelectedProductSet_QueryDB" />
+			<class name="com.vsii.cstar.testcase.TeamCalendar" />
 		</classes>
 		
 		

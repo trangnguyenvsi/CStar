@@ -47,7 +47,7 @@ ExtentReports 2.0
 <i class='mdi-hardware-desktop-windows'></i>
 </li>
 <li>
-<span class='suite-started-time'>2016-05-06 10:45:22</span>
+<span class='suite-started-time'>2016-05-13 15:53:30</span>
 </li>
 <li>
 <span>v2.40.0</span>
@@ -77,19 +77,19 @@ ExtentReports 2.0
 <div class='col l4 m4 s12'>
 <div class='card suite-total-steps'> 
 <span class='panel-name'>Total Time Taken</span> 
-<span class='suite-total-time-taken panel-lead'>0h 0m 2s+720ms</span> 
+<span class='suite-total-time-taken panel-lead'>0h 0m 4s+632ms</span> 
 </div> 
 </div>
 <div class='col l2 m6 s6 suite-start-time'>
 <div class='card green-accent'> 
 <span class='panel-name'>Start</span> 
-<span class='panel-lead suite-started-time'>2016-05-06 10:45:19</span> 
+<span class='panel-lead suite-started-time'>2016-05-13 15:53:26</span> 
 </div> 
 </div>
 <div class='col l2 m6 s6 suite-end-time'>
 <div class='card pink-accent'> 
 <span class='panel-name'>End</span> 
-<span class='panel-lead suite-ended-time'>2016-05-06 10:45:22</span> 
+<span class='panel-lead suite-ended-time'>2016-05-13 15:53:30</span> 
 </div> 
 </div>
 </div>
@@ -245,17 +245,17 @@ TestTeamCalendar
 <div class='card-panel no-padding-h no-padding-v no-margin-v vh100'>
 <div class='wrapper'>
 <ul id='test-collection' class='test-collection'>
-<li class='collection-item test displayed active fail'>
+<li class='collection-item test displayed active pass'>
 <div class='test-head'>
-<span class='test-name'>test02 </span>
-<span class='test-status label right capitalize outline fail'>fail</span>
+<span class='test-name'>TC02 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
 <span class='category-assigned hide  testteamcalendar'></span>
 </div>
 <div class='test-body'>
 <div class='test-info'>
-<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-06 10:45:21</span>
-<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-06 10:45:21</span>
-<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+2ms</span>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+4ms</span>
 </div>
 <div class='test-desc'></div>
 <div class='test-attributes'>
@@ -274,17 +274,455 @@ TestTeamCalendar
 </thead>
 <tbody>
 <tr>
-<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
-<td class='timestamp'>10:45:21</td>
-<td class='step-details'>Unable to locate element: {"method":"id","selector":"ctl00_body_lnkScreeningAppointment"}
-Command duration or timeout: 3.91 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'thanhvc-w7', ip: '192.168.100.32', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-*** Element info: {Using=id, value=ctl00_body_lnkScreeningAppointment}
-Session ID: 6b71830a-e775-4858-8453-53b783b864a0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=46.0.1}]</td>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Verify Screening Infomation</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>1. Get [Address/contact Info] / [Event Infomation] on screen
+2. Query DB to get above information
+3. Compare result between screen and database</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC02_20160513155021-pass.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC02_20160513155021-pass.jpg' /></td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Test passed</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC01 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Verify teams have Screening in a specific date</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>1. Define a date want to check existence screening
+2. Select each team in dropdown Team
+3. Get all team have screening in specific date
+4. Query DB to get teams have screening on specific date
+5. Compare result of step 3 & 4</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC01_20160513154948-pass.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC01_20160513154948-pass.jpg' /></td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Test passed</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC06 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>22222</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>44444</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC06_20160513155213-pass.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC06_20160513155213-pass.jpg' /></td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Test passed</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC03 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>22222</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>44444</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC03_20160513155029-pass.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC03_20160513155029-pass.jpg' /></td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Test passed</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC07 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>22222</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>44444</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC07_20160513155319-pass.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC07_20160513155319-pass.jpg' /></td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Test passed</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC04 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:29</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>22222</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>44444</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC04_20160513155118-pass.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC04_20160513155118-pass.jpg' /></td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>15:53:29</td>
+<td class='step-details'>Test passed</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC05 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:30</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:30</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>22222</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>44444</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC05_20160513155152-skip.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC05_20160513155152-skip.jpg' /></td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>This screening don't have any check request</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass'>
+<div class='test-head'>
+<span class='test-name'>TC09 </span>
+<span class='test-status label right capitalize outline pass'>pass</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:30</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:30</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>22222</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>44444</td>
+</tr>
+<tr>
+<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'><img class='report-img' data-featherlight='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC09_20160513155322-skip.jpg' src='file:///D:/MyJobs/RemarkMedia/Projects/TSCFramework_v0.1/report/screenshot/TC09_20160513155322-skip.jpg' /></td>
+</tr>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>Screening already occurred</td>
+</tr>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active skip'>
+<div class='test-head'>
+<span class='test-name'>TC08 </span>
+<span class='test-status label right capitalize outline skip'>skip</span>
+<span class='category-assigned hide  testteamcalendar'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' class='test-started-time label green lighten-2 text-white'>2016-05-13 15:53:30</span>
+<span title='Test ended time' class='test-ended-time label red lighten-2 text-white'>2016-05-13 15:53:30</span>
+<span title='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>TestTeamCalendar</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+<td class='timestamp'>15:53:30</td>
+<td class='step-details'>Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData</td>
 </tr>
 </tbody>
 </table>
@@ -329,14 +767,15 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 <span class='category-name'>TestTeamCalendar</span>
 </div>
 <div class='category-status-counts'>
-<span class='fail label dot'>Fail: 1</span>
+<span class='pass label dot'>Pass: 8</span>
+<span class='other label dot'>Others: 1</span>
 </div>
 <div class='cat-body'>
 <div class='category-status-counts'>
 <div class='button-group'>
-<a href='#!' class='pass label filter'>Pass <span class='icon'>0</span></a>
-<a href='#!' class='fail label filter'>Fail <span class='icon'>1</span></a>
-<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>8</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>0</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>1</span></a>
 </div>
 </div>
 <div class='cat-tests'>
@@ -349,10 +788,50 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 </tr>
 </thead>
 <tbody>
-<tr class='fail'>
-<td>2016-05-06 10:45:21</td>
-<td><span class='category-link linked'>test02</span></td>
-<td><div class='status label capitalize fail'>fail</div></td>
+<tr class='pass'>
+<td>2016-05-13 15:53:29</td>
+<td><span class='category-link linked'>TC02</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:29</td>
+<td><span class='category-link linked'>TC01</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:29</td>
+<td><span class='category-link linked'>TC06</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:29</td>
+<td><span class='category-link linked'>TC03</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:29</td>
+<td><span class='category-link linked'>TC07</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:29</td>
+<td><span class='category-link linked'>TC04</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:30</td>
+<td><span class='category-link linked'>TC05</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2016-05-13 15:53:30</td>
+<td><span class='category-link linked'>TC09</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='skip'>
+<td>2016-05-13 15:53:30</td>
+<td><span class='category-link linked'>TC08</span></td>
+<td><div class='status label capitalize skip'>skip</div></td>
 </tr>
 <tbody>
 </table>

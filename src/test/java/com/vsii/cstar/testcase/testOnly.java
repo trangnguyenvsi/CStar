@@ -1,5 +1,7 @@
 package com.vsii.cstar.testcase;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,7 +55,7 @@ public class testOnly {
 	}
 
 	@Test
-	public void t() throws InterruptedException, ParseException {
+	public void t() throws InterruptedException, ParseException, IOException, SQLException {
 		// Login to System
 
 		ArrayList<String> productValid = new ArrayList<>();

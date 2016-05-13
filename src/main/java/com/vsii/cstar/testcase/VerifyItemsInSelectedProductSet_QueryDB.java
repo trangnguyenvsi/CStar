@@ -64,7 +64,7 @@ public class VerifyItemsInSelectedProductSet_QueryDB {
 		TestBase.methodName = "TM24";
 		String input_month="April";
 		String input_Team="HOU - Houston";
-		String input_Date = TestBase.Date;
+		String input_Date = TestBase.screeningDate;
 		
 		// Login to System
 		objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com", "Thanhvc123@");

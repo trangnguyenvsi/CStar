@@ -61,9 +61,9 @@ public class TakeAppoinments {
 		// CommonMethod.checkLogin();
 	}
 
-	@Test(priority = 0, description = "Verify screening exists or not")
-	public void TM04() throws IOException, SQLException {
-		TestBase.methodName = "TM04";
+	@Test(priority = 5, description = "Verify screening exists or not")
+	public void TC06() throws IOException, SQLException {
+		TestBase.methodName = "TC06";
 		// get Screening for inputed date
 		rs_Screening = CommonMethod.getScreeningCode(TestBase.screeningDate);
 		/*
@@ -90,8 +90,9 @@ public class TakeAppoinments {
 		System.out.println("Screening exists");
 	}
 
-	@Test(priority = 1, description = "Verify screening has appointment")
-	public void test02() throws IOException, SQLException, ParseException {
+	@Test(priority = 6, description = "Verify screening has appointment")
+	public void TC07() throws IOException, SQLException, ParseException {
+		TestBase.methodName="TC07";
 		System.out.println("Please wait...");
 		//get list Appointment
 		List<Appointment> ex_appointment = CommonMethod.getExistAppointment(screeningID);
@@ -116,9 +117,9 @@ public class TakeAppoinments {
 	}
 	}
 
-	@Test(priority = 2, description = "Take appointments for screening", dataProvider = "listappointment", dataProviderClass = TestData.class)
-	public void test03(String Participants_GUID, String Amount, String Ex_AmtTotal) throws IOException, SQLException {
-		TestBase.methodName = "TM01";
+	@Test(priority = 7, description = "Take appointments for screening", dataProvider = "listappointment", dataProviderClass = TestData.class)
+	public void TC08(String Participants_GUID, String Amount, String Ex_AmtTotal) throws IOException, SQLException {
+		TestBase.methodName = "TC08";
 		String statusCode;
 		// Take a list of Appointment Cell GUID. It means list of appointment
 		// has not scheduled
@@ -186,8 +187,9 @@ public class TakeAppoinments {
 		}
 	}
 
-	@Test(priority = 4, description = "Verify taken appointment")
-	public void test04() throws ParseException {
+	@Test(priority = 8, description = "Verify taken appointment")
+	public void TC09() throws ParseException, IOException, SQLException {
+		TestBase.methodName="TC09";
 		System.out.println("Verify appointment");
 		// Steps to access Appointments Screen
 		objHomepageMethod.mouseHoverScreeningConfig();

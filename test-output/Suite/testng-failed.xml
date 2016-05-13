@@ -12,14 +12,16 @@
           <include name="teardownSuite"/>
         </methods>
       </class> <!-- com.vsii.tsc.utility.TestBase -->
-      <class name="com.vsii.cstar.testcase.VerifyScreeningsAppointments">
+      <class name="com.vsii.cstar.testcase.TeamCalendar">
         <methods>
-          <include name="afterMethod"/>
-          <include name="test02" invocation-numbers="0"/>
           <include name="end"/>
+          <include name="TC09"/>
+          <include name="TC08"/>
+          <include name="TC05"/>
           <include name="start"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.vsii.cstar.testcase.VerifyScreeningsAppointments -->
+      </class> <!-- com.vsii.cstar.testcase.TeamCalendar -->
     </classes>
   </test> <!-- TestTeamCalendar(failed) -->
 </suite> <!-- Failed suite [Suite] -->

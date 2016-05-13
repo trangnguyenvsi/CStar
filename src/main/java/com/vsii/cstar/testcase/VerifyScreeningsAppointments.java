@@ -153,6 +153,104 @@ public class VerifyScreeningsAppointments {
 			case "AO":
 				Assert.assertEquals(objAptSingleScreenMethod.getAO(Ex_Time), "X");
 				break;
+			case "AB":
+				Assert.assertEquals(objAptSingleScreenMethod.getAB(Ex_Time), "X");
+				break;
+			case "OS":
+				Assert.assertEquals(objAptSingleScreenMethod.getOS(Ex_Time), "X");
+				break;
+			case "LI":
+				Assert.assertEquals(objAptSingleScreenMethod.getLI(Ex_Time), "X");
+				break;
+			case "GL":
+				Assert.assertEquals(objAptSingleScreenMethod.getGL(Ex_Time), "X");
+				break;
+			case "AF":
+				Assert.assertEquals(objAptSingleScreenMethod.getAF(Ex_Time), "X");
+				break;
+			case "PX":
+				Assert.assertEquals(objAptSingleScreenMethod.getPX(Ex_Time), "X");
+				break;
+			case "TX":
+				Assert.assertEquals(objAptSingleScreenMethod.getTX(Ex_Time), "X");
+				break;
+			case "RX":
+				Assert.assertEquals(objAptSingleScreenMethod.getRX(Ex_Time), "X");
+				break;
+			case "AX":
+				Assert.assertEquals(objAptSingleScreenMethod.getAX(Ex_Time), "X");
+				break;
+			case "LX":
+				Assert.assertEquals(objAptSingleScreenMethod.getLX(Ex_Time), "X");
+				break;
+			case "GX":
+				Assert.assertEquals(objAptSingleScreenMethod.getGX(Ex_Time), "X");
+				break;
+			case "CO":
+				Assert.assertEquals(objAptSingleScreenMethod.getCO(Ex_Time), "X");
+				break;
+			case "SL":
+				Assert.assertEquals(objAptSingleScreenMethod.getSL(Ex_Time), "X");
+				break;
+			case "A2":
+				Assert.assertEquals(objAptSingleScreenMethod.getA2(Ex_Time), "X");
+				break;
+			case "SX":
+				Assert.assertEquals(objAptSingleScreenMethod.getSX(Ex_Time), "X");
+				break;
+			case "TP":
+				Assert.assertEquals(objAptSingleScreenMethod.getTP(Ex_Time), "X");
+				break;
+			case "PP":
+				Assert.assertEquals(objAptSingleScreenMethod.getPP(Ex_Time), "X");
+				break;
+			case "XF":
+				Assert.assertEquals(objAptSingleScreenMethod.getXF(Ex_Time), "X");
+				break;
+			case "XM":
+				Assert.assertEquals(objAptSingleScreenMethod.getXM(Ex_Time), "X");
+				break;
+			case "X1":
+				Assert.assertEquals(objAptSingleScreenMethod.getX1(Ex_Time), "X");
+				break;
+			case "KX":
+				Assert.assertEquals(objAptSingleScreenMethod.getKX(Ex_Time), "X");
+				break;
+			case "YX":
+				Assert.assertEquals(objAptSingleScreenMethod.getYX(Ex_Time), "X");
+				break;
+			case "PY":
+				Assert.assertEquals(objAptSingleScreenMethod.getPY(Ex_Time), "X");
+				break;
+			case "MT":
+				Assert.assertEquals(objAptSingleScreenMethod.getMT(Ex_Time), "X");
+				break;
+			case "LK":
+				Assert.assertEquals(objAptSingleScreenMethod.getLK(Ex_Time), "X");
+				break;
+			case "XC":
+				Assert.assertEquals(objAptSingleScreenMethod.getXC(Ex_Time), "X");
+				break;
+			case "DX":
+				Assert.assertEquals(objAptSingleScreenMethod.getDX(Ex_Time), "X");
+				break;
+			case "BH":
+				Assert.assertEquals(objAptSingleScreenMethod.getBH(Ex_Time), "X");
+				break;
+			case "KH":
+				Assert.assertEquals(objAptSingleScreenMethod.getKH(Ex_Time), "X");
+				break;
+			case "KA":
+				Assert.assertEquals(objAptSingleScreenMethod.getKA(Ex_Time), "X");
+				break;
+			case "FV":
+				Assert.assertEquals(objAptSingleScreenMethod.getFV(Ex_Time), "X");
+				break;
+			case "FQ":
+				Assert.assertEquals(objAptSingleScreenMethod.getFQ(Ex_Time), "X");
+				break;
+				
+				
 			default:
 				break;
 			}

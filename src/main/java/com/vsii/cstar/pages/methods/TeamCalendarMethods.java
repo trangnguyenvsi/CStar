@@ -43,16 +43,17 @@ public class TeamCalendarMethods {
 	}
 
 	// Select dropdown Team and choose a specific team
-	public void selectTeam(String team) {
+	public void selectTeam(String teamCode) throws IOException, SQLException {
+		String team = this.getFullTeamName(teamCode);
 		Select selectobj = new Select(objTeamCalendar.getDropdown_Team());
 		selectobj.selectByVisibleText(team);
 	}
 
-	//Wait for loading img to load
-	public void waitForLoadingIconToLoad(){
+	// Wait for loading img to load
+	public void waitForLoadingIconToLoad() {
 		new WebDriverWait(driver, 60).until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
 	}
-	
+
 	// Select a screening that visibling in calendar - select with screening
 	// name
 	public void selectExistingScreening(String screeningName) {
@@ -71,8 +72,9 @@ public class TeamCalendarMethods {
 	}
 
 	// Righ click to a date in calendar - to prepare for add/select screening
-	public void rightClickToDateCell(String date) {
-		String xpathDate = "//table/tbody/tr/td[contains(@oncontextmenu,'" + date + "')]";
+	public void rightClickToDateCell(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
+		String xpathDate = "//table/tbody/tr/td[contains(@oncontextmenu,'" + dateNew + "')]";
 		Actions action = new Actions(driver);
 		action.contextClick(driver.findElement(By.xpath(xpathDate))).perform();
 	}
@@ -129,10 +131,12 @@ public class TeamCalendarMethods {
 	 *            :Date should be in MM/dd/YYYY format (exclude zero leading)
 	 * @return true if date have screening, false if date not contain any
 	 *         screenings
+	 * @throws ParseException 
 	 */
-	public boolean isScreeningExistThisDate(String date) {
+	public boolean isScreeningExistThisDate(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
 		String xpath_dateLocation = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]";
+				+ dateNew + "')]";
 		String value = driver.findElement(By.xpath(xpath_dateLocation)).getAttribute("oncontextmenu");
 		// System.out.println(value);
 		boolean isExisted = false;
@@ -141,12 +145,12 @@ public class TeamCalendarMethods {
 		}
 		return isExisted;
 	}
-	
-	//Select screening by input date
-	public void selectScreeningByInputDate(String date){
-		String xpath_ScreeningHyperLinkLocator=
-				"//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]/span/b/a";
+
+	// Select screening by input date
+	public void selectScreeningByInputDate(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
+		String xpath_ScreeningHyperLinkLocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
+				+ dateNew + "')]/span/b/a";
 		driver.findElement(By.xpath(xpath_ScreeningHyperLinkLocator)).click();
 	}
 
@@ -162,8 +166,12 @@ public class TeamCalendarMethods {
 	 * @NOTE Date chosen must have month same with selected month
 	 * @param date
 	 * @return All team have screening in chosen date
+	 * @throws SQLException 
+	 * @throws IOException 
+	 * @throws ParseException 
 	 */
-	public ArrayList<String> getTeamsHaveScreeningInUI(String date) {
+	public ArrayList<String> getTeamsHaveScreeningInUI(String date) throws IOException, SQLException, ParseException {
+		String dateNew = this.convertDate(date);
 		String teamName = "Null";
 		ArrayList<String> teamNames = new ArrayList<>();
 		for (int i = 0; i < this.getTeamList().size(); i++) {
@@ -171,7 +179,7 @@ public class TeamCalendarMethods {
 			this.selectTeam(teamName);
 			new WebDriverWait(driver, 30)
 					.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
-			if (this.isScreeningExistThisDate(date) == true) {
+			if (this.isScreeningExistThisDate(dateNew) == true) {
 				System.out.println("Team " + teamName + " has screening in this date");
 				teamNames.add(teamName);
 			}
@@ -181,13 +189,13 @@ public class TeamCalendarMethods {
 
 	public ArrayList<String> getTeamsHaveScreeningByQueryDB(String oldDate)
 			throws ParseException, IOException, SQLException {
-		String newDate;
-		final String OLD_FORMAT = "MM/dd/yyyy";
-		final String NEW_FORMAT = "yyyy-MM-dd 00:00:00.000";
-		SimpleDateFormat dateFormat = new SimpleDateFormat(OLD_FORMAT);
-		Date d = dateFormat.parse(oldDate);
-		dateFormat.applyPattern(NEW_FORMAT);
-		newDate = dateFormat.format(d);
+//		String newDate;
+//		final String OLD_FORMAT = "MM/dd/yyyy";
+//		final String NEW_FORMAT = "yyyy-MM-dd 00:00:00.000";
+//		SimpleDateFormat dateFormat = new SimpleDateFormat(OLD_FORMAT);
+//		Date d = dateFormat.parse(oldDate);
+//		dateFormat.applyPattern(NEW_FORMAT);
+//		newDate = dateFormat.format(d);
 		// System.out.println(newDate);
 		String teamData = "Null";
 		ArrayList<String> teamNames = new ArrayList<>();
@@ -196,7 +204,7 @@ public class TeamCalendarMethods {
 				+ "from SC_Screenings sc " + "join PL_Employee_Groups "
 				+ "empGroup on sc.Employee_Group_ID=empGroup.Employee_Group_ID "
 				+ "join PL_Teams team on team.Employee_Group_ID=empGroup.Employee_Group_ID "
-				+ "where sc.Screening_Date='" + newDate + "'";
+				+ "where sc.Screening_Date='" + oldDate + "'";
 		ResultSet rs1 = DBConnection.connectSQLServer(sqlCommand_01);
 		while (rs1.next()) {
 			String teamCode = rs1.getString(1);
@@ -208,53 +216,67 @@ public class TeamCalendarMethods {
 		return teamNames;
 	}
 
+	// Get team full phrase (teamcode + team name)
+	public String getFullTeamName(String teamCode) throws IOException, SQLException {
+		String sqlCommand_GetTeamName = "select TOP(1)t.Team_Code, eg.Employee_Group_Name from PL_Teams t "
+				+ "join PL_Employee_Groups eg on eg.Employee_Group_ID=t.Employee_Group_ID "
+				+ "where t.Team_Code='"+teamCode+"'";
+		ResultSet rs = DBConnection.connectSQLServer(sqlCommand_GetTeamName);
+		
+		String teamFullName = "Null";
+		while(rs.next()){
+			teamFullName = rs.getString(1) + " - " + rs.getString(2) ;
+		}
+		return teamFullName;
+	}
+
+	// Convert Date
+	public String convertDate(String date) throws ParseException {
+		SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		Date date2 = formatDate.parse(date);
+		String finalDate = new SimpleDateFormat("M/d/yyyy").format(date2).toString();
+		return finalDate;
+	}
+
 	// Get screening's name
-	public String getScreeningName(String date) {
+	public String getScreeningName(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
 		String xpath_screeningNamelocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]/span/b/a";
+				+ dateNew + "')]/span/b/a";
 		return driver.findElement(By.xpath(xpath_screeningNamelocator)).getText();
 	}
 
 	// Get screening's tertorial & zip code
-	public String getScreeningZipCode(String date) {
+	public String getScreeningZipCode(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
 		String xpath_screeningZipCodelocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]/span"; // /br[2]
+				+ dateNew + "')]/span"; // /br[2]
 		return driver.findElement(By.xpath(xpath_screeningZipCodelocator)).getText().split("\n")[1];
 	}
 
 	// Get screening's representative
-	public String getScreeningRepresentative(String date) {
+	public String getScreeningRepresentative(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
 		String xpath_screeningRepresentativelocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]/span";
+				+ dateNew + "')]/span";
 		return driver.findElement(By.xpath(xpath_screeningRepresentativelocator)).getText().split("\n")[3];
 	}
 
 	// Get screening's status
-	public String getScreeningStatus(String date) {
+	public String getScreeningStatus(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
 		String xpath_screeningRepresentativelocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]/span";
+				+ dateNew + "')]/span";
 		return driver.findElement(By.xpath(xpath_screeningRepresentativelocator)).getText().split("\n")[4];
 	}
 
 	// Get screening's drive type
-	public String getScreeningDriveType(String date) {
+	public String getScreeningDriveType(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
 		String xpath_screeningDriveTypelocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
-				+ date + "')]/span";
-		return driver.findElement(By.xpath(xpath_screeningDriveTypelocator)).getText().split("\n")[5];
+				+ dateNew + "')]/span";
+		return driver.findElement(By.xpath(xpath_screeningDriveTypelocator)).getText().split("\n")[5]
+				.replaceAll("\\d+.*", "").trim();
 	}
-	
-	//Get screening basic info
-	public void getScreeningBasicInfo(String date){
-		System.out.println(this.getScreeningName(date));
-		this.getScreeningName(date);
-		System.out.println(this.getScreeningZipCode(date));
-		this.getScreeningZipCode(date);
-		System.out.println(this.getScreeningRepresentative(date));
-		this.getScreeningRepresentative(date);
-		System.out.println(this.getScreeningStatus(date));
-		this.getScreeningStatus(date);
-		System.out.println(this.getScreeningDriveType(date));
-		this.getScreeningDriveType(date);
-	}
-	
+
 }

@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,6 +24,8 @@ import com.vsii.tsc.model.TCImageResults;
 
 
 public class TestBase {
+	public static String screeningDate;
+	public static String teamCode;
 	public static WebDriver driver;
 	public static Properties p;
 	public static ExtentReports extent;
@@ -37,9 +40,14 @@ public class TestBase {
 
 	@BeforeSuite
 	public void setupSuite() throws IOException {
-
+//		DBConnection.revertDB("exec usp_CStar_RevertSnapshot");
 		// Read config file
 		p = CommonOperations.readConfig();
+		
+		//Get Date
+		screeningDate = p.getProperty("screeningDate");
+		teamCode = p.getProperty("teamCode");
+		
 		tcImageResultsList = new HashMap<String, List<TCImageResults>>();
 
 		if (p.getProperty("local").equals("No")) {
@@ -84,6 +92,7 @@ public class TestBase {
 		// Open base URL
 		driver.get(p.getProperty("baseUrl"));
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	@AfterSuite

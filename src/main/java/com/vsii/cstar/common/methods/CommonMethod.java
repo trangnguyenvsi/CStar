@@ -3,6 +3,7 @@ package com.vsii.cstar.common.methods;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,6 +14,8 @@ import java.util.List;
 import java.util.Random;
 
 import javax.naming.spi.DirStateFactory.Result;
+
+import org.testng.Assert;
 
 import com.vsii.cstar.pages.LoginPage;
 import com.vsii.cstar.pages.methods.LoginPageMethods;
@@ -207,7 +210,12 @@ public class CommonMethod {
 		while(rs_existAppointment.next())
 		{
 			Appointment ap = new Appointment();
-			ap.setAppointmentTime(rs_existAppointment.getString(4));
+			Date appointmentTime = rs_existAppointment.getTime(4);
+
+			SimpleDateFormat sdfDate1 = new SimpleDateFormat("h:mm a");
+			System.out.println(sdfDate1.format(appointmentTime));
+			ap.setAppointmentTime(sdfDate1.format(appointmentTime));
+			
 			ap.setScreeningCode(rs_existAppointment.getString(3));
 			ap.setSequence(rs_existAppointment.getString(5));
 			ap.setScreeningDate(TestBase.screeningDate);
@@ -246,8 +254,125 @@ public class CommonMethod {
 		}
 		return appointment;
 	}
-
-	
+//public static boolean verifyAppointment(List<Appointment> listApp)
+//{
+//	for (Appointment item : listApp) {
+//		// Get product to product list
+//		List<Product> product = item.getProduct().getProduct();
+//		// Verify Product
+//		for (Product pro : product) {
+//			switch (pro.getProductName()) {
+//			case "CA":
+//				Assert.assertEquals(objAptSingleScreenMethod.getCA(item.getAppointmentTime()), "X");
+//				System.out.println("verify CA success");
+//				break;
+//			case "AO":
+//				Assert.assertEquals(objAptSingleScreenMethod.getAO(item.getAppointmentTime()), "X");
+//				break;
+//			case "AB":
+//				Assert.assertEquals(objAptSingleScreenMethod.getAB(item.getAppointmentTime()), "X");
+//				break;
+//			case "OS":
+//				Assert.assertEquals(objAptSingleScreenMethod.getOS(item.getAppointmentTime()), "X");
+//				break;
+//			case "LI":
+//				Assert.assertEquals(objAptSingleScreenMethod.getLI(item.getAppointmentTime()), "X");
+//				break;
+//			case "GL":
+//				Assert.assertEquals(objAptSingleScreenMethod.getGL(item.getAppointmentTime()), "X");
+//				break;
+//			case "AF":
+//				Assert.assertEquals(objAptSingleScreenMethod.getAF(item.getAppointmentTime()), "X");
+//				break;
+//			case "PX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getPX(item.getAppointmentTime()), "X");
+//				break;
+//			case "TX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getTX(item.getAppointmentTime()), "X");
+//				break;
+//			case "RX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getRX(item.getAppointmentTime()), "X");
+//				break;
+//			case "AX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getAX(item.getAppointmentTime()), "X");
+//				break;
+//			case "LX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getLX(item.getAppointmentTime()), "X");
+//				break;
+//			case "GX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getGX(item.getAppointmentTime()), "X");
+//				break;
+//			case "CO":
+//				Assert.assertEquals(objAptSingleScreenMethod.getCO(item.getAppointmentTime()), "X");
+//				break;
+//			case "SL":
+//				Assert.assertEquals(objAptSingleScreenMethod.getSL(item.getAppointmentTime()), "X");
+//				break;
+//			case "A2":
+//				Assert.assertEquals(objAptSingleScreenMethod.getA2(item.getAppointmentTime()), "X");
+//				break;
+//			case "SX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getSX(item.getAppointmentTime()), "X");
+//				break;
+//			case "TP":
+//				Assert.assertEquals(objAptSingleScreenMethod.getTP(item.getAppointmentTime()), "X");
+//				break;
+//			case "PP":
+//				Assert.assertEquals(objAptSingleScreenMethod.getPP(item.getAppointmentTime()), "X");
+//				break;
+//			case "XF":
+//				Assert.assertEquals(objAptSingleScreenMethod.getXF(item.getAppointmentTime()), "X");
+//				break;
+//			case "XM":
+//				Assert.assertEquals(objAptSingleScreenMethod.getXM(item.getAppointmentTime()), "X");
+//				break;
+//			case "X1":
+//				Assert.assertEquals(objAptSingleScreenMethod.getX1(item.getAppointmentTime()), "X");
+//				break;
+//			case "KX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getKX(item.getAppointmentTime()), "X");
+//				break;
+//			case "YX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getYX(item.getAppointmentTime()), "X");
+//				break;
+//			case "PY":
+//				Assert.assertEquals(objAptSingleScreenMethod.getPY(item.getAppointmentTime()), "X");
+//				break;
+//			case "MT":
+//				Assert.assertEquals(objAptSingleScreenMethod.getMT(item.getAppointmentTime()), "X");
+//				break;
+//			case "LK":
+//				Assert.assertEquals(objAptSingleScreenMethod.getLK(item.getAppointmentTime()), "X");
+//				break;
+//			case "XC":
+//				Assert.assertEquals(objAptSingleScreenMethod.getXC(item.getAppointmentTime()), "X");
+//				break;
+//			case "DX":
+//				Assert.assertEquals(objAptSingleScreenMethod.getDX(item.getAppointmentTime()), "X");
+//				break;
+//			case "BH":
+//				Assert.assertEquals(objAptSingleScreenMethod.getBH(item.getAppointmentTime()), "X");
+//				break;
+//			case "KH":
+//				Assert.assertEquals(objAptSingleScreenMethod.getKH(item.getAppointmentTime()), "X");
+//				break;
+//			case "KA":
+//				Assert.assertEquals(objAptSingleScreenMethod.getKA(item.getAppointmentTime()), "X");
+//				break;
+//			case "FV":
+//				Assert.assertEquals(objAptSingleScreenMethod.getFV(item.getAppointmentTime()), "X");
+//				break;
+//			case "FQ":
+//				Assert.assertEquals(objAptSingleScreenMethod.getFQ(item.getAppointmentTime()), "X");
+//				break;
+//			default:
+//				break;
+//			}
+//		}
+//		System.out.println(item.getAppointmentCode() + " Verify product successfully");
+//	}
+//	return true;
+//}
 	public static ResultSet getPackagebyAppointmentCode(String appointmentCode) throws IOException{
 		String sql_getPackagebyAppointmentCode  = "DECLARE @Appointment_Code nvarchar(30) =  '"+appointmentCode+"'"
 		+" SELECT opkgX.Package_ID FROM CC_Orders o JOIN CC_Order_Packages_Xref opkgX ON o.Order_GUID = opkgX.Order_GUID"
@@ -264,4 +389,32 @@ public class CommonMethod {
 		ResultSet rs_ProductList = DBConnection.connectSQLServer(sqlCommand_05);
 		return rs_ProductList;
 	}
+	public static boolean isCurrentDate(String Date) throws ParseException
+	{	  
+		boolean isCurrent = true;
+		  //Convert is to correct format
+		  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		  Date selectDatetmp = dateFormat.parse(Date);
+		  String selectDate1 = new SimpleDateFormat("M/d/yyyy").format(selectDatetmp);
+		  Date selectDate = new SimpleDateFormat("M/d/yyyy").parse(selectDate1);
+		  
+		  //Define today date  
+		  SimpleDateFormat dateFormat1 = new SimpleDateFormat("M/d/yyyy");
+		  Date date = new Date();
+		  String todayDatetmp = dateFormat1.format(date);
+		  Date todayDate = dateFormat1.parse(todayDatetmp);
+		    
+		  //Compare screeningDate and todayDate  
+		  if(selectDate.before(todayDate)){
+			   isCurrent = true;
+		  }
+	
+		  else 
+		  {
+
+		   isCurrent = false;
+		  }
+		  return isCurrent;
 }
+}
+

@@ -50,6 +50,7 @@ public class ReportHandle {
 		initReport(testName);
 		/* Write the test result to excel file*/
 		excelHandle.writeToExcel(workbook, tcList, testName, dest);
+
 		/* Create the result file*/
 		String dir = TestBase.p.getProperty("resultpath");
 		CommonOperations.createDir(dir);

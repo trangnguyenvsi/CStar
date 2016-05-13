@@ -1,5 +1,7 @@
 package com.vsii.cstar.testcase;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -39,7 +41,7 @@ public class VerifyScreeningsAppointments2 {
 	}
 
 	@Test
-	public void VerifyScreeningAppointments() {
+	public void VerifyScreeningAppointments() throws IOException, SQLException {
 		// Steps to access Appointments Screen
 		objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com", "Thanhvc123@");
 		objHomepageMethod.mouseHoverScreeningConfig();

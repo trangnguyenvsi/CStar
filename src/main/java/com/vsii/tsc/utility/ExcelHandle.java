@@ -149,15 +149,18 @@ public class ExcelHandle {
 
 		// Col is Test Case ID's column
 		columnWanted = tcIDCol;
-		for (int r = 12; r < sheet.getLastRowNum(); r++) {
+		for (int r = 11; r <= sheet.getLastRowNum(); r++) {
 			Cell c = null;
 			Row row1 = sheet.getRow(r);
+
 			c = row1.getCell(columnWanted);
+
 			if (c == null || c.getCellType() == Cell.CELL_TYPE_BLANK) {
 				// Nothing in the cell in this row, skip it
 			} else
 				cellValueList.add(c.getStringCellValue());
 		}
+
 		return cellValueList;
 
 	}
@@ -181,6 +184,11 @@ public class ExcelHandle {
 		tcPreconList = (ArrayList<String>) ExcelHandle.loadCellValueList(workbook, sheetName, tcPreCol);
 		tcStepList = (ArrayList<String>) ExcelHandle.loadCellValueList(workbook, sheetName, tcStepCol);
 		tcExptList = (ArrayList<String>) ExcelHandle.loadCellValueList(workbook, sheetName, tcExptCol);
+
+		for (String string : tcIDList) {
+			System.out.println("tcIDList is: " + string);
+		}
+
 		file.close();
 	}
 
@@ -233,6 +241,7 @@ public class ExcelHandle {
 
 			tcList = new ArrayList<TestCase>();
 			// Create test case List
+
 			for (String id : ExcelHandle.tcIDList) {
 
 				int index = ExcelHandle.tcIDList.indexOf(id);
@@ -281,7 +290,7 @@ public class ExcelHandle {
 			System.out.println("tc size:" + tcTemple.size());
 			System.out.println("size:" + tc.getTcImageResults().size());
 			int i;
-			rowTC = rowNum;	
+			rowTC = rowNum;
 			for (i = 0; i < tc.getTcImageResults().size(); i++) {
 
 				ExcelHandle.sheet.getRow(rowNum).getCell(resultIDCol).setCellValue(tc.getTcID());
@@ -308,10 +317,10 @@ public class ExcelHandle {
 				myStyle.setBorderBottom((short) 1);
 				myStyle.setBorderLeft((short) 1);
 				myStyle.setBorderRight((short) 1);
-				
-				/* Set cell style*/
+
+				/* Set cell style */
 				switch (result) {
-				
+
 				case "pass":
 					myStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
 					break;
@@ -326,15 +335,13 @@ public class ExcelHandle {
 				sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "ED");
 				rowNum++;
 			}
-			if (tc.getTcImageResults().size() > 1) 
-			{
+			if (tc.getTcImageResults().size() > 1) {
 				j = rowTC + i - 1;
-			
+
+			} else if (tc.getTcImageResults().size() == 1) {
+				j = rowTC;
 			}
-			else if (tc.getTcImageResults().size()==1)
-			{ 	j =rowTC;
-			}
-			
+
 			/* Merge cell */
 			CellRangeAddress mergeID = new CellRangeAddress(rowTC, j, resultIDCol, resultIDCol);
 			CellRangeAddress mergeDes = new CellRangeAddress(rowTC, j, resultDesCol, resultDesCol);
@@ -348,12 +355,11 @@ public class ExcelHandle {
 			sheet.addMergedRegion(mergeStep);
 			sheet.addMergedRegion(mergeExpt);
 		}
-		
-		
-		/*remove the old rows after write*/
-		for (int i = rowTC+1; i <= sheet.getLastRowNum(); i++) {
-		    XSSFRow row1 = sheet.getRow(i);
-		        sheet.removeRow(row1);   
+
+		/* remove the old rows after write */
+		for (int i = rowTC + 1; i <= sheet.getLastRowNum(); i++) {
+			XSSFRow row1 = sheet.getRow(i);
+			sheet.removeRow(row1);
 		}
 
 	}

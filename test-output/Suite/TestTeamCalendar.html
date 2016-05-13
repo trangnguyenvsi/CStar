@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TestTeamCalendar</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/3</td>
 </tr><tr>
-<td>Started on:</td><td>Fri May 06 10:44:37 ICT 2016</td>
+<td>Started on:</td><td>Fri May 13 15:49:45 ICT 2016</td>
 </tr>
-<tr><td>Total time:</td><td>41 seconds (41238 ms)</td>
+<tr><td>Total time:</td><td>220 seconds (220284 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,72 +67,58 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vsii.cstar.testcase.VerifyScreeningsAppointments.test02()'><b>test02</b><br>Test class: com.vsii.cstar.testcase.VerifyScreeningsAppointments<br>Test method: takeappointment<br>Parameters: 287220, 474, 403, 63BA6A19-63A8-42AB-A641-265AC9609460, 16-0414_CLV,11125030, 83C0ACBC-E8D1-402D-81E6-00D505153A21, 500, 2, 11:25 AM, 29.0, MaCjoCie, 500</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;ctl00_body_lnkScreeningAppointment&quot;}
-Command duration or timeout: 3.91 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;thanhvc-w7&apos;, ip: &apos;192.168.100.32&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-*** Element info: {Using=id, value=ctl00_body_lnkScreeningAppointment}
-Session ID: 6b71830a-e775-4858-8453-53b783b864a0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=46.0.1}]
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.vsii.cstar.pages.methods.ScreeningMaintainanceMethods.clickAppointmentsLinkText(ScreeningMaintainanceMethods.java:32)
-	at com.vsii.cstar.testcase.VerifyScreeningsAppointments.test02(VerifyScreeningsAppointments.java:122)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;ctl00_body_lnkScreeningAppointment&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;thanhvc-w7&apos;, ip: &apos;192.168.100.32&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace704069077", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace704069077'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;ctl00_body_lnkScreeningAppointment&quot;}
-Command duration or timeout: 3.91 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;thanhvc-w7&apos;, ip: &apos;192.168.100.32&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-*** Element info: {Using=id, value=ctl00_body_lnkScreeningAppointment}
-Session ID: 6b71830a-e775-4858-8453-53b783b864a0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=46.0.1}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.vsii.cstar.pages.methods.ScreeningMaintainanceMethods.clickAppointmentsLinkText(ScreeningMaintainanceMethods.java:32)
-	at com.vsii.cstar.testcase.VerifyScreeningsAppointments.test02(VerifyScreeningsAppointments.java:122)
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC01()'><b>TC01</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening exists or not</td>
+<td></td>
+<td>2</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC02()'><b>TC02</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Teams information on calendar</td>
+<td></td>
+<td>30</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC03()'><b>TC03</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening site/event informations on Screening Maintainance</td>
+<td></td>
+<td>5</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC04()'><b>TC04</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Site Info tab information</td>
+<td></td>
+<td>47</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC06()'><b>TC06</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify products/packages and their prices in Products & Pricing tab</td>
+<td></td>
+<td>19</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC07()'><b>TC07</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening has appointment</td>
+<td></td>
+<td>63</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC05()'><b>TC05</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Accounting tab information</td>
+<td><div><pre>org.testng.SkipException: This screening don&apos;t have any check request
+	at com.vsii.cstar.testcase.TeamCalendar.TC05(TeamCalendar.java:735)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace538265811", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace538265811'><pre>org.testng.SkipException: This screening don&apos;t have any check request
+	at com.vsii.cstar.testcase.TeamCalendar.TC05(TeamCalendar.java:735)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -157,19 +143,74 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;ctl00_body_lnkScreeningAppointment&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;thanhvc-w7&apos;, ip: &apos;192.168.100.32&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/thanhvc/AppData/Local/Temp/anonymous3100094152857340834webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
 </pre></div></td>
-<td>32</td>
-<td>com.vsii.cstar.testcase.VerifyScreeningsAppointments@28da431b</td></tr>
+<td>30</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC08()'><b>TC08</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Take appointments for screening</td>
+<td><div><pre>org.testng.TestNGException: 
+Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1845114142", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1845114142'><pre>org.testng.TestNGException: 
+Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:263)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:419)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+</pre></div></td>
+<td>0</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC09()'><b>TC09</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify taken appointment</td>
+<td><div><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1205)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace308088552", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace308088552'><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1205)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+</pre></div></td>
+<td>0</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
 </table><p>
 </body>
 </html>

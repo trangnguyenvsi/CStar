@@ -1,25 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="3" failed="0" total="9" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="85127" started-at="2016-05-10T03:10:10Z" finished-at="2016-05-10T03:11:35Z">
+  <suite name="Suite" duration-ms="220284" started-at="2016-05-13T08:49:45Z" finished-at="2016-05-13T08:53:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="85127" started-at="2016-05-10T03:10:10Z" finished-at="2016-05-10T03:11:35Z">
-      <class name="com.vsii.cstar.testcase.VerifySiteInfoTab">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.vsii.cstar.testcase.VerifySiteInfoTab@4900269d]" name="beforeClass" is-config="true" duration-ms="12690" started-at="2016-05-10T10:10:10Z" finished-at="2016-05-10T10:10:22Z">
+    <test name="TestTeamCalendar" duration-ms="220284" started-at="2016-05-13T08:49:45Z" finished-at="2016-05-13T08:53:26Z">
+      <class name="com.vsii.cstar.testcase.TeamCalendar">
+        <test-method status="PASS" signature="start()[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="start" is-config="true" duration-ms="57" started-at="2016-05-13T15:49:45Z" finished-at="2016-05-13T15:49:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="f()[pri:0, instance:com.vsii.cstar.testcase.VerifySiteInfoTab@4900269d]" name="f" duration-ms="71557" started-at="2016-05-10T10:10:22Z" finished-at="2016-05-10T10:11:34Z">
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="TC01()[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC01" duration-ms="2840" started-at="2016-05-13T15:49:45Z" description="Verify screening exists or not" finished-at="2016-05-13T15:49:48Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.vsii.cstar.testcase.VerifySiteInfoTab@4900269d]" name="afterClass" is-config="true" duration-ms="860" started-at="2016-05-10T10:11:34Z" finished-at="2016-05-10T10:11:35Z">
+        </test-method> <!-- TC01 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2383" started-at="2016-05-13T15:49:48Z" finished-at="2016-05-13T15:49:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC01 status=SUCCESS method=TeamCalendar.TC01()[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.vsii.cstar.testcase.VerifySiteInfoTab -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="TC02()[pri:1, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC02" duration-ms="30608" started-at="2016-05-13T15:49:51Z" description="Verify Teams information on calendar" finished-at="2016-05-13T15:50:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2374" started-at="2016-05-13T15:50:21Z" finished-at="2016-05-13T15:50:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC02 status=SUCCESS method=TeamCalendar.TC02()[pri:1, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="TC03()[pri:2, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC03" duration-ms="5226" started-at="2016-05-13T15:50:24Z" description="Verify screening site/event informations on Screening Maintainance" finished-at="2016-05-13T15:50:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC03 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2377" started-at="2016-05-13T15:50:29Z" finished-at="2016-05-13T15:50:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC03 status=SUCCESS method=TeamCalendar.TC03()[pri:2, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="TC04()[pri:3, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC04" duration-ms="47295" started-at="2016-05-13T15:50:31Z" description="Verify Site Info tab information" finished-at="2016-05-13T15:51:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2410" started-at="2016-05-13T15:51:18Z" finished-at="2016-05-13T15:51:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC04 status=SUCCESS method=TeamCalendar.TC04()[pri:3, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="TC05()[pri:4, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC05" duration-ms="30716" started-at="2016-05-13T15:51:21Z" description="Verify Accounting tab information" finished-at="2016-05-13T15:51:52Z">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[This screening don't have any check request]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: This screening don't have any check request
+	at com.vsii.cstar.testcase.TeamCalendar.TC05(TeamCalendar.java:735)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC05 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2323" started-at="2016-05-13T15:51:52Z" finished-at="2016-05-13T15:51:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC05 status=SKIP method=TeamCalendar.TC05()[pri:4, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="TC06()[pri:5, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC06" duration-ms="19460" started-at="2016-05-13T15:51:54Z" description="Verify products/packages and their prices in Products &amp; Pricing tab" finished-at="2016-05-13T15:52:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC06 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2613" started-at="2016-05-13T15:52:13Z" finished-at="2016-05-13T15:52:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC06 status=SUCCESS method=TeamCalendar.TC06()[pri:5, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="TC07()[pri:6, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC07" duration-ms="63163" started-at="2016-05-13T15:52:16Z" description="Verify screening has appointment" finished-at="2016-05-13T15:53:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC07 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2853" started-at="2016-05-13T15:53:19Z" finished-at="2016-05-13T15:53:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC07 status=SUCCESS method=TeamCalendar.TC07()[pri:6, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="TC08(java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC08" duration-ms="0" started-at="2016-05-13T15:53:22Z" description="Take appointments for screening" data-provider="listappointment" finished-at="2016-05-13T15:53:22Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:263)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:419)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC08 -->
+        <test-method status="SKIP" signature="TC09()[pri:8, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="TC09" duration-ms="2" started-at="2016-05-13T15:53:22Z" description="Verify taken appointment" finished-at="2016-05-13T15:53:22Z">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Screening already occurred]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1205)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC09 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="afterMethod" is-config="true" duration-ms="2818" started-at="2016-05-13T15:53:22Z" finished-at="2016-05-13T15:53:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC09 status=SKIP method=TeamCalendar.TC09()[pri:8, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="end()[pri:0, instance:com.vsii.cstar.testcase.TeamCalendar@57ddf5ee]" name="end" is-config="true" duration-ms="730" started-at="2016-05-13T15:53:25Z" finished-at="2016-05-13T15:53:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+      </class> <!-- com.vsii.cstar.testcase.TeamCalendar -->
+      <class name="com.vsii.tsc.utility.TestBase">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@5b4bf56d]" name="setupSuite" is-config="true" duration-ms="14357" started-at="2016-05-13T15:49:31Z" finished-at="2016-05-13T15:49:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@5b4bf56d]" name="teardownSuite" is-config="true" duration-ms="1" started-at="2016-05-13T15:53:26Z" finished-at="2016-05-13T15:53:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownSuite -->
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
+    </test> <!-- TestTeamCalendar -->
+  </suite> <!-- Suite -->
 </testng-results>
