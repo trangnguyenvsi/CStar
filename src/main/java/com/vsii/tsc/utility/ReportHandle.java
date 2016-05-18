@@ -50,7 +50,6 @@ public class ReportHandle {
 		initReport(testName);
 		/* Write the test result to excel file*/
 		excelHandle.writeToExcel(workbook, tcList, testName, dest);
-
 		/* Create the result file*/
 		String dir = TestBase.p.getProperty("resultpath");
 		CommonOperations.createDir(dir);
@@ -65,28 +64,50 @@ public class ReportHandle {
 		ExtentTest test;
 		String methodName;
 		if (tests.size() > 0) {
-				
 			for (ITestResult result : tests.getAllResults()) {
 				
 				methodName = result.getMethod().getMethodName();
 				test = extentReport.startTest(methodName);
 				test.assignCategory(testName);
 				String message = "Test " + status.toString().toLowerCase() + "ed";
+				
 				if (result.getThrowable() != null)
 					message = result.getThrowable().getMessage();
 		
 				for(TestCase tc:tcList){
 					/* if TCID is equals to method Name, loop in test result*/
 					if(tc.getTcID().equals(methodName)){
-						
 						for(int i=0;i<tc.getTcImageResults().size();i++){
 							String testResult = tc.getTcImageResults().get(i).getTcResult();
 							/* If test result is same as Status-> log to report*/
+							String imageDir = test.addScreenCapture("."+TestBase.p.getProperty("imagePath") + tc.getTcImageResults().get(i).getTcImage() + ".jpg");
 							if(testResult.equals(status.toString())){
-							test.log(LogStatus.INFO,tc.getTcDesc());
-							test.log(LogStatus.INFO,tc.getTcStep());					
-							test.log(LogStatus.INFO,
-									test.addScreenCapture(TestBase.p.getProperty("imagePath") + tc.getTcImageResults().get(i).getTcImage() + ".jpg"));	
+								switch (status) {
+								case PASS:
+									test.log(LogStatus.PASS, tc.getTcDesc());
+									test.log(LogStatus.PASS, tc.getTcStep());					
+									test.log(LogStatus.PASS, imageDir);	
+									
+									break;
+								case FAIL:
+									test.log(LogStatus.FAIL, tc.getTcDesc());
+									test.log(LogStatus.FAIL, tc.getTcStep());					
+									test.log(LogStatus.FAIL, imageDir);	
+									
+									break;
+								case SKIP:
+									test.log(LogStatus.SKIP, tc.getTcDesc());
+									test.log(LogStatus.SKIP, tc.getTcStep());					
+									test.log(LogStatus.SKIP, imageDir);	
+									
+									break;
+								default:
+									test.log(LogStatus.INFO, tc.getTcDesc());
+									test.log(LogStatus.INFO, tc.getTcStep());					
+									test.log(LogStatus.INFO, imageDir);	
+									
+									break;
+								}
 							tc.getTcImageResults().remove(i);
 							break;
 							}

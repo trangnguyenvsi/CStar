@@ -12,11 +12,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,6 +23,7 @@ import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.vsii.cstar.common.methods.CommonMethod;
@@ -45,6 +43,7 @@ import com.vsii.tsc.utility.CommonOperations;
 import com.vsii.tsc.utility.DBConnection;
 import com.vsii.tsc.utility.TestBase;
 
+@Listeners({com.vsii.tsc.utility.Reports.class  })
 public class TeamCalendar {
 	WebDriver driver;
 	LoginPageMethods objLoginPageMethod;
@@ -109,7 +108,7 @@ public class TeamCalendar {
 		if (check == true) {
 			System.out.println("Screening exists");
 		} else {
-			System.out.println("Verified screening is not exist");
+			System.out.println("Verified screening is not exist or not scheduled yet");
 		}
 		Assert.assertEquals(check, true);
 	}
@@ -122,18 +121,21 @@ public class TeamCalendar {
 
 		// Define input data
 		TestBase.methodName = "TC02";
+		System.out.println("\n");
+		System.out.println("TC02: Verify Screening information on Calendar");
 
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
 
-			System.out.println("Verify Screening information on Calendar");
 			String input_Date = TestBase.screeningDate;
 			String input_Team = TestBase.teamCode;
 			// System.out.println(input_Team);
 			// System.out.println(objTeamCalendarMethod.getFullTeamName(input_Team));
 			String input_Month = CommonMethod.getMonthBaseOnInputDate(input_Date);
 
-			objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com", "Thanhvc123@");
+			String a = TestBase.userName;
+			String b = TestBase.password;
+			objLoginPageMethod.login(a, b);
 
 			// Select menu Team Calendar & Grid
 			objHomepageMethod.mouseHoverScreeningConfig();
@@ -141,9 +143,11 @@ public class TeamCalendar {
 
 			// Choose filter
 			objTeamCalendarMethod.selectMonth(input_Month);
+			new WebDriverWait(driver, 30)
+			.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
 			objTeamCalendarMethod.selectTeam(input_Team);
 			new WebDriverWait(driver, 30)
-					.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
+			.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
 
 			// Get screening information on calendar
 			String actual_ScreeningName = objTeamCalendarMethod.getScreeningName(input_Date);
@@ -243,11 +247,12 @@ public class TeamCalendar {
 	@Test(priority = 2, description = "Verify screening site/event informations on Screening Maintainance")
 	public void TC03() throws InterruptedException, ParseException, IOException, SQLException {
 		TestBase.methodName = "TC03";
+		System.out.println("\n");
+		System.out.println("TC03: Verify Screening Site/Event informations on Screening Maintainance");
 
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
 
-			System.out.println("Verify Screening Site/Event informations on Screening Maintainance");
 			// Login to System
 			// objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com",
 			// "Thanhvc123@");
@@ -408,11 +413,46 @@ public class TeamCalendar {
 				expected_ContactEmail = "null";
 			}
 
-			//Print verify result of Address/Contact Info in console
+			// Print verify result of Address/Contact Info in console
 			if (actual_SiteAddress.equals(expected_SiteAddress)) {
-				System.out.println("Site Address displayed on screen is map with address query from DB");
+				System.out.println("Site Address displayed on screen is map with Site Address query from DB");
+			} else {
+				System.out.println("Site Address displayed on screen is not map with Site Address query from DB");
 			}
-			
+			if (actual_SiteCity.equals(expected_SiteCity)) {
+				System.out.println("Site's City displayed on screen is map with Site's City query from DB");
+			} else {
+				System.out.println("Site's City displayed on screen is not map with Site's City query from DB");
+			}
+			if (actual_SiteZipCode.equals(expected_SiteZipCode)) {
+				System.out.println("Site's Zip Code displayed on screen is map with Site's Zip Code query from DB");
+			} else {
+				System.out.println("Site's Zip Code displayed on screen is not map with Site's Zip Code query from DB");
+			}
+			if (actual_SitePhone.equals(expected_SitePhone)) {
+				System.out.println("Site's Phone displayed on screen is map with Site's Phone query from DB");
+			} else {
+				System.out.println("Site's Phone displayed on screen is not map with Site's Phone query from DB");
+			}
+			if (actual_SiteFax.equals(expected_SiteFax)) {
+				System.out.println("Site's Fax displayed on screen is map with Site's Fax query from DB");
+			} else {
+				System.out.println("Site's Fax displayed on screen is not map with Site's Fax query from DB");
+			}
+			if (actual_ContactName.equals(expected_ContactName)) {
+				System.out.println(
+						"Site's Contact User displayed on screen is map with Site's Contact User query from DB");
+			} else {
+				System.out.println(
+						"Site's Contact User displayed on screen is not map with Site's Contact User query from DB");
+			}
+			if (actual_ContactEmail.equals(expected_ContactEmail)) {
+				System.out.println(
+						"Site's Contact Email displayed on screen is map with Site's Contact Email User query from DB");
+			} else {
+				System.out.println(
+						"Site's Contact Email displayed on screen is not map with Site's Contact Email User query from DB");
+			}
 
 			// Verfiy values in interface and values get in database
 			Assert.assertEquals(actual_SiteAddress, expected_SiteAddress);
@@ -439,7 +479,8 @@ public class TeamCalendar {
 			// System.out.println(actual_DriveType);
 
 			// Get drive time
-			String actual_DriveTime = objScreeningMaintainanceMethod.getDriveTime();
+			// String actual_DriveTime =
+			// objScreeningMaintainanceMethod.getDriveTime();
 			// System.out.println(actual_DriveTime);
 
 			// Get price level
@@ -538,6 +579,55 @@ public class TeamCalendar {
 			// System.out.println(expected_SiteType);
 			// System.out.println(expected_MarketingZipCode);
 
+			// Print to console result verified
+			if (actual_Representative.equals(expected_Representative)) {
+				System.out.println("Representative on screen is map with Representative on DB");
+			} else {
+				System.out.println("Representative on screen is not map with Representative on DB");
+			}
+			if (actual_RepresentativeDepartment.equals(expected_RepresentativeDepartment)) {
+				System.out
+						.println("Representative's department on screen is map with Representative's department on DB");
+			} else {
+				System.out.println(
+						"Representative's department on screen is not map with Representative's department on DB");
+			}
+			if (actual_DriveType.equals(expected_DriveType)) {
+				System.out.println("Drive Type on screen is map with Drive Type on DB");
+			} else {
+				System.out.println("Drive Type on screen is not map with Drive Type on DB");
+			}
+			if (actual_PriceLevel.equals(expected_PriceLevel)) {
+				System.out.println("Price Level on screen is map with Price Level on DB");
+			} else {
+				System.out.println("Price Level on screen is not map with Price Level on DB");
+			}
+			if (actual_FacilityStart.equals(expected_FacilityStart)) {
+				System.out.println("Facility Open Time on screen is map with Facility Open Time on DB");
+			} else {
+				System.out.println("Facility Open Time on screen is not map with Facility Open Time on DB");
+			}
+			if (actual_FacilityClose.equals(expected_FacilityClose)) {
+				System.out.println("Facility Close Time on screen is map with Facility Close Time on DB");
+			} else {
+				System.out.println("Facility Close Time on screen is not map with Facility Close Time on DB");
+			}
+			if (actual_MarketingPlan.equals(expected_MarketingPlan)) {
+				System.out.println("Marketing Plan on screen is map with Marketing Plan on DB");
+			} else {
+				System.out.println("Marketing Plan on screen is not map with Marketing Plan on DB");
+			}
+			if (actual_SiteType.equals(expected_SiteType)) {
+				System.out.println("Site Type on screen is map with Site Type on DB");
+			} else {
+				System.out.println("Site Type on screen is not map with Site Type on DB");
+			}
+			if (actual_MarketingZipCode.equals(expected_MarketingZipCode)) {
+				System.out.println("Marketing Zip Code on screen is map with Marketing Zip Code on DB");
+			} else {
+				System.out.println("Marketing Zip Code on screen is not map with Marketing Zip Code on DB");
+			}
+
 			// Verify values seen on screening and values queries from database
 			Assert.assertEquals(actual_Representative, expected_Representative);
 			Assert.assertEquals(actual_RepresentativeDepartment, expected_RepresentativeDepartment);
@@ -556,14 +646,17 @@ public class TeamCalendar {
 	@Test(priority = 3, description = "Verify Site Info tab information")
 	public void TC04() throws IOException, SQLException, ParseException {
 		TestBase.methodName = "TC04";
+		System.out.println("\n");
+		System.out.println("TC04: Verify Site Info tab informations");
 
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
 
 			// Input data
-			String input_Date = TestBase.screeningDate;
-			String input_Team = TestBase.teamCode;
-			String input_Month = CommonMethod.getMonthBaseOnInputDate(input_Date);
+			// String input_Date = TestBase.screeningDate;
+			// String input_Team = TestBase.teamCode;
+			// String input_Month =
+			// CommonMethod.getMonthBaseOnInputDate(input_Date);
 
 			// Login to system
 			// objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com",
@@ -621,7 +714,7 @@ public class TeamCalendar {
 				int hasIt = 0;
 				while (rs.next()) {
 					hasIt = rs.getInt("Has_It");
-					System.out.println(hasIt);
+					// System.out.println(hasIt);
 				}
 				if (hasIt == 1) {
 					expected_chkStatus = "checked";
@@ -631,6 +724,9 @@ public class TeamCalendar {
 
 				Assert.assertEquals(actual_chkStatus, expected_chkStatus);
 
+			}
+			if (actual_chkStatus.equals(expected_chkStatus)) {
+				System.out.println("Check/Uncheck status display on screen is map with check/uncheck value in DB");
 			}
 			// Close connections
 			conn.close();
@@ -656,11 +752,41 @@ public class TeamCalendar {
 				expected_NoteUltraSound = rs2.getString(1);
 				expected_NoteCallCenter = rs2.getString(2);
 			}
-			System.out.println("Note for UltraSound Team query from DB: " + expected_NoteUltraSound);
-			System.out.println("Note for Call Center query from DB: " + expected_NoteCallCenter);
+			// System.out.println("Note for UltraSound Team query from DB: " +
+			// expected_NoteUltraSound);
+			// System.out.println("Note for Call Center query from DB: " +
+			// expected_NoteCallCenter);
 
 			// Verify note displayed on screen and note query from db for this
 			// screening id
+
+			//Convert to null if screening dont have any notes for ultrasound team and for call center
+			   if(actual_NoteUltraSound.isEmpty()){
+			    actual_NoteUltraSound="null";
+			   }
+			   if(actual_NoteCallCenter.isEmpty()){
+			    actual_NoteCallCenter="null";
+			   }
+			   
+			   if(expected_NoteUltraSound == null){
+			    expected_NoteUltraSound = "null";
+			   }
+			   if(expected_NoteCallCenter == null){
+			    expected_NoteCallCenter="null";
+			   }
+			
+			// Print to console
+			if (actual_NoteUltraSound.equals(expected_NoteUltraSound)) {
+				System.out.println("Note for UltraSound Team in screen is map with data query from DB");
+			} else {
+				System.out.println("Note for UltraSound Team in screen is not map with data query from DB");
+			}
+			if (actual_NoteCallCenter.equals(expected_NoteCallCenter)) {
+				System.out.println("Note for Call Center in screen is map with Not for Call Center query from DB");
+			} else {
+				System.out.println("Note for Call Center in screen is not map with Not for Call Center query from DB");
+			}
+
 			Assert.assertEquals(actual_NoteUltraSound, expected_NoteUltraSound);
 			Assert.assertEquals(actual_NoteCallCenter, expected_NoteCallCenter);
 		} else {
@@ -670,14 +796,17 @@ public class TeamCalendar {
 
 	@Test(priority = 4, description = "Verify Accounting tab information")
 	public void TC05() throws IOException, SQLException, ParseException {
+		System.out.println("\n");
 		TestBase.methodName = "TC05";
+		System.out.println("TC05: Verify Accounting tab informatio");
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
 
 			// Input data
-			String input_Date = TestBase.screeningDate;
-			String input_Team = TestBase.teamCode;
-			String input_Month = CommonMethod.getMonthBaseOnInputDate(input_Date);
+			// String input_Date = TestBase.screeningDate;
+			// String input_Team = TestBase.teamCode;
+			// String input_Month =
+			// CommonMethod.getMonthBaseOnInputDate(input_Date);
 
 			// Login to system
 			// objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com",
@@ -722,7 +851,7 @@ public class TeamCalendar {
 						.findElements(By
 								.xpath("//table[@id='ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_gvCheckRequests']/tbody/tr"))
 						.size() - 1;
-				System.out.println(numOfCheckRequest);
+				// System.out.println(numOfCheckRequest);
 
 				for (int i = 2; i <= numOfCheckRequest + 1; i++) {
 					String xpath_PurposeVal = "//table[@id='ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_gvCheckRequests']/tbody/tr["
@@ -739,9 +868,9 @@ public class TeamCalendar {
 					actual_DateNeeded.add(driver.findElement(By.xpath(xpath_DateNeededVal)).getText());
 				}
 
-				for (String string : actual_Purpose) {
-					System.out.println(string);
-				}
+				// for (String string : actual_Purpose) {
+				// System.out.println(string);
+				// }
 
 				// Query data from db and set them to expected variables
 				String sqlCommand_01 = "declare @p2 int " + "set @p2=NULL " + "declare @p3 int " + "set @p3=NULL "
@@ -762,8 +891,30 @@ public class TeamCalendar {
 							.format(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS").parse(rs.getString(4))));
 				}
 
-				for (String string2 : expected_Purpose) {
-					System.out.println(string2);
+				// for (String string2 : expected_Purpose) {
+				// System.out.println(string2);
+				// }
+
+				// Print to console
+				if (actual_Purpose.equals(expected_Purpose)) {
+					System.out.println("Check's purpose on screen is map with Check's purpose query from DB");
+				} else {
+					System.out.println("Check's purpose on screen is not map with Check's purpose query from DB");
+				}
+				if (actual_Amount.equals(expected_Amount)) {
+					System.out.println("Amount on screen is map with Amount from DB");
+				} else {
+					System.out.println("Amount on screen is not map with Amount from DB");
+				}
+				if (actual_PayAbleTo.equals(expected_PayAbleTo)) {
+					System.out.println("Place to pay on screen is map with Place to pay from DB");
+				} else {
+					System.out.println("Place to pay on screen is not map with Place to pay from DB");
+				}
+				if (actual_DateNeeded.equals(expected_DateNeeded)) {
+					System.out.println("Date needed on screen is map with Date needed from DB");
+				} else {
+					System.out.println("Date needed on screen is not map with Date needed from DB");
 				}
 
 				Assert.assertEquals(actual_Purpose, expected_Purpose);
@@ -786,13 +937,16 @@ public class TeamCalendar {
 	public void TC06() throws InterruptedException, ParseException, IOException, SQLException {
 		// input data
 		TestBase.methodName = "TC06";
+		System.out.println("\n");
+		System.out.println("TC06: Verify products/packages and their prices in Products & Pricing tab");
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
 
 			// Input data
-			String input_Date = TestBase.screeningDate;
-			String input_Team = TestBase.teamCode;
-			String input_Month = CommonMethod.getMonthBaseOnInputDate(input_Date);
+			// String input_Date = TestBase.screeningDate;
+			// String input_Team = TestBase.teamCode;
+			// String input_Month =
+			// CommonMethod.getMonthBaseOnInputDate(input_Date);
 
 			// Login to System
 			// objLoginPageMethod.login("vuong.cong.thanh@vsi-international.com",
@@ -861,6 +1015,25 @@ public class TeamCalendar {
 				expected_price.add(NumberFormat.getCurrencyInstance().format(rs3.getDouble(3)));
 			}
 
+			// Print to console
+			if (actual_productPackageName.equals(expected_productPackageName)) {
+				System.out.println("Products/Package displayed on screen is map with Products/Packages from DB");
+			} else {
+				System.out.println("Products/Package displayed on screen is not map with Products/Packages from DB");
+			}
+			if (actual_type.equals(expected_type)) {
+				System.out.println("Type displayed on screen is map with Type from DB");
+			} else {
+				System.out.println("Type displayed on screen is not map with Type from DB");
+			}
+			if (actual_price.equals(expected_price)) {
+				System.out.println(
+						"Products/packages's Prices displayed on screen is map with Products/packages's Prices from DB");
+			} else {
+				System.out.println(
+						"Products/packages's Prices displayed on screen is not map with Products/packages's Prices from DB");
+			}
+
 			// Verify values seen in UI and values query from DB
 			Assert.assertEquals(actual_productPackageName, expected_productPackageName);
 			Assert.assertEquals(actual_type, expected_type);
@@ -878,11 +1051,14 @@ public class TeamCalendar {
 	@Test(priority = 6, description = "Verify screening has appointment")
 	public void TC07() throws IOException, SQLException, ParseException {
 		TestBase.methodName = "TC07";
+		System.out.println("\n");
+		System.out.println("TC07: Verify screening has appointment");
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
 			// Run if screening date is smaller than current date
 			if (CommonMethod.isCurrentDate(TestBase.screeningDate) == true) {
-				String input_Team = TestBase.teamCode;
+
+				// String input_Team = TestBase.teamCode;
 				// get list Appointment
 				List<Appointment> ex_appointment = CommonMethod.getExistAppointment(screeningID);
 				if (ex_appointment.isEmpty() == false) {
@@ -895,16 +1071,15 @@ public class TeamCalendar {
 					objScreeningMaintainanceMethod.clickAppointmentsLinkText();
 					objAptSingleScreenMethod.selectProductView();
 					for (Appointment item : ex_appointment) {
-						System.out.println(item.getAppointmentTime() + ": ");
+						System.out.println(item.getAppointmentCode() + ": ");
 						// Get product to product list
 						List<Product> product = item.getProduct().getProduct();
 						// Verify Product
 						for (Product pro : product) {
-
+							System.out.println(pro.getProductName());
 							switch (pro.getProductName()) {
 							case "CA":
 								Assert.assertEquals(objAptSingleScreenMethod.getCA(item.getAppointmentTime()), "X");
-								System.out.println("verify CA success");
 								break;
 							case "AO":
 								Assert.assertEquals(objAptSingleScreenMethod.getAO(item.getAppointmentTime()), "X");
@@ -1020,28 +1195,30 @@ public class TeamCalendar {
 		}
 	}
 
-	@Test(priority = 7, description = "Take appointments for screening", dataProvider = "listappointment", dataProviderClass = TestData.class)
-	public void TC08(String Participants_GUID, String Amount, String Ex_AmtTotal)
+	@Test(priority = 7, description = "Take appointments for screening", dataProvider = "takeappointment", dataProviderClass = TestData.class)
+	public void TC08(String Participants_GUID, String Amount)
 			throws IOException, SQLException, ParseException {
 		TestBase.methodName = "TC08";
+		System.out.println("\n");
+		System.out.println("TC08: Take appointments for screening");
 
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
+
 			// Run if screening date is smaller than current date
 			if (CommonMethod.isCurrentDate(TestBase.screeningDate) == false) {
-				// Take a list of Appointment Cell GUID. It means list of
-				// appointment
-				// has not scheduled
+				if(CommonMethod.isParticipantExist(Participants_GUID)==true)
+				{
+			
+				// Take a list of Appointment Cell GUID. It means list of appointment has not scheduled
 				ResultSet rs_AppointmentCell = CommonMethod.getAppointmentCell(screeningID);
 				Assert.assertEquals(rs_AppointmentCell.wasNull(), false);
 				// Generate appointment code
 				while (rs_AppointmentCell.next()) {
-					System.out.println(rs_AppointmentCell.getString(4));
 					appointmentTime = rs_AppointmentCell.getTime(4);
 					appointmentSequence = rs_AppointmentCell.getString(5);
 					SimpleDateFormat sdfDate = new SimpleDateFormat("hhmm");
 					appointmentCode = screeningCode + sdfDate.format(appointmentTime).trim();
-					System.out.println(sdfDate.format(appointmentTime));
 					switch (appointmentSequence.length()) {
 					case 1:
 						appointmentCode = appointmentCode + "00" + appointmentSequence;
@@ -1056,7 +1233,6 @@ public class TeamCalendar {
 						appointmentCode = appointmentCode + appointmentSequence;
 						break;
 					}
-					System.out.println(appointmentCode);
 					// Take appointment for each participant
 					// Create a Note. The output will be required input for next
 					// query.
@@ -1072,21 +1248,21 @@ public class TeamCalendar {
 					System.out.println("Take appoinment successfully");
 					while (rs_NewID.next()) {
 						// printing the result
-						System.out.println(rs_NewID.getString("NEWID"));
 						newID = rs_NewID.getString("NEWID");
 					}
 					// to change the chosen appointment cell status to scheduled
 					CommonMethod.changeAppointmentStatus(rs_AppointmentCell.getString(1));
-					System.out.println("change appointment cell status successfully");
+					System.out.println("Change appointment cell status successfully");
 
 					// Assign package to the order
 					List<Product> productList = new ArrayList<Product>();
 					productList = CommonMethod.assignPackageRandom(productSetID, priceListID, newID);
-					System.out.println("Assign package suscessfully");
+					System.out.println("Assign randomly package suscessfully");
 					PPackage pp = new PPackage();
 					pp.setProduct(productList);
 					Appointment ap = new Appointment();
 					ap.setScreeningCode(screeningCode);
+					ap.setAppointmentCode(appointmentCode);
 					ap.setScreeningDate(TestBase.screeningDate);
 					SimpleDateFormat sdfDate1 = new SimpleDateFormat("h:mm a");
 					System.out.println(sdfDate1.format(appointmentTime));
@@ -1095,9 +1271,15 @@ public class TeamCalendar {
 					ap.setProduct(pp);
 					ap.setSiteName(siteName);
 					lAp.add(ap);
+					System.out.println("Appointment "+ap.getAppointmentCode() +" is taken succesfully");
 					break;
 				}
-			} else {
+			}
+				
+			else{
+				throw new SkipException("This participant already has appointment");}
+			}
+			else {
 				throw new SkipException("Screening already occurred");
 			}
 		} else {
@@ -1106,9 +1288,11 @@ public class TeamCalendar {
 
 	}
 
-	@Test(priority = 8, description = "Verify taken appointment")
+	@Test(priority = 8, description = "Verify taken appointment in TC_08")
 	public void TC09() throws ParseException, IOException, SQLException {
 		TestBase.methodName = "TC09";
+		System.out.println("\n");
+		System.out.println("TC09: Verify taken appointment in TC_08");
 
 		// Run if screening exist, skip if screening not exist, depend on TC01
 		if (check == true) {
@@ -1118,11 +1302,11 @@ public class TeamCalendar {
 				String input_Team = TestBase.teamCode;
 				System.out.println("Verify appointment");
 				// Steps to access Appointments Screen
-				objHomepageMethod.mouseHoverScreeningConfig();
-				objHomepageMethod.selectSubMenuTeamCalendar();
-				objTeamCalendarMethod.selectMonth(CommonMethod.getMonthBaseOnInputDate(TestBase.screeningDate));
-				objTeamCalendarMethod.selectTeam(input_Team);
-				objTeamCalendarMethod.selectScreeningByInputDate(TestBase.screeningDate);
+//				objHomepageMethod.mouseHoverScreeningConfig();
+//				objHomepageMethod.selectSubMenuTeamCalendar();
+//				objTeamCalendarMethod.selectMonth(CommonMethod.getMonthBaseOnInputDate(TestBase.screeningDate));
+//				objTeamCalendarMethod.selectTeam(input_Team);
+//				objTeamCalendarMethod.selectScreeningByInputDate(TestBase.screeningDate);
 				objScreeningMaintainanceMethod.clickAppointmentsLinkText();
 				objAptSingleScreenMethod.selectProductView();
 				for (Appointment item : lAp) {
@@ -1133,7 +1317,6 @@ public class TeamCalendar {
 						switch (pro.getProductName()) {
 						case "CA":
 							Assert.assertEquals(objAptSingleScreenMethod.getCA(item.getAppointmentTime()), "X");
-							System.out.println("verify CA success");
 							break;
 						case "AO":
 							Assert.assertEquals(objAptSingleScreenMethod.getAO(item.getAppointmentTime()), "X");
@@ -1237,6 +1420,7 @@ public class TeamCalendar {
 						default:
 							break;
 						}
+						System.out.println(pro.getProductName());
 					}
 					System.out.println(item.getAppointmentCode() + " Verify product successfully");
 				}

@@ -44,7 +44,7 @@ public class TeamCalendarMethods {
 
 	// Select dropdown Team and choose a specific team
 	public void selectTeam(String teamCode) throws IOException, SQLException {
-		String team = this.getFullTeamName(teamCode);
+		String team = this.getFullTeamName(teamCode).trim();
 		Select selectobj = new Select(objTeamCalendar.getDropdown_Team());
 		selectobj.selectByVisibleText(team);
 	}

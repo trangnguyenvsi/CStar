@@ -71,6 +71,11 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.14.1</version>
 				<configuration>
+				<archive>
+				      <manifest>
+				       <mainClass>com.vsii.cstar.app.Main</mainClass>
+				      </manifest>
+				     </archive>	
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>

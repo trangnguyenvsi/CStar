@@ -4,12 +4,27 @@ import java.util.List;
 
 public class TestCase {
 	private String tcID;
+	private String tcLct;
 	private String tcDesc;
 	private String tcPrec;
 	private String tcStep;
 	private String tcExpt;
+	private String tcPri;
 	private List<TCImageResults> tcImageResults;
 	
+	
+	public String getTcLct() {
+		return tcLct;
+	}
+	public void setTcLct(String tcLct) {
+		this.tcLct = tcLct;
+	}
+	public String getTcPri() {
+		return tcPri;
+	}
+	public void setTcPri(String tcPri) {
+		this.tcPri = tcPri;
+	}
 	public String getTcID() {
 		return tcID;
 	}

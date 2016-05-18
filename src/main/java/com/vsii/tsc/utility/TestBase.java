@@ -26,6 +26,8 @@ import com.vsii.tsc.model.TCImageResults;
 public class TestBase {
 	public static String screeningDate;
 	public static String teamCode;
+	public static String userName;
+	public static String password;
 	public static WebDriver driver;
 	public static Properties p;
 	public static ExtentReports extent;
@@ -40,13 +42,15 @@ public class TestBase {
 
 	@BeforeSuite
 	public void setupSuite() throws IOException {
-//		DBConnection.revertDB("exec usp_CStar_RevertSnapshot");
+	//	DBConnection.revertDB("exec usp_CStar_RevertSnapshot");
 		// Read config file
 		p = CommonOperations.readConfig();
 		
 		//Get Date
 		screeningDate = p.getProperty("screeningDate");
 		teamCode = p.getProperty("teamCode");
+		userName = p.getProperty("email");
+		password = p.getProperty("pwd");
 		
 		tcImageResultsList = new HashMap<String, List<TCImageResults>>();
 

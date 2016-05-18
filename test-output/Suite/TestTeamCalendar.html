@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TestTeamCalendar</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/3</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/1/4</td>
 </tr><tr>
-<td>Started on:</td><td>Fri May 13 15:49:45 ICT 2016</td>
+<td>Started on:</td><td>Tue May 17 16:20:51 ICT 2016</td>
 </tr>
-<tr><td>Total time:</td><td>220 seconds (220284 ms)</td>
+<tr><td>Total time:</td><td>124 seconds (124768 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,52 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC03()'><b>TC03</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening site/event informations on Screening Maintainance</td>
+<td><div><pre>java.lang.AssertionError: expected [4198534946] but found [4198534946x:1]
+	at com.vsii.cstar.testcase.TeamCalendar.TC03(TeamCalendar.java:459)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace25384064", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace25384064'><pre>java.lang.AssertionError: expected [4198534946] but found [4198534946x:1]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.vsii.cstar.testcase.TeamCalendar.TC03(TeamCalendar.java:459)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+</pre></div></td>
+<td>2</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -77,33 +123,33 @@ function toggleAllBoxes() {
 <tr>
 <td title='com.vsii.cstar.testcase.TeamCalendar.TC01()'><b>TC01</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening exists or not</td>
 <td></td>
-<td>2</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<td>3</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
 <tr>
-<td title='com.vsii.cstar.testcase.TeamCalendar.TC02()'><b>TC02</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Teams information on calendar</td>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC02()'><b>TC02</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Screening information on calendar</td>
 <td></td>
-<td>30</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
-<tr>
-<td title='com.vsii.cstar.testcase.TeamCalendar.TC03()'><b>TC03</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening site/event informations on Screening Maintainance</td>
-<td></td>
-<td>5</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<td>34</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
 <tr>
 <td title='com.vsii.cstar.testcase.TeamCalendar.TC04()'><b>TC04</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Site Info tab information</td>
 <td></td>
-<td>47</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<td>34</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC05()'><b>TC05</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Accounting tab information</td>
+<td></td>
+<td>2</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
 <tr>
 <td title='com.vsii.cstar.testcase.TeamCalendar.TC06()'><b>TC06</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify products/packages and their prices in Products & Pricing tab</td>
 <td></td>
-<td>19</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<td>15</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
 <tr>
 <td title='com.vsii.cstar.testcase.TeamCalendar.TC07()'><b>TC07</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify screening has appointment</td>
 <td></td>
-<td>63</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<td>1</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -113,77 +159,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vsii.cstar.testcase.TeamCalendar.TC05()'><b>TC05</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify Accounting tab information</td>
-<td><div><pre>org.testng.SkipException: This screening don&apos;t have any check request
-	at com.vsii.cstar.testcase.TeamCalendar.TC05(TeamCalendar.java:735)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace538265811", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace538265811'><pre>org.testng.SkipException: This screening don&apos;t have any check request
-	at com.vsii.cstar.testcase.TeamCalendar.TC05(TeamCalendar.java:735)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-</pre></div></td>
-<td>30</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
-<tr>
-<td title='com.vsii.cstar.testcase.TeamCalendar.TC08()'><b>TC08</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Take appointments for screening</td>
-<td><div><pre>org.testng.TestNGException: 
-Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData
-... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1845114142", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1845114142'><pre>org.testng.TestNGException: 
-Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData
-	at org.testng.internal.Parameters.findDataProvider(Parameters.java:263)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:419)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-</pre></div></td>
-<td>0</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
-<tr>
-<td title='com.vsii.cstar.testcase.TeamCalendar.TC09()'><b>TC09</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify taken appointment</td>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC08()'><b>TC08</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Take appointments for screening<br>Parameters: D3BE1606-A082-4A14-BC94-00B4FE38C289, 500</td>
 <td><div><pre>org.testng.SkipException: Screening already occurred
-	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1205)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace308088552", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace308088552'><pre>org.testng.SkipException: Screening already occurred
-	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1205)
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace6211122", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace6211122'><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -205,12 +187,109 @@ Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,ja
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
 	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
 </pre></div></td>
 <td>0</td>
-<td>com.vsii.cstar.testcase.TeamCalendar@57ddf5ee</td></tr>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC08()'><b>TC08</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Take appointments for screening<br>Parameters: F26FD815-6AF4-4E18-B19F-009F7DC54991, 500</td>
+<td><div><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace21533948", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace21533948'><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+</pre></div></td>
+<td>0</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC08()'><b>TC08</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Take appointments for screening<br>Parameters: abcd, 500</td>
+<td><div><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace29651293", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace29651293'><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+</pre></div></td>
+<td>0</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
+<tr>
+<td title='com.vsii.cstar.testcase.TeamCalendar.TC09()'><b>TC09</b><br>Test class: com.vsii.cstar.testcase.TeamCalendar<br>Test method: Verify taken appointment in TC_08</td>
+<td><div><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1426)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace3370113", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace3370113'><pre>org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1426)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+</pre></div></td>
+<td>0</td>
+<td>com.vsii.cstar.testcase.TeamCalendar@1ff8b8f</td></tr>
 </table><p>
 </body>
 </html>

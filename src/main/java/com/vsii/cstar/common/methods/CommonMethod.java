@@ -416,5 +416,22 @@ public class CommonMethod {
 		  }
 		  return isCurrent;
 }
+	public static boolean isParticipantExist(String GUID) throws IOException, SQLException{
+		try{
+		String sql_Participant = "select * from pl_participants where participant_guid = '"+GUID+"'";
+		ResultSet rs_participant = DBConnection.connectSQLServer(sql_Participant);
+		if(rs_participant.next()){
+			return true;
+		}
+		else
+		{
+		return false;
+		}
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
 }
 

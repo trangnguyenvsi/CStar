@@ -37,7 +37,6 @@ public class Reports implements IReporter {
 			for (ISuiteResult r : result.values()) {
 				context = r.getTestContext();
 				categoryName = context.getName();
-
 				/* Excel Report*/
 				reportHandle.exportExcelReport(categoryName);
 				/* HTML Report*/

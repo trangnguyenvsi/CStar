@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\thanhvc\git\CStar\testng.xml</span>
+                    <span>[unset file name]</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods,  3 skipped,  6 passed</span>
+                    <span class="method-stats">11 methods, 1 failed,  4 skipped,  6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC03">TC03</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title skipped">Skipped methods</span>
@@ -101,12 +115,17 @@
                     <div class="method-list-content skipped suite-Suite">
                       <span>
                         <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC05">TC05</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC08(F26FD815-6AF4-4E18-B19F-009F7DC54991, 500)">TC08(F26FD815-6AF4-4E18-B19F-009F7DC54991, 500)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC08">TC08</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC08(abcd, 500)">TC08(abcd, 500)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC08(D3BE1606-A082-4A14-BC94-00B4FE38C289, 500)">TC08(D3BE1606-A082-4A14-BC94-00B4FE38C289, 500)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -135,12 +154,12 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC03">TC03</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC04">TC04</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC04">TC04</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.cstar.testcase.TeamCalendar" hash-for-method="TC05">TC05</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -165,6 +184,28 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.vsii.cstar.testcase.TeamCalendar</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC03">
+                  </a> <!-- TC03 -->
+                  <span class="method-name">TC03</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [4198534946] but found [4198534946x:1]
+	at com.vsii.cstar.testcase.TeamCalendar.TC03(TeamCalendar.java:459)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 26 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify screening site/event informations on Screening Maintainance)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
@@ -173,24 +214,43 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TC05">
-                  </a> <!-- TC05 -->
-                  <span class="method-name">TC05</span>
-                  <div class="stack-trace">org.testng.SkipException: This screening don&apos;t have any check request
-	at com.vsii.cstar.testcase.TeamCalendar.TC05(TeamCalendar.java:735)
-... Removed 24 stack frames
+                  <a name="TC08(F26FD815-6AF4-4E18-B19F-009F7DC54991, 500)">
+                  </a> <!-- TC08(F26FD815-6AF4-4E18-B19F-009F7DC54991, 500) -->
+                  <span class="method-name">TC08</span>
+                  <span class="parameters">(F26FD815-6AF4-4E18-B19F-009F7DC54991, 500)</span>
+                  <div class="stack-trace">org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Verify Accounting tab information)                  </em>
+(Take appointments for screening)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TC08">
-                  </a> <!-- TC08 -->
+                  <a name="TC08(abcd, 500)">
+                  </a> <!-- TC08(abcd, 500) -->
                   <span class="method-name">TC08</span>
-                  <div class="stack-trace">org.testng.TestNGException: 
-Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException,java.sql.SQLException,java.text.ParseException requires a @DataProvider named : listappointment in class com.vsii.cstar.testdata.TestData
+                  <span class="parameters">(abcd, 500)</span>
+                  <div class="stack-trace">org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Take appointments for screening)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC08(D3BE1606-A082-4A14-BC94-00B4FE38C289, 500)">
+                  </a> <!-- TC08(D3BE1606-A082-4A14-BC94-00B4FE38C289, 500) -->
+                  <span class="method-name">TC08</span>
+                  <span class="parameters">(D3BE1606-A082-4A14-BC94-00B4FE38C289, 500)</span>
+                  <div class="stack-trace">org.testng.SkipException: Screening already occurred
+	at com.vsii.cstar.testcase.TeamCalendar.TC08(TeamCalendar.java:1281)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
 ... Removed 21 stack frames
 </div> <!-- stack-trace -->
                   <em>
@@ -203,11 +263,12 @@ Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,ja
                   </a> <!-- TC09 -->
                   <span class="method-name">TC09</span>
                   <div class="stack-trace">org.testng.SkipException: Screening already occurred
-	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1205)
-... Removed 24 stack frames
+	at com.vsii.cstar.testcase.TeamCalendar.TC09(TeamCalendar.java:1426)
+	at com.vsii.cstar.app.Main.main(Main.java:32)
+... Removed 21 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Verify taken appointment)                  </em>
+(Verify taken appointment in TC_08)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -233,16 +294,7 @@ Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,ja
                   </a> <!-- TC02 -->
                   <span class="method-name">TC02</span>
                   <em>
-(Verify Teams information on calendar)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC03">
-                  </a> <!-- TC03 -->
-                  <span class="method-name">TC03</span>
-                  <em>
-(Verify screening site/event informations on Screening Maintainance)                  </em>
+(Verify Screening information on calendar)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -252,6 +304,15 @@ Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,ja
                   <span class="method-name">TC04</span>
                   <em>
 (Verify Site Info tab information)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC05">
+                  </a> <!-- TC05 -->
+                  <span class="method-name">TC05</span>
+                  <em>
+(Verify Accounting tab information)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -277,16 +338,12 @@ Method public void com.vsii.cstar.testcase.TeamCalendar.TC08(java.lang.String,ja
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\thanhvc\git\CStar\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.vsii.tsc.utility.Reports&quot;/&gt;
-  &lt;/listeners&gt;
+&lt;suite name=&quot;Suite&quot;&gt;
   &lt;test name=&quot;TestTeamCalendar&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.vsii.tsc.utility.TestBase&quot;/&gt;
@@ -330,48 +387,56 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC07')
+data.setCell(0, 1, 'TC04')
 data.setCell(0, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(0, 3, 63163);
+data.setCell(0, 3, 34809);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC04')
+data.setCell(1, 1, 'TC02')
 data.setCell(1, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(1, 3, 47295);
+data.setCell(1, 3, 34034);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TC05')
+data.setCell(2, 1, 'TC06')
 data.setCell(2, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(2, 3, 30716);
+data.setCell(2, 3, 15802);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'TC02')
+data.setCell(3, 1, 'TC01')
 data.setCell(3, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(3, 3, 30608);
+data.setCell(3, 3, 3414);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TC06')
+data.setCell(4, 1, 'TC05')
 data.setCell(4, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(4, 3, 19460);
+data.setCell(4, 3, 2841);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'TC03')
 data.setCell(5, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(5, 3, 5226);
+data.setCell(5, 3, 2300);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'TC01')
+data.setCell(6, 1, 'TC07')
 data.setCell(6, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(6, 3, 2840);
+data.setCell(6, 3, 1801);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'TC09')
 data.setCell(7, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(7, 3, 2);
+data.setCell(7, 3, 1);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'TC08')
 data.setCell(8, 2, 'com.vsii.cstar.testcase.TeamCalendar')
-data.setCell(8, 3, 0);
+data.setCell(8, 3, 1);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'TC08')
+data.setCell(9, 2, 'com.vsii.cstar.testcase.TeamCalendar')
+data.setCell(9, 3, 1);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'TC08')
+data.setCell(10, 2, 'com.vsii.cstar.testcase.TeamCalendar')
+data.setCell(10, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -407,82 +472,108 @@ return data;
               <div class="chronological-class-name">com.vsii.cstar.testcase.TeamCalendar</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">start</span>
-                <span class="method-start">14366 ms</span>
+                <span class="method-start">23766 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">TC01</span>
-                <span class="method-start">14428 ms</span>
+                <span class="method-start">24134 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=TC01 status=SUCCESS method=TeamCalendar.TC01()[pri:0, instance:com.vsii.cstar.testc...)</span>
-                <span class="method-start">17269 ms</span>
+                <span class="method-start">27548 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC02</span>
-                <span class="method-start">19653 ms</span>
+                <span class="method-start">30032 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=TC02 status=SUCCESS method=TeamCalendar.TC02()[pri:1, instance:com.vsii.cstar.testc...)</span>
-                <span class="method-start">50262 ms</span>
+                <span class="method-start">64066 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">TC03</span>
-                <span class="method-start">52637 ms</span>
+                <span class="method-start">66416 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=TC03 status=SUCCESS method=TeamCalendar.TC03()[pri:2, instance:com.vsii.cstar.testc...)</span>
-                <span class="method-start">57864 ms</span>
+                <span class="method-name">afterMethod([TestResult name=TC03 status=FAILURE method=TeamCalendar.TC03()[pri:2, instance:com.vsii.cstar.testc...)</span>
+                <span class="method-start">68716 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC04</span>
-                <span class="method-start">60242 ms</span>
+                <span class="method-start">71096 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=TC04 status=SUCCESS method=TeamCalendar.TC04()[pri:3, instance:com.vsii.cstar.testc...)</span>
-                <span class="method-start">107538 ms</span>
+                <span class="method-start">105905 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC05</span>
-                <span class="method-start">109949 ms</span>
+                <span class="method-start">108293 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=TC05 status=SKIP method=TeamCalendar.TC05()[pri:4, instance:com.vsii.cstar.testcase...)</span>
-                <span class="method-start">140666 ms</span>
+                <span class="method-name">afterMethod([TestResult name=TC05 status=SUCCESS method=TeamCalendar.TC05()[pri:4, instance:com.vsii.cstar.testc...)</span>
+                <span class="method-start">111134 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC06</span>
-                <span class="method-start">142990 ms</span>
+                <span class="method-start">113524 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=TC06 status=SUCCESS method=TeamCalendar.TC06()[pri:5, instance:com.vsii.cstar.testc...)</span>
-                <span class="method-start">162451 ms</span>
+                <span class="method-start">129326 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC07</span>
-                <span class="method-start">165064 ms</span>
+                <span class="method-start">131863 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=TC07 status=SUCCESS method=TeamCalendar.TC07()[pri:6, instance:com.vsii.cstar.testc...)</span>
-                <span class="method-start">228228 ms</span>
+                <span class="method-start">133664 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">TC08(D3BE1606-A082-4A14-BC94-00B4FE38C289, 500)</span>
+                <span class="method-start">137350 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=TC08 status=SKIP method=TeamCalendar.TC08(java.lang.String, java.lang.String)[pri:7...)</span>
+                <span class="method-start">137351 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">TC08(F26FD815-6AF4-4E18-B19F-009F7DC54991, 500)</span>
+                <span class="method-start">139832 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=TC08 status=SKIP method=TeamCalendar.TC08(java.lang.String, java.lang.String)[pri:7...)</span>
+                <span class="method-start">139833 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">TC08(abcd, 500)</span>
+                <span class="method-start">142196 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=TC08 status=SKIP method=TeamCalendar.TC08(java.lang.String, java.lang.String)[pri:7...)</span>
+                <span class="method-start">142197 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC09</span>
-                <span class="method-start">231089 ms</span>
+                <span class="method-start">144583 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=TC09 status=SKIP method=TeamCalendar.TC09()[pri:8, instance:com.vsii.cstar.testcase...)</span>
-                <span class="method-start">231092 ms</span>
+                <span class="method-start">144584 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">end</span>
-                <span class="method-start">233910 ms</span>
+                <span class="method-start">146952 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">234741 ms</span>
+                <span class="method-start">148544 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

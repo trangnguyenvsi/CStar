@@ -7,7 +7,7 @@ import com.vsii.tsc.utility.ExcelHandle;;
 public class TestData {
 	@DataProvider(name="takeappointment")
 	public static Object[][] takeappointment() {
-		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "TeamCalendar", "TC02");
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "TeamCalendar", "TC01");
 		return data;
 	}
 	
