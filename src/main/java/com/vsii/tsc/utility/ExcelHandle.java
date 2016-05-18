@@ -15,11 +15,13 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.relevantcodes.extentreports.model.Author;
 import com.vsii.tsc.model.TCImageResults;
 import com.vsii.tsc.model.TestCase;
 
@@ -111,13 +113,13 @@ public class ExcelHandle {
 		// Identify table
 		if (tagList.size() == 2) {
 			startRow = tagList.get(0).getRowIndex() + 1;
-			System.out.println(startRow);
+			// System.out.println(startRow);
 			startCol = tagList.get(0).getColumnIndex() + 1;
-			System.out.println(startCol);
+			// System.out.println(startCol);
 			endRow = tagList.get(1).getRowIndex() - 1;
-			System.out.println(endRow);
+			// System.out.println(endRow);
 			endCol = tagList.get(1).getColumnIndex() - 1;
-			System.out.println(endCol);
+			// System.out.println(endCol);
 		} else
 			System.out.println("Wrong table");
 
@@ -149,7 +151,7 @@ public class ExcelHandle {
 
 		// Col is Test Case ID's column
 		columnWanted = tcIDCol;
-		for (int r = 12; r < sheet.getLastRowNum(); r++) {
+		for (int r = 12; r <= sheet.getLastRowNum(); r++) {
 			Cell c = null;
 			Row row1 = sheet.getRow(r);
 			c = row1.getCell(columnWanted);
@@ -277,12 +279,16 @@ public class ExcelHandle {
 		int resultTestCol = Integer.parseInt(TestBase.p.getProperty("resultTestCol"));
 		int rowTC = 0;
 		int j = 0;
+
 		for (TestCase tc : tcTemple) {
-			System.out.println("tc size:" + tcTemple.size());
-			System.out.println("size:" + tc.getTcImageResults().size());
 			int i;
-			rowTC = rowNum;	
+			rowTC = rowNum;
 			for (i = 0; i < tc.getTcImageResults().size(); i++) {
+
+				// Create new row if row select dont exist
+				if (ExcelHandle.sheet.getRow(rowNum) == null) {
+					copyRow(workbook, sheet, (rowNum - 1), rowNum);
+				}
 
 				ExcelHandle.sheet.getRow(rowNum).getCell(resultIDCol).setCellValue(tc.getTcID());
 				ExcelHandle.sheet.getRow(rowNum).getCell(resultDesCol).setCellValue(tc.getTcDesc());
@@ -290,12 +296,13 @@ public class ExcelHandle {
 				ExcelHandle.sheet.getRow(rowNum).getCell(resultStepCol).setCellValue(tc.getTcStep());
 				ExcelHandle.sheet.getRow(rowNum).getCell(resultExptCol).setCellValue(tc.getTcExpt());
 
-				System.out.println("TC ID:" + tc.getTcID());
-				System.out.println("TC Des:" + tc.getTcDesc());
-				System.out.println("TC Pre:" + tc.getTcPrec());
-				System.out.println("TC Step:" + tc.getTcStep());
-				System.out.println("TC Expt:" + tc.getTcExpt());
-				System.out.println("TC Results:" + tc.getTcImageResults().get(i).getTcResult());
+				// System.out.println("TC ID:" + tc.getTcID());
+				// System.out.println("TC Des:" + tc.getTcDesc());
+				// System.out.println("TC Pre:" + tc.getTcPrec());
+				// System.out.println("TC Step:" + tc.getTcStep());
+				// System.out.println("TC Expt:" + tc.getTcExpt());
+				// System.out.println("TC Results:" +
+				// tc.getTcImageResults().get(i).getTcResult());
 
 				String result = tc.getTcImageResults().get(i).getTcResult().toString();
 				/* Get access to XSSFCellStyle */
@@ -308,41 +315,32 @@ public class ExcelHandle {
 				myStyle.setBorderBottom((short) 1);
 				myStyle.setBorderLeft((short) 1);
 				myStyle.setBorderRight((short) 1);
-				
-				/* Set cell style*/
+
+				/* Set cell style */
 				switch (result) {
-				
+
 				case "pass":
 					myStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
 					break;
 				case "fail":
 					myStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
 					break;
-				case "skip":
-					myStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					break;
 				default:
-					myStyle.setFillForegroundColor(IndexedColors.BLUE_GREY.getIndex());
+					myStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
 					break;
 				}
 				sheet.getRow(rowNum).getCell(resultTestCol).setCellStyle(myStyle);
-				if(result.toUpperCase().equals("SKIP"))
-				{
-				sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "PED");
-				}
-				else
-				{sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "ED");}
+				sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "ED");
+
 				rowNum++;
 			}
-			if (tc.getTcImageResults().size() > 1) 
-			{
+			if (tc.getTcImageResults().size() > 1) {
 				j = rowTC + i - 1;
-			
+
+			} else if (tc.getTcImageResults().size() == 1) {
+				j = rowTC;
 			}
-			else if (tc.getTcImageResults().size()==1)
-			{ 	j =rowTC;
-			}
-			
+
 			/* Merge cell */
 			CellRangeAddress mergeID = new CellRangeAddress(rowTC, j, resultIDCol, resultIDCol);
 			CellRangeAddress mergeDes = new CellRangeAddress(rowTC, j, resultDesCol, resultDesCol);
@@ -356,27 +354,97 @@ public class ExcelHandle {
 			sheet.addMergedRegion(mergeStep);
 			sheet.addMergedRegion(mergeExpt);
 		}
-		
-		
-		/*remove the old rows after write*/
-		for (int i = rowTC+1; i <= sheet.getLastRowNum(); i++) {
-		    XSSFRow row1 = sheet.getRow(i);
-		        sheet.removeRow(row1);   
+
+		/* remove the old rows after write */
+		for (int i = rowTC + 1; i <= sheet.getLastRowNum(); i++) {
+			XSSFRow row1 = sheet.getRow(i);
+			sheet.removeRow(row1);
 		}
 
 	}
 
-	/*
-	 * Create hashmap
+	/**
+	 * @author thanhvc
+	 * @return update new method: Copy row
 	 */
-	// public static HashMap<String, String> createHashMap(List<String>
-	// tcIDList, List<String> tcDescList) {
-	// testcaseList = new HashMap<String, String>();
-	// for (int i = 0; i < tcIDList.size(); i++) {
-	// testcaseList.put(tcIDList.get(i), tcDescList.get(i));
-	// System.out.println(tcIDList.get(i) + "|" + tcDescList.get(i));
-	// }
-	// return testcaseList;
-	//
-	// }
+	private static void copyRow(XSSFWorkbook workbook, XSSFSheet worksheet, int sourceRowNum, int destinationRowNum) {
+		// Get the source / new row
+		XSSFRow newRow = worksheet.getRow(destinationRowNum);
+		XSSFRow sourceRow = worksheet.getRow(sourceRowNum);
+
+		// If the row exist in destination, push down all rows by 1 else create
+		// a new row
+		if (newRow != null) {
+			worksheet.shiftRows(destinationRowNum, worksheet.getLastRowNum(), 1);
+		} else {
+			newRow = worksheet.createRow(destinationRowNum);
+		}
+
+		// Loop through source columns to add to new row
+		for (int i = 0; i < sourceRow.getLastCellNum(); i++) {
+			// Grab a copy of the old/new cell
+			XSSFCell oldCell = sourceRow.getCell(i);
+			XSSFCell newCell = newRow.createCell(i);
+
+			// If the old cell is null jump to next cell
+			if (oldCell == null) {
+				newCell = null;
+				continue;
+			}
+
+			// Copy style from old cell and apply to new cell
+			XSSFCellStyle newCellStyle = workbook.createCellStyle();
+			newCellStyle.cloneStyleFrom(oldCell.getCellStyle());
+			;
+			newCell.setCellStyle(newCellStyle);
+
+			// If there is a cell comment, copy
+			if (oldCell.getCellComment() != null) {
+				newCell.setCellComment(oldCell.getCellComment());
+			}
+
+			// If there is a cell hyperlink, copy
+			if (oldCell.getHyperlink() != null) {
+				newCell.setHyperlink(oldCell.getHyperlink());
+			}
+
+			// Set the cell data type
+			newCell.setCellType(oldCell.getCellType());
+
+			// Set the cell data value
+			switch (oldCell.getCellType()) {
+			case Cell.CELL_TYPE_BLANK:
+				newCell.setCellValue(oldCell.getStringCellValue());
+				break;
+			case Cell.CELL_TYPE_BOOLEAN:
+				newCell.setCellValue(oldCell.getBooleanCellValue());
+				break;
+			case Cell.CELL_TYPE_ERROR:
+				newCell.setCellErrorValue(oldCell.getErrorCellValue());
+				break;
+			case Cell.CELL_TYPE_FORMULA:
+				newCell.setCellFormula(oldCell.getCellFormula());
+				break;
+			case Cell.CELL_TYPE_NUMERIC:
+				newCell.setCellValue(oldCell.getNumericCellValue());
+				break;
+			case Cell.CELL_TYPE_STRING:
+				newCell.setCellValue(oldCell.getRichStringCellValue());
+				break;
+			}
+		}
+
+		// If there are are any merged regions in the source row, copy to new
+		// row
+		for (int i = 0; i < worksheet.getNumMergedRegions(); i++) {
+			CellRangeAddress cellRangeAddress = worksheet.getMergedRegion(i);
+			if (cellRangeAddress.getFirstRow() == sourceRow.getRowNum()) {
+				CellRangeAddress newCellRangeAddress = new CellRangeAddress(newRow.getRowNum(),
+						(newRow.getRowNum() + (cellRangeAddress.getLastRow() - cellRangeAddress.getFirstRow())),
+						cellRangeAddress.getFirstColumn(), cellRangeAddress.getLastColumn());
+				worksheet.addMergedRegion(newCellRangeAddress);
+			}
+		}
+	}
+
 }
