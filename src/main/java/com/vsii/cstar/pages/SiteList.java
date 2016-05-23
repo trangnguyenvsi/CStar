@@ -16,6 +16,20 @@ public class SiteList {
 	//Button Search
 	@FindBy(id="ctl00_plcMain_btnEnter")
 	private WebElement btn_Search;
+	
+	//Loading Image
+	@FindBy(id="ctl00_imgLoading")
+	private WebElement img_Loading;
+	
+	
+
+	public WebElement getImg_Loading() {
+		return img_Loading;
+	}
+
+	public void setImg_Loading(WebElement img_Loading) {
+		this.img_Loading = img_Loading;
+	}
 
 	public WebElement getTxt_Zip() {
 		return txt_Zip;

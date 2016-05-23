@@ -36,10 +36,24 @@ public class ScreeningInfo {
 	//Dropdown Schedule Code
 	@FindBy(id = "ctl00_body_ddlScheduleCode")
 	private WebElement dropdown_ScheduleCode;
+	
+	//Value HIPAA 
+	@FindBy(id="ctl00_body_lblHipaaFormVal")
+	private WebElement val_HIPAA;
 
 	//Button Save & Continue to Screening
 	@FindBy(id = "ctl00_body_btnSaveScreening")
 	private WebElement btn_SaveNContinueToScreening;
+
+	
+	
+	public WebElement getVal_HIPAA() {
+		return val_HIPAA;
+	}
+
+	public void setVal_HIPAA(WebElement val_HIPAA) {
+		this.val_HIPAA = val_HIPAA;
+	}
 
 	public WebElement getDropdown_Representative() {
 		return dropdown_Representative;
