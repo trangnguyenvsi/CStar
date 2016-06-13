@@ -108,6 +108,8 @@ public class CommonMethod {
 					+ "@RowsAffected=@p5 output " + "select @p4, @p5";
 		DBConnection.connectSQLServer(sqlCommand_03);				
 	}
+	
+	//Get month base on input date that has format is "yyyy-MM-dd hh:mm:ss"
 	public static String getMonthBaseOnInputDate(String date) throws ParseException{
 		  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		  //Convert string -> date
@@ -121,6 +123,21 @@ public class CommonMethod {
 		  //return month in a string text
 		  return new DateFormatSymbols().getMonths()[month];
 		 }
+	
+	//Get year base on input date that has format is "yyyy-MM-dd hh:mm:ss"
+		public static String getYearBaseOnInputDate(String date) throws ParseException{
+			  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			  //Convert string -> date
+			  Date date2 = dateFormat.parse(date);
+			  
+			  //Get month in int
+			  Calendar cal = Calendar.getInstance();
+			  cal.setTime(date2);
+			  String year = Integer.toString(cal.get(Calendar.YEAR));
+			  
+			  //return month in a string text
+			  return year;
+			 }
 	/*
 	 * This method takes radom package or product for participant
 	 */

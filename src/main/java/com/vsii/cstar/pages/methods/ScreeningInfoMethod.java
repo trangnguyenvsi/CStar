@@ -1,6 +1,8 @@
 package com.vsii.cstar.pages.methods;
 
 import java.util.ArrayList;
+
+import org.apache.poi.poifs.crypt.dsig.SignatureConfig.SignatureConfigurable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,31 +31,69 @@ public class ScreeningInfoMethod {
 		oSelect.selectByVisibleText(repName);
 	}
 
+	// Select marketing plan
 	public void selectMarketingPlanByText(String marketingPlan) {
 		Select oSelect = new Select(objScreeningInfo.getDropdown_MarketingPlan());
 		oSelect.selectByVisibleText(marketingPlan);
 	}
 
+	// Select ACO Type (if you choose marketing plan is ACO)
+	public void selectACOType(String acoType) {
+		Select ddlACOType = new Select(objScreeningInfo.getDdl_ACOType());
+		ddlACOType.selectByVisibleText(acoType);
+	}
+
+	// Select driver type
 	public void selectDriveTypeByText(String driveType) {
 		Select oSelect = new Select(objScreeningInfo.getDropdown_DriveType());
 		oSelect.selectByVisibleText(driveType);
 	}
 
+	// Clear Facility's Open time
+	public void clearFacilityOpenTime() {
+		objScreeningInfo.getTxt_SiteHoursOpenTime().clear();
+	}
+
+	// Input Facility's Open time
+	public void inputFacilityOpenTime(String siteOpenTime) {
+		objScreeningInfo.getTxt_SiteHoursOpenTime().sendKeys(siteOpenTime);
+	}
+
+	// Clear Facility's Close time
+	public void clearFacilityCloseTime() {
+		objScreeningInfo.getTxt_SiteHoursCloseTime().clear();
+	}
+
+	// Input Facility's Close time
+	public void inputFacilityCloseTime(String siteCloseTime) {
+		objScreeningInfo.getTxt_SiteHoursCloseTime().sendKeys(siteCloseTime);
+	}
+
+	// wait for loading icon to load
 	public void waitForElementToLoad() {
 		new WebDriverWait(driver, 30)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_body_imgProgress")));
 	}
 
+	// select Product set
 	public void selectProductSetByItName(String productSetName) {
 		Select oSelect = new Select(objScreeningInfo.getDropdown_ProductSet());
 		oSelect.selectByVisibleText(productSetName);
 	}
 
+	// select price level
 	public void selectPriceLevelByItName(String priceLevelName) {
 		Select oSelect = new Select(objScreeningInfo.getDropdown_PriceLevel());
 		oSelect.selectByVisibleText(priceLevelName);
 	}
 
+	// Select schedule code
+	public void selectScheduleCode(String scheduleCode) {
+		Select ddlScheduleCode = new Select(objScreeningInfo.getDropdown_ScheduleCode());
+		ddlScheduleCode.selectByVisibleText(scheduleCode);
+	}
+
+	// Click buton Save & continue to screening
 	public void clickBtnSaveContinueScreening() {
 		objScreeningInfo.getBtn_SaveNContinueToScreening().click();
 	}
@@ -152,5 +192,60 @@ public class ScreeningInfoMethod {
 
 	public String getHIPAAValue() {
 		return objScreeningInfo.getVal_HIPAA().getText();
+	}
+
+	// Update screening information
+	public void updateScreeningInfo(String repName, String marketingPlan, String acoType, String driveType,
+			String siteOpenTime, String siteCloseTime, String productSetName, String priceLevelName,
+			String scheduleCode) {
+		// select representative
+		this.selectRepresentativeByText(repName);
+
+		// select marketing plan
+		this.selectMarketingPlanByText(marketingPlan);
+		this.waitForElementToLoad();
+
+		// Select ACO Type if marketing plan is ACO
+		if (marketingPlan.equals("ACO")) {
+			this.selectACOType(acoType);
+		} else {
+			System.out.println("Cannot select ACO Type due to Marketing Plan is not ACO");
+		}
+
+		// Select driver type
+		this.selectDriveTypeByText(driveType);
+
+		// Input Site's open time
+		if (siteOpenTime.equals("default")) {
+			// Leave textbox value is default
+		} else {
+			this.clearFacilityOpenTime();
+			this.inputFacilityOpenTime(siteOpenTime);
+		}
+
+		// Input site's close time
+		if (siteCloseTime.equals("default")) {
+			// Leave textbox value is default
+		} else {
+			this.clearFacilityCloseTime();
+			this.inputFacilityCloseTime(siteCloseTime);
+		}
+
+		// Select product set
+		this.selectProductSetByItName(productSetName);
+
+		// Select price level
+		this.selectPriceLevelByItName(priceLevelName);
+
+		// Select schedule code
+		if (scheduleCode.equals("default")) {
+			// Leave dropdown value is default
+		} else {
+			this.selectScheduleCode(scheduleCode);
+		}
+
+		// Click Save & Continue to Screening
+		this.clickBtnSaveContinueScreening();
+		this.waitForElementToLoad();
 	}
 }

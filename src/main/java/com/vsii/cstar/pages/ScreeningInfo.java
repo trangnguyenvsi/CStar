@@ -12,11 +12,23 @@ public class ScreeningInfo {
 	//Dropdown Marketing Plan
 	@FindBy(id = "ctl00_body_ddlMarketingPlan")
 	private WebElement dropdown_MarketingPlan;
+	
+	//Dropdown ACO Type
+	@FindBy(id="ctl00_body_ctlACOType")
+	private WebElement ddl_ACOType;
 
 	//Dropdown Drive Type
 	@FindBy(id = "ctl00_body_ddlDriveType")
 	private WebElement dropdown_DriveType;
 
+	//Site hours open time
+	@FindBy(id="ctl00_body_timePickerFrom_radTimePicker_dateInput")
+	private WebElement txt_SiteHoursOpenTime;
+	
+	//Site hours close time
+	@FindBy(id="ctl00_body_timePickerTo_radTimePicker_dateInput")
+	private WebElement txt_SiteHoursCloseTime;
+	
 	//Textbox From of Site Hours label
 	@FindBy(id = "ctl00_body_timePickerFrom_radTimePicker_dateInput")
 	private WebElement txt_SiteStartTime;
@@ -45,10 +57,38 @@ public class ScreeningInfo {
 	@FindBy(id = "ctl00_body_btnSaveScreening")
 	private WebElement btn_SaveNContinueToScreening;
 
+	/**
+	 * Bean Shell
+	 */
+	
 	
 	
 	public WebElement getVal_HIPAA() {
 		return val_HIPAA;
+	}
+
+	public WebElement getTxt_SiteHoursOpenTime() {
+		return txt_SiteHoursOpenTime;
+	}
+
+	public void setTxt_SiteHoursOpenTime(WebElement txt_SiteHoursOpenTime) {
+		this.txt_SiteHoursOpenTime = txt_SiteHoursOpenTime;
+	}
+
+	public WebElement getTxt_SiteHoursCloseTime() {
+		return txt_SiteHoursCloseTime;
+	}
+
+	public void setTxt_SiteHoursCloseTime(WebElement txt_SiteHoursCloseTime) {
+		this.txt_SiteHoursCloseTime = txt_SiteHoursCloseTime;
+	}
+
+	public WebElement getDdl_ACOType() {
+		return ddl_ACOType;
+	}
+
+	public void setDdl_ACOType(WebElement ddl_ACOType) {
+		this.ddl_ACOType = ddl_ACOType;
 	}
 
 	public void setVal_HIPAA(WebElement val_HIPAA) {
