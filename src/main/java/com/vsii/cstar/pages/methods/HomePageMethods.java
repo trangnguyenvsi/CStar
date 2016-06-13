@@ -15,6 +15,22 @@ public class HomePageMethods {
 		PageFactory.initElements(driver, objHomePage);
 	}
 	
+	//Get login information
+	public String getLoginAccount(){
+		return objHomePage.getLabel_Account().getText();
+	}
+	
+	//Mousehover to menu Call center
+	public void mouseHoverCallCenter(){
+		Actions action=new Actions(driver);
+		action.moveToElement(objHomePage.getMenu_CallCenter()).perform();		
+	}
+	
+	//Select submenu Pariticipant Maintainance
+	public void selectSubMenuPariticipantMaintainance(){
+		objHomePage.getSubmenu_ParticipantMaintenance().click();;
+	}
+	
 	//Mousehover to menu Screening Config
 	public void mouseHoverScreeningConfig(){
 		Actions action=new Actions(driver);
