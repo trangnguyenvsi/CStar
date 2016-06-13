@@ -8,243 +8,877 @@ public class ScreeningMaintenance {
 	/**
 	 * Below Elements is in Address/Contact Info information block
 	 */
+	// Screening header
+	@FindBy(id = "ctl00_heading_lblHeading")
+	private WebElement lbl_Heading;
+
 	// Site Address Information
-	//Screening name
-	@FindBy(id="ctl00_body_lblSiteNmVal")
+	// Screening name
+	@FindBy(id = "ctl00_body_lblSiteNmVal")
 	private WebElement lbl_ScreeningName;
-	
-	//Screening status
-	@FindBy(id="ctl00_body_lblStatusVal")
+
+	// Screening status
+	@FindBy(id = "ctl00_body_lblStatusVal")
 	private WebElement lbl_ScreeningStatus;
-	
-	//Site address
+
+	// Site address
 	@FindBy(id = "ctl00_body_litPrimaryAddress_top")
 	private WebElement label_SiteAddress;
 
-	//site phone no
+	// site phone no
 	@FindBy(id = "ctl00_body_ctlSitePhone_lblPhoneNumber")
 	private WebElement label_SitePhoneNo;
 
-	//Site fax no
+	// Site fax no
 	@FindBy(id = "ctl00_body_ctlSiteFax_lblPhoneNumber")
 	private WebElement label_SiteFaxNo;
 
-	//Site contact - contact person
+	// Site contact - contact person
 	@FindBy(id = "ctl00_body_lblPrimaryContactNameVal")
 	private WebElement label_SiteContact;
 
-	//Site contact - phone no
+	// Contact type
+	@FindBy(id = "ctl00_body_lblPrimaryContactTypeVal")
+	private WebElement val_ContactType;
+
+	// Site contact - phone no
 	@FindBy(id = "ctl00_body_ctlPhonePrimaryContact_lblPhoneNumber")
 	private WebElement label_SiteContactPhoneNo;
 
-	//Site contact - email
+	// Contact phone type
+	@FindBy(id = "ctl00_body_ctlPhonePrimaryContact_lblPhoneType")
+	private WebElement val_ContactPhoneType;
+
+	// Site contact - email
 	@FindBy(id = "ctl00_body_lblPrimaryContactEmailVal")
 	private WebElement label_SiteContactEmail;
+
+	// Contact email type
+	@FindBy(id = "ctl00_body_lblPrimaryContactEmailTypeVal")
+	private WebElement val_ContactEmailType;
+
 	/**
 	 * Below Elements is in Event Information information block
 	 */
-	//Representative name
+	// Representative name
 	@FindBy(id = "ctl00_body_lblEventRepresentativeVal")
 	private WebElement label_Representative;
-	
-	//Representative's department
-	@FindBy(id="ctl00_body_lblDepartmentVal")
+
+	// Representative's department
+	@FindBy(id = "ctl00_body_lblDepartmentVal")
 	private WebElement label_Department;
 
-	//Drived type 
+	// Drived type
 	@FindBy(id = "ctl00_body_lblEventDriveTypeVal")
 	private WebElement label_DriveType;
 
-	//Drive Time
+	// Drive Time
 	@FindBy(id = "ctl00_body_lblEventDriveTimeVal")
 	private WebElement label_DriveTime;
 
-	//Price Level
+	// Price Level
 	@FindBy(id = "ctl00_body_lblEventPriveLevelVal")
 	private WebElement label_PriceLevel;
-	
-	//Facility start and close time
-	@FindBy(id="ctl00_body_lblFacilityTimeVal")
+
+	// Facility start and close time
+	@FindBy(id = "ctl00_body_lblFacilityTimeVal")
 	private WebElement label_FacilityTime;
 
-	//Label schedule time
-	@FindBy(id="ctl00_body_lblEventScheduleVal")
+	// Label schedule time
+	@FindBy(id = "ctl00_body_lblEventScheduleVal")
 	private WebElement lbl_ScheduleTime;
-	
-	//Label time zone
-	@FindBy(id="ctl00_body_lblEventScheduleTimeZone")
+
+	// Label time zone
+	@FindBy(id = "ctl00_body_lblEventScheduleTimeZone")
 	private WebElement lbl_TimeZone;
-	
-	//Mareting Plan
+
+	// Mareting Plan
 	@FindBy(id = "ctl00_body_lblMarketingInfoPlanVal")
 	private WebElement label_MarketingPlan;
-	
-	//Site type
-	@FindBy(id="ctl00_body_lblMarketingSiteTypeVal")
+
+	// Site type
+	@FindBy(id = "ctl00_body_lblMarketingSiteTypeVal")
 	private WebElement label_SiteType;
-	
-	//Marketing Zip Code
-	@FindBy(id="ctl00_body_lblMarketingPostalSectorVal")
+
+	// Marketing Zip Code
+	@FindBy(id = "ctl00_body_lblMarketingPostalSectorVal")
 	private WebElement label_MarketingZipCode;
 
 	/**
 	 * Below Elements is in Other Information block
 	 */
-	//Preliminary time
-	@FindBy(id="ctl00_body_lblPreliminaryVal")
+	// Preliminary time
+	@FindBy(id = "ctl00_body_lblPreliminaryVal")
 	private WebElement lbl_Premininary;
-	
-	//Scheduling time
-	@FindBy(id="ctl00_body_lblSchedulingVal")
+
+	// Scheduling time
+	@FindBy(id = "ctl00_body_lblSchedulingVal")
 	private WebElement lbl_Scheduling;
-	
-	//Expecting Upload time
-	@FindBy(id="ctl00_body_lblExpectingUploadVal")
+
+	// Expecting Upload time
+	@FindBy(id = "ctl00_body_lblExpectingUploadVal")
 	private WebElement lbl_ExpectingUpload;
-	
-	//Field Reported time
-	@FindBy(id="ctl00_body_lblResultsVal")
+
+	// Field Reported time
+	@FindBy(id = "ctl00_body_lblResultsVal")
 	private WebElement lbl_FieldReport;
-	
-	//Loading Result time
-	@FindBy(id="ctl00_body_lblLoadingResultsVal")
+
+	// Loading Result time
+	@FindBy(id = "ctl00_body_lblLoadingResultsVal")
 	private WebElement lbl_LoadingResult;
-	
-	//Complete time
-	@FindBy(id="ctl00_body_lblCompletedVal")
+
+	// Complete time
+	@FindBy(id = "ctl00_body_lblCompletedVal")
 	private WebElement lbl_Complete;
-	
-	//Changed time
-	@FindBy(id="ctl00_body_lblChangedVal")
+
+	// Changed time
+	@FindBy(id = "ctl00_body_lblChangedVal")
 	private WebElement lbl_Changed;
-	
-	//Change Reason
-	@FindBy(id="ctl00_body_lblChangeReasonVal")
-	private WebElement lbl_ChangeReason;	
-	
-	//Schedule Code
+
+	// Change Reason
+	@FindBy(id = "ctl00_body_lblChangeReasonVal")
+	private WebElement lbl_ChangeReason;
+
+	// Schedule Code
 	@FindBy(id = "ctl00_body_lblInfoScheduleVal")
 	private WebElement label_ScheduleCode;
 
-	//Hyper link Appointments
+	// Hyper link Appointments
 	@FindBy(id = "ctl00_body_lnkScreeningAppointment")
 	private WebElement link_Appointments;
 
 	/**
 	 * Elements in Products & Pricing Tab
 	 */
-	//Tab location
-	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlProductPricing")
+	// Tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlProductPricing")
 	private WebElement tab_ProductsPricing;
-	
-	//Dropdown ProductSet
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlProductPricing_ddlProductSet")
+
+	// Dropdown ProductSet
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlProductPricing_ddlProductSet")
 	private WebElement ddl_ProductSet;
+
+	// Dropdown Price Level
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlProductPricing_ddlPriceLevel")
+	private WebElement ddl_PriceLevel;
+
+	// Buton Exit - tab Product & Pricing
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlProductPricing_btnProductPricingExit")
+	private WebElement btn_Exit_PPtab;
 	
+	//Button Save & Continue
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlProductPricing_btnProductPricingSaveContinue")
+	private WebElement btn_SaveContinue_ProPrice;
+
 	/**
 	 * Site info tab
 	 */
-	//Tab location
-	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlSiteInfo")
+	// Tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlSiteInfo")
 	private WebElement tab_SiteInfo;
-	
-	//Texbox Note for UltraSound Team
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_txtUltrasoundNotes")
+
+	// Texbox Note for UltraSound Team
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_txtUltrasoundNotes")
 	private WebElement txt_NoteUltraSound;
-	
-	//Texbox Note for Call center
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_txtCallCenterNotes")
+
+	// Texbox Note for Call center
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_txtCallCenterNotes")
 	private WebElement txt_NoteCallCenter;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl02_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl02_chkActive")
 	private WebElement chk_01;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl03_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl03_chkActive")
 	private WebElement chk_02;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl04_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl04_chkActive")
 	private WebElement chk_03;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl05_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl05_chkActive")
 	private WebElement chk_04;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl06_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl06_chkActive")
 	private WebElement chk_05;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl07_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl07_chkActive")
 	private WebElement chk_06;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl08_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl08_chkActive")
 	private WebElement chk_07;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl09_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl09_chkActive")
 	private WebElement chk_08;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl10_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl10_chkActive")
 	private WebElement chk_09;
-	
-	//Checkbox Site Requirements 
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl11_chkActive")
+
+	// Checkbox Site Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_grdSiteInfo_ctl11_chkActive")
 	private WebElement chk_10;
-	
-	//Button Save & Continue
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlSiteInfo_btnSiteInfoSaveContinue")
+
+	// Button Save & Continue
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_btnSiteInfoSaveContinue")
 	private WebElement btn_SaveContinueSiteInfo;
-	
+
+	// Buton Edit Site
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_btnSiteInfoViewEdit")
+	private WebElement btn_EditSite;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_btnSiteInfoExit")
+	private WebElement btn_Exit_SiteInfo;
+
+	// Label Screening Requirements
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_lblScreeningReq")
+	private WebElement lbl_ScreeningRequirements;
+
+	// Label Notes for Ultrasound Team
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_lblUltrasoundNotes")
+	private WebElement lbl_Note4UltraSound;
+
+	// Label Notes for Call Center
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_lblCallCenterNotes")
+	private WebElement lbl_Note4CallCenter;
+
+	// Label Dimension
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlSiteInfo_lblDimensions")
+	private WebElement lbl_Dimensions;
+
 	/**
 	 * Accounting tab
 	 */
-	//Tab Accounting location
-	@FindBy(id="__tab_ctl00_body_tabScreeningInfo_tabPnlAccounting")
+	// Tab Accounting location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlAccounting")
 	private WebElement tab_Accounting;
-	
-	//Link Add a check request
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lnkAddCheck")
+
+	// Link Add a check request
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lnkAddCheck")
 	private WebElement lnk_AddCheckRequest;
-	
-	//Dropdown Purpose
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlCheckPurpose")
+
+	// Dropdown Purpose
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlCheckPurpose")
 	private WebElement chk_Purpose;
-	
-	//Dropdown Payable to
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_txtPayableTo")
+
+	// Dropdown Payable to
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_txtPayableTo")
 	private WebElement chk_PayTo;
-	
-	//Textbox Amount
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlAmount_radInputBox")
+
+	// Textbox Amount
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlAmount_radInputBox")
 	private WebElement txt_Amount;
-	
-	//Textbox VAT
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlVatAmount_radInputBox")
+
+	// Textbox VAT
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_ctlVatAmount_radInputBox")
 	private WebElement txt_VAT;
-	
-	//Textbox date
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_chkDateNeeded_dateInput")
+
+	// Textbox date
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_chkDateNeeded_dateInput")
 	private WebElement txt_DateNeeded;
 	
-	//Label payment fullfill
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalFulfilled")
-	private WebElement lbl_PaymentsFullfilled;
-	
-	//Label payments requested
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalRequested")
+	//Button Save Check Request
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_btnSave")
+	private WebElement btn_SaveCheckRequest;
+
+	// Value payment fullfill
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalFulfilled")
+	private WebElement val_PaymentsFullfilled;
+
+	// Value payments requested
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalRequested")
+	private WebElement val_PaymentsRequested;
+
+	// Value toltal
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalPayments")
+	private WebElement val_Total;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_btnAccountingExit")
+	private WebElement btn_Exit_Accounting;
+
+	// Label Payment fullfilled
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblFulfilledTxt")
+	private WebElement lbl_PaymentsFulFilled;
+
+	// Label Payments Requested
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblRequestedTxt")
 	private WebElement lbl_PaymentsRequested;
-	
-	//Label toltal
-	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalPayments")
+
+	// Label Total
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_lblTotalPaymentsTxt")
 	private WebElement lbl_Total;
 	
+	/**
+	 * Travel tab
+	 */
+	// Tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlTravel")
+	private WebElement tab_Travel;
+
+	//Label From start point to site
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlTravel_lblFromStartPointToSite")
+	private WebElement lbl_FromStartPointToSite;
+	
+	//Label From site to end point
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlTravel_lblFromSiteToEndPoint")
+	private WebElement lbl_FromSiteToEndPoint;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlTravel_btnTravelExit")
+	private WebElement btn_Exit_Travel;
+	
+	//Button Calculate Directions
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlTravel_btnTravelCalculateDirections")
+	private WebElement btn_CalculateDirections;
+	
+	//Button Run Preliminary LOD
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlTravel_btnRunPreliminaryLOD")
+	private WebElement btn_RunPreliminaryLOD;
+
+
+	/**
+	 * Advance Travel tab
+	 */
+	// Tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel")
+	private WebElement tab_AdvanceTravel;
+	
+	//Label Violations
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_lblAdvancedVioloations")
+	private WebElement lbl_Violations;
+	
+	//Textbox Facility Open Time
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_tpAdvTravelFrom_dateInput")
+	private WebElement txt_FacilityOpenTime;
+	
+	//Textbox Facility Close Time
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_tpAdvTravelTo_dateInput")
+	private WebElement txt_FacilityCloseTime;
+	
+	//Textbox Start Scan
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_tpAdvStartScan_radTimePicker_dateInput")
+	private WebElement txt_StartScanTime;
+	
+	//Textbox End Scan
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_tpAdvEndScan_radTimePicker_dateInput")
+	private WebElement txt_EndScanTime;
+	
+	//Button Override Start Scan Time
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvancedStartScanOverride")
+	private WebElement btn_OverrideStartScan;
+	
+	//Button Override End Scan Time
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvancedEndScanOverride")
+	private WebElement btn_OverrideEndScan;
+	
+	//Button Calculate Directions
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvancedCalculateDirections")
+	private WebElement btn_AdvTrv_CalculateDrirections;
+	
+	//Button Run Preliminary LOD
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvancedRunPreliminaryLOD")
+	private WebElement btn_AdvTrv_RunPreliminaryLOD;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvacedExit")
+	private WebElement btn_Exit_AdvanceTravel;
+	
+	//Button Save& Exit
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvancedSaveExit")
+	private WebElement btn_SaveExitAdvTrv;
+	
+	//Button Save
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlAdvanceTravel_btnAdvancedSaveContinue")
+	private WebElement btn_SaveAdvTrv;
+
+	/**
+	 * Marketing tab
+	 */
+	// tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlMarketing")
+	private WebElement tab_Marketing;
+	
+	//Dropdown Marketing plan
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlMarketing_ddlMarketingPlanTabs")
+	private WebElement ddl_MarketingPlan;
+	
+	//Dropdown ACO Type
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlMarketing_ctlACOType")
+	private WebElement ddl_ACOType;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlMarketing_btnMarketingExit")
+	private WebElement btn_Exit_Marketing;
+
+	/**
+	 * Note tab
+	 */
+	// tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlNotes")
+	private WebElement tab_Notes;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlNotes_btnNotesExit")
+	private WebElement btn_Exit_Notes;
+
+	/**
+	 * History tab
+	 * 
+	 */
+	// tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlHistory")
+	private WebElement tab_History;
+	
+	//Grid History
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlHistory_grdHistory")
+	private WebElement grid_History;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlHistory_btnHistoryExit")
+	private WebElement btn_Exit_History;
+
+	/**
+	 * Operation tab
+	 */
+	// tab location
+	@FindBy(id = "__tab_ctl00_body_tabScreeningInfo_tabPnlOperations")
+	private WebElement tab_Operations;
+	
+	//Dropdown status
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlOperations_ddlOpStatusList")
+	private WebElement ddl_Status;
+	
+	//Dropdown reasons
+	@FindBy(id="ctl00_body_tabScreeningInfo_tabPnlOperations_ddlOperationReasons")
+	private WebElement ddl_Reasons;
+
+	// Button Exit
+	@FindBy(id = "ctl00_body_tabScreeningInfo_tabPnlOperations_btnOperationExit")
+	private WebElement btn_Exit_Operations;
+
+	/**
+	 * Bean shell
+	 */
 	
 	
+
+	public WebElement getVal_ContactPhoneType() {
+		return val_ContactPhoneType;
+	}
+
+	public WebElement getBtn_SaveExitAdvTrv() {
+		return btn_SaveExitAdvTrv;
+	}
+
+	public void setBtn_SaveExitAdvTrv(WebElement btn_SaveExitAdvTrv) {
+		this.btn_SaveExitAdvTrv = btn_SaveExitAdvTrv;
+	}
+
+	public WebElement getBtn_SaveAdvTrv() {
+		return btn_SaveAdvTrv;
+	}
+
+	public void setBtn_SaveAdvTrv(WebElement btn_SaveAdvTrv) {
+		this.btn_SaveAdvTrv = btn_SaveAdvTrv;
+	}
+
+	public WebElement getTxt_FacilityOpenTime() {
+		return txt_FacilityOpenTime;
+	}
+
+	public void setTxt_FacilityOpenTime(WebElement txt_FacilityOpenTime) {
+		this.txt_FacilityOpenTime = txt_FacilityOpenTime;
+	}
+
+	public WebElement getTxt_FacilityCloseTime() {
+		return txt_FacilityCloseTime;
+	}
+
+	public void setTxt_FacilityCloseTime(WebElement txt_FacilityCloseTime) {
+		this.txt_FacilityCloseTime = txt_FacilityCloseTime;
+	}
+
+	public WebElement getTxt_StartScanTime() {
+		return txt_StartScanTime;
+	}
+
+	public void setTxt_StartScanTime(WebElement txt_StartScanTime) {
+		this.txt_StartScanTime = txt_StartScanTime;
+	}
+
+	public WebElement getTxt_EndScanTime() {
+		return txt_EndScanTime;
+	}
+
+	public void setTxt_EndScanTime(WebElement txt_EndScanTime) {
+		this.txt_EndScanTime = txt_EndScanTime;
+	}
+
+	public WebElement getBtn_OverrideStartScan() {
+		return btn_OverrideStartScan;
+	}
+
+	public void setBtn_OverrideStartScan(WebElement btn_OverrideStartScan) {
+		this.btn_OverrideStartScan = btn_OverrideStartScan;
+	}
+
+	public WebElement getBtn_OverrideEndScan() {
+		return btn_OverrideEndScan;
+	}
+
+	public void setBtn_OverrideEndScan(WebElement btn_OverrideEndScan) {
+		this.btn_OverrideEndScan = btn_OverrideEndScan;
+	}
+
+
+	public WebElement getBtn_SaveContinue_ProPrice() {
+		return btn_SaveContinue_ProPrice;
+	}
+
+	public void setBtn_SaveContinue_ProPrice(WebElement btn_SaveContinue_ProPrice) {
+		this.btn_SaveContinue_ProPrice = btn_SaveContinue_ProPrice;
+	}
+
+	public WebElement getBtn_SaveCheckRequest() {
+		return btn_SaveCheckRequest;
+	}
+
+	public void setBtn_SaveCheckRequest(WebElement btn_SaveCheckRequest) {
+		this.btn_SaveCheckRequest = btn_SaveCheckRequest;
+	}
+
+	public WebElement getDdl_Status() {
+		return ddl_Status;
+	}
+
+	public void setDdl_Status(WebElement ddl_Status) {
+		this.ddl_Status = ddl_Status;
+	}
+
+	public WebElement getDdl_Reasons() {
+		return ddl_Reasons;
+	}
+
+	public void setDdl_Reasons(WebElement ddl_Reasons) {
+		this.ddl_Reasons = ddl_Reasons;
+	}
+
+	public WebElement getGrid_History() {
+		return grid_History;
+	}
+
+	public void setGrid_History(WebElement grid_History) {
+		this.grid_History = grid_History;
+	}
+
+	public WebElement getDdl_MarketingPlan() {
+		return ddl_MarketingPlan;
+	}
+
+	public void setDdl_MarketingPlan(WebElement ddl_MarketingPlan) {
+		this.ddl_MarketingPlan = ddl_MarketingPlan;
+	}
+
+	public WebElement getDdl_ACOType() {
+		return ddl_ACOType;
+	}
+
+	public void setDdl_ACOType(WebElement ddl_ACOType) {
+		this.ddl_ACOType = ddl_ACOType;
+	}
+
+	public WebElement getLbl_Violations() {
+		return lbl_Violations;
+	}
+
+	public void setLbl_Violations(WebElement lbl_Violations) {
+		this.lbl_Violations = lbl_Violations;
+	}
+
+	public WebElement getBtn_AdvTrv_CalculateDrirections() {
+		return btn_AdvTrv_CalculateDrirections;
+	}
+
+	public void setBtn_AdvTrv_CalculateDrirections(WebElement btn_AdvTrv_CalculateDrirections) {
+		this.btn_AdvTrv_CalculateDrirections = btn_AdvTrv_CalculateDrirections;
+	}
+
+	public WebElement getBtn_AdvTrv_RunPreliminaryLOD() {
+		return btn_AdvTrv_RunPreliminaryLOD;
+	}
+
+	public void setBtn_AdvTrv_RunPreliminaryLOD(WebElement btn_AdvTrv_RunPreliminaryLOD) {
+		this.btn_AdvTrv_RunPreliminaryLOD = btn_AdvTrv_RunPreliminaryLOD;
+	}
+
+	public WebElement getBtn_CalculateDirections() {
+		return btn_CalculateDirections;
+	}
+
+	public void setBtn_CalculateDirections(WebElement btn_CalculateDirections) {
+		this.btn_CalculateDirections = btn_CalculateDirections;
+	}
+
+	public WebElement getBtn_RunPreliminaryLOD() {
+		return btn_RunPreliminaryLOD;
+	}
+
+	public void setBtn_RunPreliminaryLOD(WebElement btn_RunPreliminaryLOD) {
+		this.btn_RunPreliminaryLOD = btn_RunPreliminaryLOD;
+	}
+
+	public WebElement getLbl_FromStartPointToSite() {
+		return lbl_FromStartPointToSite;
+	}
+
+	public void setLbl_FromStartPointToSite(WebElement lbl_FromStartPointToSite) {
+		this.lbl_FromStartPointToSite = lbl_FromStartPointToSite;
+	}
+
+	public WebElement getLbl_FromSiteToEndPoint() {
+		return lbl_FromSiteToEndPoint;
+	}
+
+	public void setLbl_FromSiteToEndPoint(WebElement lbl_FromSiteToEndPoint) {
+		this.lbl_FromSiteToEndPoint = lbl_FromSiteToEndPoint;
+	}
+
+	public WebElement getDdl_PriceLevel() {
+		return ddl_PriceLevel;
+	}
+
+	public void setDdl_PriceLevel(WebElement ddl_PriceLevel) {
+		this.ddl_PriceLevel = ddl_PriceLevel;
+	}
+
+	public WebElement getVal_PaymentsFullfilled() {
+		return val_PaymentsFullfilled;
+	}
+
+	public void setVal_PaymentsFullfilled(WebElement val_PaymentsFullfilled) {
+		this.val_PaymentsFullfilled = val_PaymentsFullfilled;
+	}
+
+	public WebElement getVal_PaymentsRequested() {
+		return val_PaymentsRequested;
+	}
+
+	public void setVal_PaymentsRequested(WebElement val_PaymentsRequested) {
+		this.val_PaymentsRequested = val_PaymentsRequested;
+	}
+
+	public WebElement getVal_Total() {
+		return val_Total;
+	}
+
+	public void setVal_Total(WebElement val_Total) {
+		this.val_Total = val_Total;
+	}
+
+	public WebElement getLbl_PaymentsFulFilled() {
+		return lbl_PaymentsFulFilled;
+	}
+
+	public void setLbl_PaymentsFulFilled(WebElement lbl_PaymentsFulFilled) {
+		this.lbl_PaymentsFulFilled = lbl_PaymentsFulFilled;
+	}
+
+	public WebElement getLbl_ScreeningRequirements() {
+		return lbl_ScreeningRequirements;
+	}
+
+	public void setLbl_ScreeningRequirements(WebElement lbl_ScreeningRequirements) {
+		this.lbl_ScreeningRequirements = lbl_ScreeningRequirements;
+	}
+
+	public WebElement getLbl_Note4UltraSound() {
+		return lbl_Note4UltraSound;
+	}
+
+	public void setLbl_Note4UltraSound(WebElement lbl_Note4UltraSound) {
+		this.lbl_Note4UltraSound = lbl_Note4UltraSound;
+	}
+
+	public WebElement getLbl_Note4CallCenter() {
+		return lbl_Note4CallCenter;
+	}
+
+	public void setLbl_Note4CallCenter(WebElement lbl_Note4CallCenter) {
+		this.lbl_Note4CallCenter = lbl_Note4CallCenter;
+	}
+
+	public WebElement getLbl_Dimensions() {
+		return lbl_Dimensions;
+	}
+
+	public void setLbl_Dimensions(WebElement lbl_Dimensions) {
+		this.lbl_Dimensions = lbl_Dimensions;
+	}
+
+	public WebElement getBtn_Exit_Accounting() {
+		return btn_Exit_Accounting;
+	}
+
+	public void setBtn_Exit_Accounting(WebElement btn_Exit_Accounting) {
+		this.btn_Exit_Accounting = btn_Exit_Accounting;
+	}
+
+	public WebElement getBtn_Exit_SiteInfo() {
+		return btn_Exit_SiteInfo;
+	}
+
+	public void setBtn_Exit_SiteInfo(WebElement btn_Exit_SiteInfo) {
+		this.btn_Exit_SiteInfo = btn_Exit_SiteInfo;
+	}
+
+	public WebElement getTab_Travel() {
+		return tab_Travel;
+	}
+
+	public void setTab_Travel(WebElement tab_Travel) {
+		this.tab_Travel = tab_Travel;
+	}
+
+	public WebElement getBtn_Exit_Travel() {
+		return btn_Exit_Travel;
+	}
+
+	public void setBtn_Exit_Travel(WebElement btn_Exit_Travel) {
+		this.btn_Exit_Travel = btn_Exit_Travel;
+	}
+
+	public WebElement getTab_AdvanceTravel() {
+		return tab_AdvanceTravel;
+	}
+
+	public void setTab_AdvanceTravel(WebElement tab_AdvanceTravel) {
+		this.tab_AdvanceTravel = tab_AdvanceTravel;
+	}
+
+	public WebElement getBtn_Exit_AdvanceTravel() {
+		return btn_Exit_AdvanceTravel;
+	}
+
+	public void setBtn_Exit_AdvanceTravel(WebElement btn_Exit_AdvanceTravel) {
+		this.btn_Exit_AdvanceTravel = btn_Exit_AdvanceTravel;
+	}
+
+	public WebElement getTab_Marketing() {
+		return tab_Marketing;
+	}
+
+	public void setTab_Marketing(WebElement tab_Marketing) {
+		this.tab_Marketing = tab_Marketing;
+	}
+
+	public WebElement getBtn_Exit_Marketing() {
+		return btn_Exit_Marketing;
+	}
+
+	public void setBtn_Exit_Marketing(WebElement btn_Exit_Marketing) {
+		this.btn_Exit_Marketing = btn_Exit_Marketing;
+	}
+
+	public WebElement getTab_Notes() {
+		return tab_Notes;
+	}
+
+	public void setTab_Notes(WebElement tab_Notes) {
+		this.tab_Notes = tab_Notes;
+	}
+
+	public WebElement getBtn_Exit_Notes() {
+		return btn_Exit_Notes;
+	}
+
+	public void setBtn_Exit_Notes(WebElement btn_Exit_Notes) {
+		this.btn_Exit_Notes = btn_Exit_Notes;
+	}
+
+	public WebElement getTab_History() {
+		return tab_History;
+	}
+
+	public void setTab_History(WebElement tab_History) {
+		this.tab_History = tab_History;
+	}
+
+	public WebElement getBtn_Exit_History() {
+		return btn_Exit_History;
+	}
+
+	public void setBtn_Exit_History(WebElement btn_Exit_History) {
+		this.btn_Exit_History = btn_Exit_History;
+	}
+
+	public WebElement getTab_Operations() {
+		return tab_Operations;
+	}
+
+	public void setTab_Operations(WebElement tab_Operations) {
+		this.tab_Operations = tab_Operations;
+	}
+
+	public WebElement getBtn_Exit_Operations() {
+		return btn_Exit_Operations;
+	}
+
+	public void setBtn_Exit_Operations(WebElement btn_Exit_Operations) {
+		this.btn_Exit_Operations = btn_Exit_Operations;
+	}
+
+	public void setVal_ContactPhoneType(WebElement val_ContactPhoneType) {
+		this.val_ContactPhoneType = val_ContactPhoneType;
+	}
+
+	public WebElement getVal_ContactEmailType() {
+		return val_ContactEmailType;
+	}
+
+	public void setVal_ContactEmailType(WebElement val_ContactEmailType) {
+		this.val_ContactEmailType = val_ContactEmailType;
+	}
+
+	public WebElement getVal_ContactType() {
+		return val_ContactType;
+	}
+
+	public void setVal_ContactType(WebElement val_ContactType) {
+		this.val_ContactType = val_ContactType;
+	}
+
+	public WebElement getLbl_Heading() {
+		return lbl_Heading;
+	}
+
+	public void setLbl_Heading(WebElement lbl_Heading) {
+		this.lbl_Heading = lbl_Heading;
+	}
+
+	public WebElement getBtn_EditSite() {
+		return btn_EditSite;
+	}
+
+	public void setBtn_EditSite(WebElement btn_EditSite) {
+		this.btn_EditSite = btn_EditSite;
+	}
+
+	public WebElement getBtn_Exit_PPtab() {
+		return btn_Exit_PPtab;
+	}
+
+	public void setBtn_Exit_PPtab(WebElement btn_Exit_PPtab) {
+		this.btn_Exit_PPtab = btn_Exit_PPtab;
+	}
+
 	public WebElement getLabel_Department() {
 		return label_Department;
 	}
@@ -339,14 +973,6 @@ public class ScreeningMaintenance {
 
 	public void setLbl_ChangeReason(WebElement lbl_ChangeReason) {
 		this.lbl_ChangeReason = lbl_ChangeReason;
-	}
-
-	public WebElement getLbl_PaymentsFullfilled() {
-		return lbl_PaymentsFullfilled;
-	}
-
-	public void setLbl_PaymentsFullfilled(WebElement lbl_PaymentsFullfilled) {
-		this.lbl_PaymentsFullfilled = lbl_PaymentsFullfilled;
 	}
 
 	public WebElement getLbl_PaymentsRequested() {

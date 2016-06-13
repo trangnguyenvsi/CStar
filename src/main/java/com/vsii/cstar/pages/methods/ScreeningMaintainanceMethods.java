@@ -16,9 +16,18 @@ public class ScreeningMaintainanceMethods {
 	WebDriver driver;
 	public ScreeningMaintenance objScreeningMaintainance = new ScreeningMaintenance();
 
+	public enum TAB {
+		SITE_INFO, ACCOUNTING, PRODUCTS_PRICING, TRAVEL, ADVANCED_TRAVEL, MARKETING, NOTES, HISTORY, OPERATION
+	}
+
 	public ScreeningMaintainanceMethods(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, objScreeningMaintainance);
+	}
+
+	// Get header of page
+	public String getPageHeader() {
+		return objScreeningMaintainance.getLbl_Heading().getText();
 	}
 
 	// get Screening name
@@ -46,14 +55,29 @@ public class ScreeningMaintainanceMethods {
 		return objScreeningMaintainance.getLabel_SiteContact().getText();
 	}
 
+	// Get site's contact type
+	public String getSiteContactType() {
+		return objScreeningMaintainance.getVal_ContactType().getText();
+	}
+
 	// Get site contact phone
 	public String getSiteContactPhone() {
 		return objScreeningMaintainance.getLabel_SiteContactPhoneNo().getText();
 	}
 
+	// Get site contact phone type
+	public String getSiteContactPhoneType() {
+		return objScreeningMaintainance.getVal_ContactPhoneType().getText().replaceAll("\\(", "").replaceAll("\\)", "");
+	}
+
 	// Get site contact email
 	public String getSiteContactEmail() {
 		return objScreeningMaintainance.getLabel_SiteContactEmail().getText();
+	}
+
+	// Get site contact email type
+	public String getSiteContactEmailType() {
+		return objScreeningMaintainance.getVal_ContactEmailType().getText();
 	}
 
 	// Get Screening representative
@@ -203,12 +227,12 @@ public class ScreeningMaintainanceMethods {
 
 	// Get payments fullfill value - Accounting tab
 	public String getPaymentsFullfilledValue() {
-		return objScreeningMaintainance.getLbl_PaymentsFullfilled().getText();
+		return objScreeningMaintainance.getVal_PaymentsFullfilled().getText();
 	}
 
 	// Get payments request value - Accounting tab
 	public String getPaymentsRequestedValue() {
-		return objScreeningMaintainance.getLbl_PaymentsRequested().getText();
+		return objScreeningMaintainance.getVal_PaymentsRequested().getText();
 	}
 
 	// Check if there is any check request or not - Accounting tab
@@ -232,6 +256,13 @@ public class ScreeningMaintainanceMethods {
 	public void selectDdlProductSet(String productSetname) {
 		Select selecto = new Select(objScreeningMaintainance.getDdl_ProductSet());
 		selecto.selectByVisibleText(productSetname);
+	}
+
+	// Get chosen product set
+	public String getChosenProductSet() {
+		Select selecto = new Select(objScreeningMaintainance.getDdl_ProductSet());
+		String chosenProductSet = selecto.getFirstSelectedOption().getText();
+		return chosenProductSet;
 	}
 
 	// Get name of all product/packet in product set
@@ -263,9 +294,54 @@ public class ScreeningMaintainanceMethods {
 		return chkStatus;
 	}
 
-	// Select 1st checkbox in tab Site Info
-	public void checkSiteRequirements() {
-		objScreeningMaintainance.getChk_01().click();
+	// Select checkbox in tab Site Info by check box's name
+	public void selectSiteRequirements(String checkboxName) {
+
+		// Declare checkbox location
+		String xpath_chk_ScreeningRequirements = "//td[following-sibling::td[contains(text(),\"" + checkboxName
+				+ "\")]]/input";
+
+		// Get checkbox status
+		String chkStatus = driver.findElement(By.xpath(xpath_chk_ScreeningRequirements)).getAttribute("checked");
+
+		// If checkbox is checked, then leave it alone, else check it
+		if (chkStatus == null) {
+			driver.findElement(By.xpath(xpath_chk_ScreeningRequirements)).click();
+		}
+	}
+
+	// De-Select checkbox in tab Site Info by check box's name
+	public void deselectSiteRequirements(String checkboxName) {
+		// Declare checkbox location
+		String xpath_chk_ScreeningRequirements = "//td[following-sibling::td[contains(text(),\"" + checkboxName
+				+ "\")]]/input";
+
+		// Get checkbox status
+		String chkStatus = driver.findElement(By.xpath(xpath_chk_ScreeningRequirements)).getAttribute("checked");
+
+		// If checkbox is checked, then leave it alone, else check it
+		if (chkStatus.toString() != null) {
+			driver.findElement(By.xpath(xpath_chk_ScreeningRequirements)).click();
+		}
+	}
+
+	// Get status of checkbox Screening requirements
+	public boolean isScreeningRequirementsChecked(String checkboxName) {
+		boolean isChecked = false;
+
+		// Declare checkbox location
+		String xpath_chk_ScreeningRequirements = "//td[following-sibling::td[contains(text(),\"" + checkboxName
+				+ "\")]]/input";
+
+		// Get checkbox status
+		String chkStatus = driver.findElement(By.xpath(xpath_chk_ScreeningRequirements)).getAttribute("checked");
+
+		// Get boolean value base on condition of checkbox
+		if (chkStatus.toString() != null) {
+			isChecked = true;
+		}
+
+		return isChecked;
 	}
 
 	// Get text from Note for UltraSound Team textbox
@@ -306,14 +382,50 @@ public class ScreeningMaintainanceMethods {
 
 	}
 
+	// Add new check request
+	public void addCheckRequest(String purpose, String payAbleTo, String amount, String VAT, String dateNeedeed) {
+		// Click link Add Check Request
+		objScreeningMaintainance.getLnk_AddCheckRequest().click();
+		this.waitForPageToLoad(30);
+
+		// Select purpose
+		new Select(objScreeningMaintainance.getChk_Purpose()).selectByVisibleText(purpose);
+		objScreeningMaintainance.getChk_PayTo().sendKeys(payAbleTo);
+		objScreeningMaintainance.getTxt_Amount().sendKeys(amount);
+		objScreeningMaintainance.getTxt_VAT().sendKeys(VAT);
+		objScreeningMaintainance.getTxt_DateNeeded().sendKeys(dateNeedeed);
+
+		// Save
+		objScreeningMaintainance.getBtn_SaveCheckRequest().click();
+		this.waitForSaveCheckRequest();
+	}
+
+	//Click link Edit check request base on its purpose
+	public void clickLinkEditCheckRequestByItsPurpose(String purpose) {
+		String xpath_EditButton = "//span[contains(text(),'" + purpose + "')]/../../td/a[contains(text(),'Edit')]";
+		driver.findElement(By.xpath(xpath_EditButton)).click();
+		this.waitForPageToLoad(30);
+	}
+	
+	//Get check request status by its purpose
+	public String getCheckRequestStatus(String purpose){
+		String xpath_Status="//td[preceding-sibling::td/span[contains(text(),'"+purpose+"')]][8]/a";
+		return driver.findElement(By.xpath(xpath_Status)).getText();
+	}
+
 	// Wait for loading icon disappeared
 	public void waitForPageToLoad(int timeInSecond) {
 		new WebDriverWait(driver, timeInSecond)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_body_imgLoaderScreening")));
 	}
 
+	// Wait for save check request
+	public void waitForSaveCheckRequest() {
+		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(
+				By.id("ctl00_body_tabScreeningInfo_tabPnlAccounting_ctlCheckRequest_imgLoaderScreening")));
+	}
+
 	/**
-	 * TODO: new method to get product only
 	 * 
 	 * @return
 	 */
@@ -441,6 +553,45 @@ public class ScreeningMaintainanceMethods {
 		}
 
 		return itemPrice;
+	}
+
+	public void clickButonExit(TAB tabname) {
+		switch (tabname) {
+
+		case SITE_INFO:
+			objScreeningMaintainance.getBtn_Exit_SiteInfo().click();
+			break;
+		case ACCOUNTING:
+			objScreeningMaintainance.getBtn_Exit_Accounting().click();
+			break;
+		case PRODUCTS_PRICING:
+			objScreeningMaintainance.getBtn_Exit_PPtab().click();
+			break;
+		case TRAVEL:
+			objScreeningMaintainance.getBtn_Exit_Travel().click();
+			break;
+		case ADVANCED_TRAVEL:
+			objScreeningMaintainance.getBtn_Exit_AdvanceTravel().click();
+			break;
+		case MARKETING:
+			objScreeningMaintainance.getBtn_Exit_Marketing().click();
+			break;
+		case NOTES:
+			objScreeningMaintainance.getBtn_Exit_Notes().click();
+			break;
+		case HISTORY:
+			objScreeningMaintainance.getBtn_Exit_History().click();
+			break;
+		case OPERATION:
+			objScreeningMaintainance.getBtn_Exit_Operations().click();
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void clickEditSite() {
+		objScreeningMaintainance.getBtn_EditSite().click();
 	}
 
 }
