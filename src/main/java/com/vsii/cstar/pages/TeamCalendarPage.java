@@ -4,62 +4,126 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TeamCalendarPage {
- //Define Elements
-	//Dropdown Month
-	@FindBy(id="ctl00_plcMain_ddlMonth")
+	// Define Elements
+
+	// Header of page
+	@FindBy(id = "ctl00_heading_lblHeading")
+	private WebElement val_PageHeader;
+
+	// Header Month year information
+	@FindBy(xpath="//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td/table/tbody/tr/td[2]")
+	private WebElement lbl_MonthYearInfo;
+	
+	// Dropdown Month
+	@FindBy(id = "ctl00_plcMain_ddlMonth")
 	private WebElement dropdown_Month;
-	
-	//Dropdown year
-	@FindBy(id="ctl00_plcMain_ddlYear")
+
+	// Dropdown year
+	@FindBy(id = "ctl00_plcMain_ddlYear")
 	private WebElement dropdown_Year;
-	
-	
-	//Dropdown Team
-	@FindBy(id="ctl00_plcMain_ddlTeamList")
+
+	// Dropdown Team
+	@FindBy(id = "ctl00_plcMain_ddlTeamList")
 	private WebElement dropdown_Team;
-	
-	//Checkbox Showall
-	@FindBy(id="ctl00_plcMain_chkShowAll")
+
+	// Checkbox Showall
+	@FindBy(id = "ctl00_plcMain_chkShowAll")
 	private WebElement checkbox_Showall;
-	
-	//Radio button Calendar
-	@FindBy(id="ctl00_plcMain_radioBtnViewOption_0")
+
+	// Radio button Calendar
+	@FindBy(id = "ctl00_plcMain_radioBtnViewOption_0")
 	private WebElement radio_Calendar;
-	
-	//Radio button Grid
-	@FindBy(id="ctl00_plcMain_radioBtnViewOption_1")
+
+	// Radio button Grid
+	@FindBy(id = "ctl00_plcMain_radioBtnViewOption_1")
 	private WebElement radio_Grid;
-	
-	//Loading image
-	@FindBy(id="ctl00_imgLoading")
+
+	// Loading image
+	@FindBy(id = "ctl00_imgLoading")
 	private WebElement img_Loading;
-	
-	//Option: Add Screening
-	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl02_lnkBtnControlTypes")
+
+	// Option: Add Screening
+	@FindBy(id = "ctl00_plcMain_grdControlTypes_ctl02_lnkBtnControlTypes")
 	private WebElement option_AddScreening;
-	
-	//Option: Reserved
-	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl03_lnkBtnControlTypes")
+
+	// Option: Reserved
+	@FindBy(id = "ctl00_plcMain_grdControlTypes_ctl03_lnkBtnControlTypes")
 	private WebElement option_Reserved;
 	
-	//Option: View Screening
-	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl04_lnkBtnControlTypes")
+	//Dropdown Territory
+	@FindBy(id="ctl00_plcMain_ddlTerritory")
+	private WebElement ddl_Territory;
+	
+	//Button Save territory
+	@FindBy(id="ctl00_plcMain_btnSave")
+	private WebElement btn_SaveReservedDate;
+	
+	//Button Cancel reserved date
+	@FindBy(id="ctl00_plcMain_btnCancel")
+	private WebElement btn_CancelReservedDate;
+
+	// Option: View Screening
+	@FindBy(id = "ctl00_plcMain_grdControlTypes_ctl04_lnkBtnControlTypes")
 	private WebElement option_ViewScreening;
-	
-	//Option: Site Change
-	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl05_lnkBtnControlTypes")
+
+	// Option: Site Change
+	@FindBy(id = "ctl00_plcMain_grdControlTypes_ctl05_lnkBtnControlTypes")
 	private WebElement option_SiteChange;
-	
-	//Option: Travel
-	@FindBy(id="ctl00_plcMain_grdControlTypes_ctl06_lnkBtnControlTypes")
+
+	// Option: Travel
+	@FindBy(id = "ctl00_plcMain_grdControlTypes_ctl06_lnkBtnControlTypes")
 	private WebElement option_Travel;
 
-	//NOTE: Option Undo Reserved Date is not selected in this Screen
-	
+	// NOTE: Option Undo Reserved Date is not selected in this Screen
+
+	/**
+	 * Bean shell
+	 */
+
 	
 	
 	public WebElement getDropdown_Month() {
 		return dropdown_Month;
+	}
+
+	public WebElement getLbl_MonthYearInfo() {
+		return lbl_MonthYearInfo;
+	}
+
+	public void setLbl_MonthYearInfo(WebElement lbl_MonthYearInfo) {
+		this.lbl_MonthYearInfo = lbl_MonthYearInfo;
+	}
+
+	public WebElement getDdl_Territory() {
+		return ddl_Territory;
+	}
+
+	public void setDdl_Territory(WebElement ddl_Territory) {
+		this.ddl_Territory = ddl_Territory;
+	}
+
+	public WebElement getBtn_SaveReservedDate() {
+		return btn_SaveReservedDate;
+	}
+
+	public void setBtn_SaveReservedDate(WebElement btn_SaveReservedDate) {
+		this.btn_SaveReservedDate = btn_SaveReservedDate;
+	}
+
+	public WebElement getBtn_CancelReservedDate() {
+		return btn_CancelReservedDate;
+	}
+
+	public void setBtn_CancelReservedDate(WebElement btn_CancelReservedDate) {
+		this.btn_CancelReservedDate = btn_CancelReservedDate;
+	}
+
+	public WebElement getVal_PageHeader() {
+		return val_PageHeader;
+	}
+
+	public void setVal_PageHeader(WebElement val_PageHeader) {
+		this.val_PageHeader = val_PageHeader;
 	}
 
 	public WebElement getImg_Loading() {
@@ -145,8 +209,6 @@ public class TeamCalendarPage {
 	public void setOption_Travel(WebElement option_Travel) {
 		this.option_Travel = option_Travel;
 	}
-	
-	
 
 	public WebElement getDropdown_Year() {
 		return dropdown_Year;
@@ -154,6 +216,6 @@ public class TeamCalendarPage {
 
 	public void setDropdown_Year(WebElement dropdown_Year) {
 		this.dropdown_Year = dropdown_Year;
-	}	
+	}
 
 }
