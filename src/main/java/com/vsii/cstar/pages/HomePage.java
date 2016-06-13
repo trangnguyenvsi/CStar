@@ -9,6 +9,14 @@ public class HomePage {
 	@FindBy(id="ctl00_login")
 	private WebElement label_Account;
 	
+	//Menu Call center
+	@FindBy(linkText="Call Center")
+	private WebElement menu_CallCenter;
+	
+	//Submenu Participant Maintainance
+	@FindBy(xpath="//a[contains(text(),'Outbound Only - Participant Maintenance')]")
+	private WebElement submenu_ParticipantMaintenance;
+	
 	//Menu Screening Config
 	@FindBy(xpath="//a[contains(text(),'Screening Config')]")
 	private WebElement menu_Screeningcfg;
@@ -34,6 +42,22 @@ public class HomePage {
 	WebElement submenu_Package;
 	
 	
+
+	public WebElement getMenu_CallCenter() {
+		return menu_CallCenter;
+	}
+
+	public void setMenu_CallCenter(WebElement menu_CallCenter) {
+		this.menu_CallCenter = menu_CallCenter;
+	}
+
+	public WebElement getSubmenu_ParticipantMaintenance() {
+		return submenu_ParticipantMaintenance;
+	}
+
+	public void setSubmenu_ParticipantMaintenance(WebElement submenu_ParticipantMaintenance) {
+		this.submenu_ParticipantMaintenance = submenu_ParticipantMaintenance;
+	}
 
 	public WebElement getSubmenu_Package() {
 		return submenu_Package;
