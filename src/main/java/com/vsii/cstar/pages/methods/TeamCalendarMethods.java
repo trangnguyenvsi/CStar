@@ -30,13 +30,23 @@ public class TeamCalendarMethods {
 		PageFactory.initElements(driver, objTeamCalendar);
 	}
 
+	//Get header of page
+	public String getPageHeader(){
+		return objTeamCalendar.getVal_PageHeader().getText();
+	}
+	
+	//Get current month - year info
+	public String getSelectedMonthYear(){
+		return objTeamCalendar.getLbl_MonthYearInfo().getText();
+	}
+	
 	// Select dropdown Month and choose a specific month
 	public void selectMonth(String month) {
 		Select selectobj = new Select(objTeamCalendar.getDropdown_Month());
 		selectobj.selectByVisibleText(month);
 	}
 
-	// Select dropdown Year and choose a specific year
+	// Select dropdown Year and choose a specific year by visible text
 	public void selectYear(String year) {
 		Select selectobj = new Select(objTeamCalendar.getDropdown_Year());
 		selectobj.selectByVisibleText(year);
@@ -88,12 +98,18 @@ public class TeamCalendarMethods {
 	public void selectOptionReservedDate() {
 		objTeamCalendar.getOption_Reserved().click();
 	}
-
+	
+	
 	// Choose view type - Grid
 	public void selectGridView() {
 		objTeamCalendar.getRadio_Grid().click();
 	}
 
+	//Choose view type - Calendar
+	public void selectCalendarView() {
+		objTeamCalendar.getRadio_Calendar().click();
+	}
+	
 	// Show all team's calendar
 	public void selectShowAll() {
 		objTeamCalendar.getCheckbox_Showall().click();
@@ -104,11 +120,7 @@ public class TeamCalendarMethods {
 		objTeamCalendar.getOption_AddScreening().click();
 	}
 
-	// Click to Reserved Date
-	public void reservedDate() {
-		objTeamCalendar.getOption_Reserved().click();
-	}
-
+	
 	// Click to View Screening
 	public void viewScreeningInNewWindow() {
 		objTeamCalendar.getOption_ViewScreening().click();
@@ -154,6 +166,12 @@ public class TeamCalendarMethods {
 		driver.findElement(By.xpath(xpath_ScreeningHyperLinkLocator)).click();
 	}
 
+	//Get border color of a date
+	public String getColorBorderOfADate(String currDate){
+		String xpath_Date = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"+ currDate + "')]";
+		return driver.findElement(By.xpath(xpath_Date)).getCssValue("border-left-color");
+	}
+	
 	// Get all team list in dropdown list Team
 	public List<WebElement> getTeamList() {
 		Select select = new Select(objTeamCalendar.getDropdown_Team());
@@ -278,5 +296,45 @@ public class TeamCalendarMethods {
 		return driver.findElement(By.xpath(xpath_screeningDriveTypelocator)).getText().split("\n")[5]
 				.replaceAll("\\d+.*", "").trim();
 	}
-
+	
+	//Get full screening infomation
+	public String getFullScreeningInfo(String date) throws ParseException {
+		String dateNew = this.convertDate(date);
+		String xpath_screeningDriveTypelocator = "//table[@id='ctl00_plcMain_calSchedule']/tbody/tr/td[contains(@oncontextmenu,'"
+				+ dateNew + "')]/span";
+		return driver.findElement(By.xpath(xpath_screeningDriveTypelocator)).getText();
+	}
+	
+	//Select dropdownlist Territory
+	public Select selectDropdownTerritory(){
+		Select ddlTerritory = new Select(objTeamCalendar.getDdl_Territory());
+		return ddlTerritory;
+	}
+	
+	//Click to button save for Reserved Date function
+	public void saveReservedDate(){
+		objTeamCalendar.getBtn_SaveReservedDate().click();
+	}
+	
+	public void cancelReservedDate(){
+		objTeamCalendar.getBtn_CancelReservedDate().click();
+	}
+	
+	//Reserved Date
+	public void reservedDate(String date, String territory) throws ParseException{
+		this.rightClickToDateCell(date);
+		this.selectOptionReservedDate();
+		this.waitForLoadingIconToLoad();
+		this.selectDropdownTerritory().selectByVisibleText(territory);
+		this.saveReservedDate();
+		this.waitForLoadingIconToLoad();
+	}
+	
+	//Get reserved date infomarion
+	public String getReservedInfo(String date) throws ParseException{
+		String dateNew = this.convertDate(date);
+		String xpathReservedInfo = "//table/tbody/tr/td[contains(@oncontextmenu,'" + dateNew + "')]/span";
+		return driver.findElement(By.xpath(xpathReservedInfo)).getText();
+	}
+	
 }
