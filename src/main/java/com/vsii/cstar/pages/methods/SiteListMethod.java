@@ -16,34 +16,87 @@ public class SiteListMethod {
 		this.driver = driver;
 		PageFactory.initElements(driver, objSiteList);
 	}
-	
-	public void enterZipCode(String zipCode){
+
+	// Get page header
+	public String getPageHeader() {
+		return objSiteList.getVal_PageHeader().getText();
+	}
+
+	// Get page question text
+	public String getPageDefaultQuestion() {
+		return objSiteList.getVal_ZipEntryQuestion().getText();
+	}
+
+	// Clear text from textbox Zipcode
+	public void clearZipCode() {
+		objSiteList.getTxt_Zip().clear();
+	}
+
+	// Enter zip code to corresponding textbox
+	public void enterZipCode(String zipCode) {
 		objSiteList.getTxt_Zip().sendKeys(zipCode);
 	}
-	
-	public void clickBtnVerifyZip(){
+
+	// Click icon verify zipcode
+	public void clickBtnVerifyZip() {
 		objSiteList.getBtn_VerifyZip().click();
 	}
-	
-	public void clickBtnSearch(){
+
+	// Check if error text appeared or not
+	public boolean isZipCodeWrong() {
+		boolean isWrong = false;
+		if (objSiteList.getLbl_CityError().isDisplayed() == true) {
+			isWrong = true;
+		}
+		return isWrong;
+	}
+
+	// Check if zip code correct or not
+	public boolean isZipCodeCorrect() {
+		boolean isCorrect = false;
+		if (driver.findElements(By.id("ctl00_plcMain_ctlZipCodeSearch_ddlCity")).size() != 0) {
+			isCorrect = true;
+		}
+		return isCorrect;
+	}
+
+	// Check if loading image displayed or not
+	public boolean isLoadingIMGDisplayed() {
+		boolean isLoading = false;
+		if (driver.findElements(By.id("ctl00_imgLoading")).size() != 0) {
+			isLoading = true;
+		}
+		return isLoading;
+	}
+
+	public void clickBtnSearch() {
 		objSiteList.getBtn_Search().click();
 	}
-	
-	public void waitToElementLoaded(){
-		String id = objSiteList.getImg_Loading().getAttribute("id");
-		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.id(id)));
+
+	// Click buton New site
+	public void clickBtnNewSite() {
+		objSiteList.getBtn_NewSite().click();
 	}
 	
-	public void clickFirstSiteInList(){
+	//Click button Return to Team Calendar
+	public void clickReturnTeamCalendar(){
+		objSiteList.getBtn_ReturnToTeamCalendar().click();
+	}
+
+	public void waitToElementLoaded() {
+		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.id("ctl00_imgLoading")));
+	}
+
+	public void clickFirstSiteInList() {
 		driver.findElement(By.xpath("//table[@id='ctl00_plcMain_grdScreening']/tbody/tr[2]/td[2]")).click();
 	}
-	
-	public void searchSiteByZipCode(String zipCode){
+
+	public void searchSiteByZipCode(String zipCode) {
 		this.enterZipCode(zipCode);
 		this.clickBtnVerifyZip();
 		this.waitToElementLoaded();
 		this.clickBtnSearch();
 		this.waitToElementLoaded();
 	}
-	
+
 }
