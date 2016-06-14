@@ -37,7 +37,18 @@ public class ContactInformationPageMethod {
 		new WebDriverWait(driver, 30).until(ExpectedConditions
 				.invisibilityOfElementLocated(By.id("ctl00_plcMain_tcDetails_tpAddress_rptAddress_up1Progress")));
 	}
-
+	
+	// Wait for loading image to load (when click a function buton at Add/Edit
+		// Email window)
+		/**
+		 * @note Wait for loading image to load (when click a function buton at
+		 *       Add/Edit Email window)
+		 */
+	public void waitForLoadingImageToLoad3() {
+		new WebDriverWait(driver, 30).until(ExpectedConditions
+				.invisibilityOfElementLocated(By.id("ctl00_plcMain_tcDetails_tpEmail_rptEmail_imgLoaderScreening")));
+	}
+	
 	// Click buton Add
 	public void clickAddContact() {
 		objContactInformationPage.getBtn_ContactInfo_Add().click();
@@ -172,9 +183,10 @@ public class ContactInformationPageMethod {
 
 		this.clearTxtComment();
 		this.inputComment(comment);
-
+		
 		this.saveContactInformation();
 		this.waitForLoadingImageToLoad();
+
 	}
 
 	// Select tab Address
@@ -317,6 +329,7 @@ public class ContactInformationPageMethod {
 	// Clear text from textbox Zip Code
 	public void clearTxtZipCode() {
 		objContactInformationPage.getTxt_Zipcode().clear();
+		this.waitForLoadingImageToLoad2();
 	}
 
 	// Input Zip Code
@@ -442,6 +455,8 @@ public class ContactInformationPageMethod {
 		
 		this.clearTxtAddressLine3();
 		this.inputAddressLine3(address3);
+		
+		// this.clearTxtCity();
 		// this.inputCity(city);
 		
 		this.clearTxtFour();
@@ -457,7 +472,6 @@ public class ContactInformationPageMethod {
 		}
 
 		this.saveAddress();
-		this.waitForLoadingImageToLoad2();
 	}
 
 	// Get number of contact's phone
@@ -597,12 +611,13 @@ public class ContactInformationPageMethod {
 	// Enter text to textbox Email
 	public void inputEmail(String email) {
 		objContactInformationPage.getTxt_Email().sendKeys(email);
+		
 	}
 
 	// Click buton Save Email
 	public void saveEmail() {
-		objContactInformationPage.getBtn_SavePhone().click();
-		this.waitForLoadingImageToLoad2();
+		objContactInformationPage.getBtn_SaveMail().click();
+		this.waitForLoadingImageToLoad3();
 	}
 
 	// Click buton cancel update Email

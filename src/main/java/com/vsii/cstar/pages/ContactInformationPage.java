@@ -66,7 +66,7 @@ public class ContactInformationPage {
 	private WebElement btn_CancelUpdatePhone;
 
 	// Buton Save Mail
-	@FindBy(id = "id=ctl00_plcMain_tcDetails_tpEmail_rptEmail_btnSave")
+	@FindBy(id = "ctl00_plcMain_tcDetails_tpEmail_rptEmail_btnSave")
 	private WebElement btn_SaveMail;
 
 	// Buton Cancel Mail

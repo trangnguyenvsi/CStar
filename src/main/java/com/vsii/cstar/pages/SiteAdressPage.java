@@ -114,6 +114,36 @@ public class SiteAdressPage {
 	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpAddress_ucAddressRepeater_btnCancel")
 	private WebElement btn_Adr_Cancel;
 
+	///////////// Element in Phone tab/////////////////
+
+	// Linktext add phone
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_rPhone_ctl00_lbAddPhone")
+	private WebElement lnk_AddPhone;
+
+	// Check box primary (phone)
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_ucfvPhone_fvPhone1_chkPrimary")
+	private WebElement chk_PrimaryPhone;
+
+	// Dropdown Type (phone)
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_ucfvPhone_fvPhone1_ddlPhoneTypes")
+	private WebElement ddl_PhoneType;
+
+	// Textbox Phone number
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_ucfvPhone_fvPhone1_txtPhoneNumber")
+	private WebElement txt_PhoneNumber;
+
+	// Textbox Phone Extension
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_ucfvPhone_fvPhone1_txtExtension")
+	private WebElement txt_PhoneExtension;
+
+	// Buton Save
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_btnSave")
+	private WebElement btn_SavePhone;
+
+	// Buton Cancel
+	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_btnCancel")
+	private WebElement btn_CancelUpdatePhone;
+
 	///////////// Element in Site Information tab/////////////////
 	// Textbox Site name
 	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tbpnlSiteInfo_txtSiteInfoSiteName")
@@ -155,14 +185,69 @@ public class SiteAdressPage {
 	@FindBy(id = "ctl00_plcMain_tbcSiteAddress_tbpnlSiteInfo_btnSiteInfoCancel")
 	private WebElement btn_SiteInfo_Cancel;
 
-	
-
 	/**
 	 * Bean shell
 	 */
+	
 
 	public WebElement getTab_Address() {
 		return tab_Address;
+	}
+
+	public WebElement getBtn_SavePhone() {
+		return btn_SavePhone;
+	}
+
+	public void setBtn_SavePhone(WebElement btn_SavePhone) {
+		this.btn_SavePhone = btn_SavePhone;
+	}
+
+	public WebElement getBtn_CancelUpdatePhone() {
+		return btn_CancelUpdatePhone;
+	}
+
+	public void setBtn_CancelUpdatePhone(WebElement btn_CancelUpdatePhone) {
+		this.btn_CancelUpdatePhone = btn_CancelUpdatePhone;
+	}
+
+	public WebElement getLnk_AddPhone() {
+		return lnk_AddPhone;
+	}
+
+	public void setLnk_AddPhone(WebElement lnk_AddPhone) {
+		this.lnk_AddPhone = lnk_AddPhone;
+	}
+
+	public WebElement getChk_PrimaryPhone() {
+		return chk_PrimaryPhone;
+	}
+
+	public void setChk_PrimaryPhone(WebElement chk_PrimaryPhone) {
+		this.chk_PrimaryPhone = chk_PrimaryPhone;
+	}
+
+	public WebElement getDdl_PhoneType() {
+		return ddl_PhoneType;
+	}
+
+	public void setDdl_PhoneType(WebElement ddl_PhoneType) {
+		this.ddl_PhoneType = ddl_PhoneType;
+	}
+
+	public WebElement getTxt_PhoneNumber() {
+		return txt_PhoneNumber;
+	}
+
+	public void setTxt_PhoneNumber(WebElement txt_PhoneNumber) {
+		this.txt_PhoneNumber = txt_PhoneNumber;
+	}
+
+	public WebElement getTxt_PhoneExtension() {
+		return txt_PhoneExtension;
+	}
+
+	public void setTxt_PhoneExtension(WebElement txt_PhoneExtension) {
+		this.txt_PhoneExtension = txt_PhoneExtension;
 	}
 
 	public WebElement getBtn_SiteInfo_Save() {

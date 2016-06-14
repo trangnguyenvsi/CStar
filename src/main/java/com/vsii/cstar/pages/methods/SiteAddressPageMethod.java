@@ -276,7 +276,7 @@ public class SiteAddressPageMethod {
 					chkOrder = Integer.toString(i);
 					break;
 				} else {
-					System.out.println("Checkbox number "+i+" not match with input value");
+					System.out.println("Checkbox number " + i + " not match with input value");
 				}
 			}
 
@@ -333,24 +333,33 @@ public class SiteAddressPageMethod {
 			ddlType.selectByVisibleText(val);
 			break;
 		case ADDRESS1:
+			objSiteAdressPage.getTxt_Address1().clear();
 			objSiteAdressPage.getTxt_Address1().sendKeys(val);
 			break;
 		case ADDRESS2:
+			objSiteAdressPage.getTxt_Address2().clear();
 			objSiteAdressPage.getTxt_Address2().sendKeys(val);
 			break;
 		case ADDRESS3:
+			objSiteAdressPage.getTxt_Address3().clear();
 			objSiteAdressPage.getTxt_Address3().sendKeys(val);
 			break;
 		case CITY:
+			objSiteAdressPage.getTxt_City().clear();
 			objSiteAdressPage.getTxt_City().sendKeys(val);
 			break;
 		case ZIP_CODE:
+			objSiteAdressPage.getTxt_ZipCode().clear();
+			this.waitForLoadingImgToLoad2();
 			objSiteAdressPage.getTxt_ZipCode().sendKeys(val);
+			this.clickButon(SA_TAB.ADDRESS, SA_BUTON.VERIFY_ZIPCODE);
 			break;
 		case FOUR:
+			objSiteAdressPage.getTxt_Four().clear();
 			objSiteAdressPage.getTxt_Four().sendKeys(val);
 			break;
 		case NOTES:
+			objSiteAdressPage.getTxt_Notes().clear();
 			objSiteAdressPage.getTxt_Notes().sendKeys(val);
 			break;
 		case CHK_MN_GEO_CODE:
@@ -358,14 +367,86 @@ public class SiteAddressPageMethod {
 			this.waitForLoadingImgToLoad2();
 			break;
 		case LATITUDE:
+			objSiteAdressPage.getTxt_Latitude().clear();
 			objSiteAdressPage.getTxt_Latitude().sendKeys(val);
 			break;
 		case LONGITUDE:
+			objSiteAdressPage.getTxt_Longitude().clear();
 			objSiteAdressPage.getTxt_Longitude().sendKeys(val);
 			break;
 		default:
 			break;
 		}
+	}
+
+	// Check to checkbox primary phone
+	public void checkUncheckPrimaryPhone() {
+		objSiteAdressPage.getChk_PrimaryPhone().click();
+	}
+
+	// Select phone type
+	public Select selectPhoneType() {
+		Select ddlPhoneType = new Select(objSiteAdressPage.getDdl_PhoneType());
+		return ddlPhoneType;
+	}
+
+	// Clear text from phone number textbox
+	public void clearPhoneNumber() {
+		objSiteAdressPage.getTxt_PhoneNumber().clear();
+	}
+
+	// Input text to phone number textbox
+	public void inputPhoneNumber(String phoneNo) {
+		objSiteAdressPage.getTxt_PhoneNumber().sendKeys(phoneNo);
+	}
+
+	// Clear text from phone extension textbox
+	public void clearPhoneExtension() {
+		objSiteAdressPage.getTxt_PhoneExtension().clear();
+	}
+
+	// input text to phone extension textbox
+	public void inputPhoneExtension(String phoneExtension) {
+		objSiteAdressPage.getTxt_PhoneExtension().sendKeys(phoneExtension);
+	}
+
+	// Click buton Save (Phone)
+	public void savePhone() {
+		objSiteAdressPage.getBtn_SavePhone().click();
+	}
+
+	// input data to Add or Edit Phone form
+	/**
+	 * @param check
+	 *            : If check = 1, then check or uncheck check box
+	 * @param phoneType
+	 *            : should match with values in dropdown list Type
+	 * @param phoneNo
+	 * @param phoneExtension
+	 */
+	public void inputDataToUpdatePhoneForm(int check, String phoneType, String phoneNo, String phoneExtension) {
+		// If check = 1, then check or uncheck check box
+		if (check == 1) {
+			this.checkUncheckPrimaryPhone();
+		}
+
+		// Select phone type by visible text (in interface)
+		this.selectPhoneType().selectByVisibleText(phoneType);
+
+		// Clear and input new phone no.
+		this.clearPhoneNumber();
+		this.inputPhoneNumber(phoneNo);
+
+		// Clear and input new phone extension, leave "" if phone dont have
+		// extension
+		this.clearPhoneExtension();
+		this.inputPhoneExtension(phoneExtension);
+
+		// Save
+		this.savePhone();
+		new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(
+				By.id("ctl00_plcMain_tbcSiteAddress_tpPhone_ucPhoneRepeater_mpePhone_backgroundElement")));
+
 	}
 
 	/**

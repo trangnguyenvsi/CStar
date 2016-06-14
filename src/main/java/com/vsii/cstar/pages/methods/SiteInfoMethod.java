@@ -371,7 +371,15 @@ public class SiteInfoMethod {
 		this.objSiteInfo.getTxt_SiteAddress2().click();
 
 		// Wait for 10s for address status display
-		this.waitForAddressStatusDisplay();
+		// this.waitForAddressStatusDisplay(); //Remove this
+		
+		// While validate message is not displayed, click to 2 textbox
+		// Address 1
+		// and Address 2 until it's displayed
+		while (this.getAddressStatus().length() == 0) {
+			objSiteInfo.getTxt_SiteAddress2().click();
+			objSiteInfo.getTxt_SiteAddress1().click();
+		}
 
 		// if it diplayed, and its value is "Bad Address", close popup Auto
 		// Suggestion
@@ -578,8 +586,8 @@ public class SiteInfoMethod {
 		case CONTACT_EMAIL_TYPE:
 			val = new Select(objSiteInfo.getDdl_ContactMailType()).getFirstSelectedOption().getText();
 			break;
-			// case SITE_EMAIL:
-			// No need yet
+		// case SITE_EMAIL:
+		// No need yet
 		default:
 			break;
 		}

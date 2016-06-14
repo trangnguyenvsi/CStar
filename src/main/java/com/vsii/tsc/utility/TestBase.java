@@ -22,7 +22,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.vsii.tsc.model.TCImageResults;
 
-
 public class TestBase {
 	public static String screeningDate;
 	public static String teamCode;
@@ -42,16 +41,16 @@ public class TestBase {
 
 	@BeforeSuite
 	public void setupSuite() throws IOException {
-	//	DBConnection.revertDB("exec usp_CStar_RevertSnapshot");
+//		 DBConnection.revertDB("exec usp_CStar_RevertSnapshot");
 		// Read config file
 		p = CommonOperations.readConfig();
-		
-		//Get Date
+
+		// Get Date
 		screeningDate = p.getProperty("screeningDate");
 		teamCode = p.getProperty("teamCode");
 		userName = p.getProperty("email");
 		password = p.getProperty("pwd");
-		
+
 		tcImageResultsList = new HashMap<String, List<TCImageResults>>();
 
 		if (p.getProperty("local").equals("No")) {
@@ -84,7 +83,9 @@ public class TestBase {
 				break;
 			case ("IE"):
 				System.setProperty(p.getProperty("ieDriver"), p.getProperty("ieDriverPath"));
-				driver = new InternetExplorerDriver();
+				DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+				caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				driver = new InternetExplorerDriver(caps);
 				break;
 			case ("Safari"):
 				driver = new SafariDriver();
@@ -101,8 +102,8 @@ public class TestBase {
 
 	@AfterSuite
 	public void teardownSuite() throws Exception {
-		//driver.quit();
-		//SendMail.execute();
+		// driver.quit();
+		// SendMail.execute();
 	}
 
 }

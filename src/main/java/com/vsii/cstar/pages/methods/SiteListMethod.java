@@ -53,9 +53,12 @@ public class SiteListMethod {
 
 	// Check if zip code correct or not
 	public boolean isZipCodeCorrect() {
-		boolean isCorrect = false;
-		if (driver.findElements(By.id("ctl00_plcMain_ctlZipCodeSearch_ddlCity")).size() != 0) {
+		boolean isCorrect;
+		try {
+			driver.findElement(By.xpath("//select[@id='ctl00_plcMain_ctlZipCodeSearch_ddlCity']/option")).getText();
 			isCorrect = true;
+		} catch (Exception e) {
+			isCorrect= false;
 		}
 		return isCorrect;
 	}

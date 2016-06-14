@@ -10,9 +10,17 @@ public class TestCase {
 	private String tcStep;
 	private String tcExpt;
 	private String tcPri;
+	private String tcTestData;
 	private List<TCImageResults> tcImageResults;
 	
 	
+	
+	public String getTcTestData() {
+		return tcTestData;
+	}
+	public void setTcTestData(String tcTestData) {
+		this.tcTestData = tcTestData;
+	}
 	public String getTcLct() {
 		return tcLct;
 	}

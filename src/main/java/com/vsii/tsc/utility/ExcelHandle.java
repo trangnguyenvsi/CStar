@@ -342,18 +342,21 @@ public class ExcelHandle {
 			}
 
 			/* Merge cell */
+						
 			CellRangeAddress mergeID = new CellRangeAddress(rowTC, j, resultIDCol, resultIDCol);
 			CellRangeAddress mergeDes = new CellRangeAddress(rowTC, j, resultDesCol, resultDesCol);
 			CellRangeAddress mergePre = new CellRangeAddress(rowTC, j, resultPreCol, resultPreCol);
 			CellRangeAddress mergeStep = new CellRangeAddress(rowTC, j, resultStepCol, resultStepCol);
 			CellRangeAddress mergeExpt = new CellRangeAddress(rowTC, j, resultExptCol, resultExptCol);
+			
 
 			sheet.addMergedRegion(mergeID);
 			sheet.addMergedRegion(mergeDes);
 			sheet.addMergedRegion(mergePre);
 			sheet.addMergedRegion(mergeStep);
 			sheet.addMergedRegion(mergeExpt);
-		}
+			}
+		
 
 		/* remove the old rows after write */
 		for (int i = rowTC + 1; i <= sheet.getLastRowNum(); i++) {
